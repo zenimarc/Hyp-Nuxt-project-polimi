@@ -35,7 +35,7 @@ async function initializeDatabaseConnection() {
     // id is automatically created with autoincrement integer
     name: DataTypes.STRING,
     surname: DataTypes.STRING,
-    job_title: DataTypes.STRING,
+    jobTitle: DataTypes.STRING,
     image: DataTypes.STRING,
   })
 
@@ -75,6 +75,11 @@ async function runMainApi() {
     const { topic } = req.params
     const result = pageContentObject[topic]
     return res.json(result)
+  })
+
+  app.get('/info/teamMembers', async (req, res) => {
+    const members = await models.TeamMember.findAll()
+    return res.json(members)
   })
 
   app.get('/cats/:id', async (req, res) => {

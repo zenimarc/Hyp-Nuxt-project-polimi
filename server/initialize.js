@@ -54,16 +54,16 @@ export default async (models) => {
     {
       name: 'Giorgio',
       surname: 'Verdi',
-      job_title: 'head of office',
+      jobTitle: 'head of office',
       image:
-        'https://i.pinimg.com/736x/ca/28/47/ca28478cd4788b38d99b167e56e0a555.jpg',
+        'https://i.pinimg.com/originals/3d/fa/72/3dfa721da08c2977a0fe583bea20d7d4.jpg',
     },
     {
       name: 'Luca',
       surname: 'Rossi',
-      job_title: 'city expert',
+      jobTitle: 'city expert',
       image:
-        'https://thumbs.dreamstime.com/b/smiling-portrait-man-face-real-retro-colour-high-detail-32390572.jpg',
+        'https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg',
     },
   ]
   await models.TeamMember.bulkCreate(teamMembers)

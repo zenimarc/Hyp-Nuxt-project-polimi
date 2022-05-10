@@ -54,6 +54,10 @@ export default {
           path: '/list',
         },
         {
+          name: 'Team',
+          path: '/team',
+        },
+        {
           name: 'About',
           path: '/about',
         },
