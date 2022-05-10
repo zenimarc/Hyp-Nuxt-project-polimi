@@ -1,4 +1,4 @@
-# lesson15
+# Final Project template
 
 ## Build Setup
 
