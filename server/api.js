@@ -20,6 +20,12 @@ const database = new Sequelize(
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
   await database.authenticate()
+  const TeamMember = database.define('teamMember', {
+    name: DataTypes.STRING,
+    surname: DataTypes.STRING,
+    jobTitle: DataTypes.STRING,
+    img: DataTypes.STRING,
+  })
   const Cat = database.define('cat', {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
@@ -30,15 +36,6 @@ async function initializeDatabaseConnection() {
     name: DataTypes.STRING,
     city: DataTypes.STRING,
   })
-
-  const TeamMember = database.define('TeamMember', {
-    // id is automatically created with autoincrement integer
-    name: DataTypes.STRING,
-    surname: DataTypes.STRING,
-    jobTitle: DataTypes.STRING,
-    image: DataTypes.STRING,
-  })
-
   Location.hasMany(Cat)
   Cat.belongsTo(Location)
   await database.sync({ force: true })
@@ -77,11 +74,6 @@ async function runMainApi() {
     return res.json(result)
   })
 
-  app.get('/info/teamMembers', async (req, res) => {
-    const members = await models.TeamMember.findAll()
-    return res.json(members)
-  })
-
   app.get('/cats/:id', async (req, res) => {
     const id = +req.params.id
     const result = await models.Cat.findOne({
@@ -101,6 +93,22 @@ async function runMainApi() {
         img: element.img,
         breed: element.breed,
         id: element.id,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  // HTTP GET api that returns all the members in our actual database
+  app.get('/teamMembers', async (req, res) => {
+    const result = await models.TeamMember.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        img: element.img,
+        surname: element.surname,
+        id: element.id,
+        jobTitle: element.jobTitle,
       })
     }
     return res.json(filtered)
