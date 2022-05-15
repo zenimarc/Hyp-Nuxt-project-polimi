@@ -21,6 +21,7 @@
           :surname="member.surname"
           :jobTitle="member.jobTitle"
           :img="member.img"
+          :socialsList="socialsList"
         />
       </div>
 
@@ -52,9 +53,12 @@ export default {
   },
   async asyncData({ $axios }) {
     // const { data } = await $axios.get('http://localhost:3000/api/cats')
-    const { data } = await $axios.get('/api/teamMembers')
+    const { data } = await $axios.get('api/teamMembers')
+    const data2 = await $axios.get('/api/page-info/about')
+    // console.log("~" + JSON.stringify(data2.data.socialsList));
     return {
       membersList: data,
+      socialsList: data2.data.socialsList,
     }
   },
 }

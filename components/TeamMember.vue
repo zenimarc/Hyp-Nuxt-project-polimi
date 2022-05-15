@@ -7,29 +7,19 @@
     <p class="text-muted">{{ jobTitle }}</p>
     <!-- Socials-->
     <!-- ========================================= -->
-    <a
-      class="btn btn-dark btn-social mx-2"
-      href="#!"
-      aria-label="Parveen Anand Twitter Profile"
-      ><i class="fab fa-twitter"></i
-    ></a>
-    <a
-      class="btn btn-dark btn-social mx-2"
-      href="#!"
-      aria-label="Parveen Anand Facebook Profile"
-      ><i class="fab fa-facebook-f"></i
-    ></a>
-    <a
-      class="btn btn-dark btn-social mx-2"
-      href="#!"
-      aria-label="Parveen Anand LinkedIn Profile"
-      ><i class="fab fa-linkedin-in"></i
-    ></a>
+    <Social
+      v-for="(social, socialIndex) of socialsList"
+      :key="`social${socialIndex}`"
+      :name="name"
+      :surname="surname"
+      :social="social"
+    />
     <!-- ========================================= -->
   </div>
 </template>
 
 <script>
+import Social from './Social.vue'
 export default {
   name: 'TeamMember',
   props: {
@@ -53,6 +43,11 @@ export default {
       type: String,
       required: true,
     },
+    socialsList: {
+      type: Array,
+      required: true,
+    },
   },
+  components: { Social },
 }
 </script>
