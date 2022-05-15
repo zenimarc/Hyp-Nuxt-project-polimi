@@ -22,6 +22,7 @@
 import Social from './Social.vue'
 export default {
   name: 'TeamMember',
+  components: { Social },
   props: {
     name: {
       type: String,
@@ -48,6 +49,5 @@ export default {
       required: true,
     },
   },
-  components: { Social },
 }
 </script>

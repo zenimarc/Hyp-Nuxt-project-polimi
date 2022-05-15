@@ -1,7 +1,7 @@
 <template>
   <!-- Team members header-->
   <!-- ========================================= -->
-  <section class="page-section bg-light" id="team">
+  <section id="team" class="page-section bg-light">
     <div class="container">
       <div class="text-center">
         <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
@@ -14,14 +14,14 @@
       <div class="row">
         <TeamMember
           v-for="(member, memberIndex) of membersList"
-          class="col-lg-4"
-          :key="`member${memberIndex}`"
           :id="member.id"
+          :key="`member${memberIndex}`"
+          class="col-lg-4"
           :name="member.name"
           :surname="member.surname"
-          :jobTitle="member.jobTitle"
+          :job-title="member.jobTitle"
           :img="member.img"
-          :socialsList="socialsList"
+          :socials-list="socialsList"
         />
       </div>
 
@@ -48,9 +48,6 @@ export default {
   components: {
     TeamMember,
   },
-  data() {
-    return {}
-  },
   async asyncData({ $axios }) {
     // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('api/teamMembers')
@@ -60,6 +57,9 @@ export default {
       membersList: data,
       socialsList: data2.data.socialsList,
     }
+  },
+  data() {
+    return {}
   },
 }
 </script>
