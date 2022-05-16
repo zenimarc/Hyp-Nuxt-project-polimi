@@ -81,4 +81,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  publicRuntimeConfig: {
+    GOOGLE_API_KEY:
+      process.env.GOOGLE_API_KEY || 'AIzaSyAEIq77p46JVQVeDNbl-q59sj_uJKnYl94',
+  },
 }
