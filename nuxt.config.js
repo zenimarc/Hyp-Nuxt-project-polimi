@@ -51,6 +51,7 @@ export default {
         // <!-- Font Awesome icons (free version)-->
         src: 'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
       },
+      { src: 'scripts.js', defer: true },
     ],
   },
 

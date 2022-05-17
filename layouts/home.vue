@@ -1,15 +1,14 @@
 <template>
   <div class="main-page">
-    <the-header class="navbar-shrink" />
+    <the-header class="homepageNav" />
     <nuxt />
-    <the-footer />
   </div>
 </template>
 
 <script>
 import TheHeader from '~/components/TheHeader.vue'
 export default {
-  name: 'DefaultLayout',
+  name: 'HomeLayout',
   components: {
     TheHeader,
   },

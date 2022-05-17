@@ -9,6 +9,7 @@ export default {
   components: {
     CustomPage,
   },
+  layout: 'home',
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/page-info/index')
     const title = data.title
@@ -18,6 +19,11 @@ export default {
       title,
       description,
       image,
+    }
+  },
+  head() {
+    return {
+      title: 'Taormina Homepage', // Other meta information
     }
   },
 }

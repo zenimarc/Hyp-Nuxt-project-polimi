@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="#page-top"
-        ><img src="styles/assets/img/navbar-logo.svg" alt="..."
+        ><img src="/assets/img/navbar-logo.svg" alt="logo"
       /></a>
       <button
         class="navbar-toggler"
@@ -35,30 +35,30 @@
 
 <script>
 export default {
-  name: "TheHeader",
+  name: 'TheHeader',
   data() {
     return {
       headerList: [
         {
-          name: "Home",
-          path: "/",
+          name: 'Home',
+          path: '/',
         },
         {
-          name: "List",
-          path: "/list",
+          name: 'List',
+          path: '/list',
         },
         {
-          name: "About",
-          path: "/about",
+          name: 'About',
+          path: '/about',
         },
         {
-          name: "Contacts",
-          path: "/contacts",
+          name: 'Contacts',
+          path: '/contacts',
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>
