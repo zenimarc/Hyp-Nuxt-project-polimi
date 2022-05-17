@@ -26,6 +26,18 @@ async function initializeDatabaseConnection() {
     jobTitle: DataTypes.STRING,
     img: DataTypes.STRING,
   })
+  const PoiImage = database.define('image', {
+    description: DataTypes.STRING,
+    src: DataTypes.STRING,
+  })
+  const PointOfInterest = database.define('pointOfInterest', {
+    name: DataTypes.STRING,
+    visitInformation: DataTypes.STRING,
+    shortDescription: DataTypes.STRING,
+  })
+  PointOfInterest.hasMany(PoiImage)
+  PoiImage.belongsTo(PointOfInterest)
+
   const Cat = database.define('cat', {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
