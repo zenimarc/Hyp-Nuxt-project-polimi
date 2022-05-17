@@ -34,7 +34,7 @@ export default {
         rel: 'stylesheet',
         type: 'text/css',
       },
-      //<!-- Google fonts-->
+      // <!-- Google fonts-->
       {
         href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700',
         rel: 'stylesheet',
@@ -44,9 +44,11 @@ export default {
     ],
     script: [
       {
-        //<!-- Bootstrap core JS-->
+        // <!-- Bootstrap core JS-->
         src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
-        //<!-- Font Awesome icons (free version)-->
+      },
+      {
+        // <!-- Font Awesome icons (free version)-->
         src: 'https://use.fontawesome.com/releases/v6.1.0/js/all.js',
       },
     ],
@@ -56,7 +58,7 @@ export default {
   css: ['@/styles/css/styles.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '@/styles/js/scripts.js', mode: 'client' }],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
