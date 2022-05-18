@@ -49,7 +49,7 @@ export default async (models) => {
     },
   ]
   await models.Cat.bulkCreate(catList)
-
+  //  Team members
   const membersList = [
     {
       name: 'Giorgio',
@@ -83,4 +83,34 @@ export default async (models) => {
     },
   ]
   await models.PointOfInterest.bulkCreate(poiList)
+
+  // Service types
+  const serviceTypeList = [
+    {
+      name: 'Pharmacies',
+      title: 'Title 1',
+      introduction: 'Introduction 1',
+    },
+    {
+      name: 'Banks',
+      title: 'Title 2',
+      introduction: 'Introduction 2',
+    },
+    {
+      name: 'Restaurants',
+      title: 'Title 3',
+      introduction: 'Introduction 3',
+    },
+    {
+      name: 'Health services',
+      title: 'Title 4',
+      introduction: 'Introduction 4',
+    },
+  ]
+
+  const serviceType = {}
+  for (let i = 0; i < serviceTypeList.length; i++) {
+    serviceType[i] = await models.ServiceType.create(serviceTypeList[i])
+    // console.log(JSON.stringify(serviceType[i]) + '~')
+  }
 }
