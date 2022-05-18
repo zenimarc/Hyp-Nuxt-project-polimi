@@ -1,9 +1,9 @@
 <template>
   <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#page-top"
+      <nuxt-link to="/" class="navbar-brand"
         ><img src="/assets/img/navbar-logo.svg" alt="logo"
-      /></a>
+      /></nuxt-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -39,10 +39,6 @@ export default {
   data() {
     return {
       headerList: [
-        {
-          name: 'Home',
-          path: '/',
-        },
         {
           name: 'List',
           path: '/list',
