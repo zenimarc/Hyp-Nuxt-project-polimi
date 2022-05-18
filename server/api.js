@@ -33,9 +33,9 @@ async function initializeDatabaseConnection() {
     imgUrl: DataTypes.STRING,
     address: DataTypes.STRING,
     startingHour: DataTypes.TIME,
-    startingDay: DataTypes.VARCHAR,
+    startingDay: DataTypes.STRING,
     endingHour: DataTypes.TIME,
-    endingDay: DataTypes.VARCHAR,
+    endingDay: DataTypes.STRING,
   })
 
   const ServiceType = database.define('serviceType', {
@@ -83,8 +83,8 @@ async function initializeDatabaseConnection() {
   )
   Itinerary.belongsToMany(PointOfInterest, { through: Involves })
   PointOfInterest.belongsToMany(Itinerary, { through: Involves })
-  PointOfInterest.hasMany(Service, { through: Involves })
-  Service.belongsTo(PointOfInterest, { through: Involves })
+  PointOfInterest.belongsToMany(Service, { through: Involves })
+  Service.belongsToMany(PointOfInterest, { through: Involves })
 
   const Cat = database.define('cat', {
     name: DataTypes.STRING,
