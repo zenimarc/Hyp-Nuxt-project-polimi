@@ -1,6 +1,6 @@
 <template>
   <div class="main-page">
-    <the-header class="homepageNav" />
+    <the-header class="homepageNav" :is-fixed-pos="true" />
     <nuxt />
   </div>
 </template>

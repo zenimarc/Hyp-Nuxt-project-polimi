@@ -1,5 +1,10 @@
 <template>
-  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <nav
+    id="mainNav"
+    :class="`navbar navbar-expand-lg navbar-dark ${
+      isFixedPos ? 'fixed-top' : 'sticky-top'
+    }`"
+  >
     <div class="container">
       <nuxt-link to="/" class="navbar-brand"
         ><img src="/assets/img/navbar-logo.svg" alt="logo"
@@ -36,6 +41,12 @@
 <script>
 export default {
   name: 'TheHeader',
+  props: {
+    isFixedPos: {
+      type: Boolean,
+      required: false,
+    },
+  },
   data() {
     return {
       headerList: [
@@ -109,7 +120,11 @@ export default {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border: none;
-    background-color: #212529;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
