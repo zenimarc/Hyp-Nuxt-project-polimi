@@ -26,8 +26,26 @@ async function initializeDatabaseConnection() {
     jobTitle: DataTypes.STRING,
     img: DataTypes.STRING,
   })
+  // Service
+  // ========================================================
+  const Service = database.define('service', {
+    name: DataTypes.STRING,
+    imgUrl: DataTypes.STRING,
+    address: DataTypes.STRING,
+    startingHour: DataTypes.TIME,
+    startingDay: DataTypes.VARCHAR,
+    endingHour: DataTypes.TIME,
+    endingDay: DataTypes.VARCHAR,
+  })
 
+  const ServiceType = database.define('serviceType', {
+    title: DataTypes.STRING,
+    introduction: DataTypes.STRING,
+  })
+  ServiceType.hasMany(Service)
+  Service.belongsTo(ServiceType)
   // Point of Interest
+  // ========================================================
   const PoiImage = database.define('image', {
     description: DataTypes.STRING,
     src: DataTypes.STRING,
@@ -40,7 +58,7 @@ async function initializeDatabaseConnection() {
   })
   PointOfInterest.hasMany(PoiImage)
   PoiImage.belongsTo(PointOfInterest)
-
+  // ========================================================
   // Itinerary
   const ItineraryImage = database.define('image', {
     description: DataTypes.STRING,
@@ -53,7 +71,7 @@ async function initializeDatabaseConnection() {
   })
   Itinerary.hasMany(ItineraryImage)
   ItineraryImage.belongsTo(Itinerary)
-
+  // ========================================================
   // Involves bridge table
   // look here for documentation: https://sequelize.org/docs/v6/advanced-association-concepts/advanced-many-to-many/
   const Involves = database.define(
@@ -65,6 +83,8 @@ async function initializeDatabaseConnection() {
   )
   Itinerary.belongsToMany(PointOfInterest, { through: Involves })
   PointOfInterest.belongsToMany(Itinerary, { through: Involves })
+  PointOfInterest.hasMany(Service, { through: Involves })
+  Service.belongsTo(PointOfInterest, { through: Involves })
 
   const Cat = database.define('cat', {
     name: DataTypes.STRING,
@@ -88,9 +108,11 @@ async function initializeDatabaseConnection() {
     ItineraryImage,
     Itinerary,
     Involves,
+    Service,
+    ServiceType,
   }
 }
-
+// ========================================================
 // With this line, our server will know how to parse any incoming request
 // that contains some JSON in the body
 
