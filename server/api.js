@@ -26,6 +26,67 @@ async function initializeDatabaseConnection() {
     jobTitle: DataTypes.STRING,
     img: DataTypes.STRING,
   })
+  // Service
+  // ========================================================
+  const Service = database.define('service', {
+    name: DataTypes.STRING,
+    imgUrl: DataTypes.STRING,
+    address: DataTypes.STRING,
+    startingHour: DataTypes.TIME,
+    startingDay: DataTypes.STRING,
+    endingHour: DataTypes.TIME,
+    endingDay: DataTypes.STRING,
+  })
+
+  const ServiceType = database.define('serviceType', {
+    name: DataTypes.STRING,
+    title: DataTypes.STRING,
+    introduction: DataTypes.STRING,
+  })
+  ServiceType.hasMany(Service)
+  Service.belongsTo(ServiceType)
+  // Point of Interest
+  // ========================================================
+  const PoiImage = database.define('image', {
+    description: DataTypes.STRING,
+    src: DataTypes.STRING,
+  })
+  const PointOfInterest = database.define('pointOfInterest', {
+    name: DataTypes.STRING,
+    visitInformation: DataTypes.TEXT,
+    shortDescription: DataTypes.TEXT,
+    address: DataTypes.STRING,
+  })
+  PointOfInterest.hasMany(PoiImage)
+  PoiImage.belongsTo(PointOfInterest)
+  // ========================================================
+  // Itinerary
+  const ItineraryImage = database.define('image', {
+    description: DataTypes.STRING,
+    src: DataTypes.STRING,
+  })
+  const Itinerary = database.define('itinerary', {
+    title: DataTypes.STRING,
+    durationMinutes: DataTypes.INTEGER,
+    shortDescription: DataTypes.TEXT,
+  })
+  Itinerary.hasMany(ItineraryImage)
+  ItineraryImage.belongsTo(Itinerary)
+  // ========================================================
+  // Involves bridge table
+  // look here for documentation: https://sequelize.org/docs/v6/advanced-association-concepts/advanced-many-to-many/
+  const Involves = database.define(
+    'Involves',
+    {
+      order: DataTypes.INTEGER,
+    },
+    { timestamps: false }
+  )
+  Itinerary.belongsToMany(PointOfInterest, { through: Involves })
+  PointOfInterest.belongsToMany(Itinerary, { through: Involves })
+  PointOfInterest.belongsToMany(Service, { through: Involves })
+  Service.belongsToMany(PointOfInterest, { through: Involves })
+
   const Cat = database.define('cat', {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
@@ -43,9 +104,16 @@ async function initializeDatabaseConnection() {
     Cat,
     Location,
     TeamMember,
+    PoiImage,
+    PointOfInterest,
+    ItineraryImage,
+    Itinerary,
+    Involves,
+    Service,
+    ServiceType,
   }
 }
-
+// ========================================================
 // With this line, our server will know how to parse any incoming request
 // that contains some JSON in the body
 
