@@ -148,6 +148,23 @@ async function runMainApi() {
     return res.json(result)
   })
 
+  // HTTP GET api that returns all the POIs in our actual database
+  app.get('/pois', async (req, res) => {
+    const result = await models.PointOfInterest.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        visitInformation: element.visitInformation,
+        // shortDescription: element.shortDescription,
+        address: element.address,
+        images: element.images,
+      })
+    }
+    return res.json(filtered)
+  })
+
   // HTTP GET api that returns all the cats in our actual database
   app.get('/cats', async (req, res) => {
     const result = await models.Cat.findAll()

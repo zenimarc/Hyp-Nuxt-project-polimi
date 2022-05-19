@@ -5,12 +5,19 @@
       <div class="container">
         <div class="masthead-subheading">Welcome To Our Studio!</div>
         <div class="masthead-heading text-uppercase">Taormina</div>
-        <a class="btn btn-primary btn-xl text-uppercase" href="#services"
+        <a
+          class="btn btn-primary btn-xl text-uppercase"
+          @click="scrollSmoothIntoView('#mainContentHome')"
           >Tell Me More</a
         >
       </div>
     </header>
-    <custom-page :title="title" :image="image" :description="description" />
+    <custom-page
+      id="mainContentHome"
+      :title="title"
+      :image="image"
+      :description="description"
+    />
   </div>
 </template>
 
@@ -37,6 +44,14 @@ export default {
     return {
       title: 'Taormina Homepage', // Other meta information
     }
+  },
+  methods: {
+    scrollSmoothIntoView(selector) {
+      const elem = document.querySelector(selector)
+      elem.scrollIntoView({
+        behavior: 'smooth',
+      })
+    },
   },
 }
 </script>

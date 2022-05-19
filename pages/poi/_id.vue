@@ -1,34 +1,48 @@
 <template>
-  <div class="container">
+  <div class="container mt-5 mb-5">
     <div class="row">
       <div class="col-lg-6 description-wrapper">
-        <p>
+        <h1 class="title">{{ name }}</h1>
+        <p class="description">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
           laboriosam veritatis, quos non quis ad perspiciatis, totam corporis
           ea, alias ut unde.
         </p>
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-lg px-4"
+          @click="backToList"
+        >
+          Back to list
+        </button>
       </div>
       <div class="col-lg-6 image-wrapper">
-        <img src="" alt="" />
+        <img :src="images[0]" :alt="name" width="100%" />
       </div>
+    </div>
+    <div class="map-container mt-4">
+      <Map title="How to reach it" :query="`${name} taormina`" />
     </div>
   </div>
 </template>
 
 <script>
+import Map from '~/components/Map.vue'
 import CommonMixin from '~/mixins/common'
 export default {
+  components: { Map },
   name: 'PoidetailsPage',
   mixins: [CommonMixin],
   async asyncData({ route, $axios }) {
     const { id } = route.params
     const { data } = await $axios.get('/api/poi/' + id)
     return {
+      id: data.id,
       name: data.name,
-      breed: data.breed,
-      img: data.img,
-      description: data.description,
-      location: data.location,
+      visitInformation: data.visitInformation,
+      shortDescription: data.shortDescription,
+      address: data.address,
+      images: data.images,
     }
   },
   head() {
@@ -43,8 +57,15 @@ export default {
   },
   methods: {
     backToList() {
-      this.$router.push('/list')
+      this.$router.push('/all-point-of-interests')
     },
   },
 }
 </script>
+
+<style scoped>
+.map-container {
+  width: 100%;
+  height: 36rem;
+}
+</style>

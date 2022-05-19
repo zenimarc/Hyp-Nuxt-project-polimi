@@ -55,6 +55,10 @@ export default {
           path: '/list',
         },
         {
+          name: 'Point of interests',
+          path: '/all-point-of-interests',
+        },
+        {
           name: 'About',
           path: '/about',
         },
