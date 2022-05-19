@@ -1,5 +1,6 @@
 <template>
   <div>
+    <the-header class="homepageNav" :is-fixed-pos="true" />
     <header class="masthead">
       <div class="container">
         <div class="masthead-subheading">Welcome To Our Studio!</div>
@@ -20,7 +21,7 @@ export default {
   components: {
     CustomPage,
   },
-  layout: 'home',
+  layout: 'empty',
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/page-info/index')
     const title = data.title
