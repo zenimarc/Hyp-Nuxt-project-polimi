@@ -47,31 +47,21 @@ async function initializeDatabaseConnection() {
   Service.belongsTo(ServiceType)
   // Point of Interest
   // ========================================================
-  const PoiImage = database.define('image', {
-    description: DataTypes.STRING,
-    src: DataTypes.STRING,
-  })
   const PointOfInterest = database.define('pointOfInterest', {
     name: DataTypes.STRING,
     visitInformation: DataTypes.TEXT,
     shortDescription: DataTypes.TEXT,
     address: DataTypes.STRING,
+    images: DataTypes.ARRAY(DataTypes.TEXT),
   })
-  PointOfInterest.hasMany(PoiImage)
-  PoiImage.belongsTo(PointOfInterest)
   // ========================================================
   // Itinerary
-  const ItineraryImage = database.define('image', {
-    description: DataTypes.STRING,
-    src: DataTypes.STRING,
-  })
   const Itinerary = database.define('itinerary', {
     title: DataTypes.STRING,
     durationMinutes: DataTypes.INTEGER,
     shortDescription: DataTypes.TEXT,
+    images: DataTypes.ARRAY(DataTypes.TEXT),
   })
-  Itinerary.hasMany(ItineraryImage)
-  ItineraryImage.belongsTo(Itinerary)
   // ========================================================
   // Involves bridge table
   // look here for documentation: https://sequelize.org/docs/v6/advanced-association-concepts/advanced-many-to-many/
@@ -104,9 +94,7 @@ async function initializeDatabaseConnection() {
     Cat,
     Location,
     TeamMember,
-    PoiImage,
     PointOfInterest,
-    ItineraryImage,
     Itinerary,
     Involves,
     Service,
@@ -148,6 +136,14 @@ async function runMainApi() {
     const result = await models.Cat.findOne({
       where: { id },
       include: [{ model: models.Location }],
+    })
+    return res.json(result)
+  })
+
+  app.get('/poi/:id', async (req, res) => {
+    const id = Number(req.params.id)
+    const result = await models.PointOfInterest.findOne({
+      where: { id },
     })
     return res.json(result)
   })
