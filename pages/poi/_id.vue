@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-5 mb-5">
-    <div class="row">
-      <div class="col-lg-6 description-wrapper">
+    <div class="row gy-5">
+      <div class="col-lg-6 ms-auto description-wrapper">
         <h1 class="title">{{ name }}</h1>
         <p class="description">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
@@ -16,7 +16,7 @@
           Back to list
         </button>
       </div>
-      <div class="col-lg-6 image-wrapper">
+      <div class="col-lg-6 ms-auto image-wrapper">
         <img :src="images[0]" :alt="name" width="100%" />
       </div>
     </div>
