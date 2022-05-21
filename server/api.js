@@ -30,12 +30,17 @@ async function initializeDatabaseConnection() {
   // ========================================================
   const Service = database.define('service', {
     name: DataTypes.STRING,
-    imgUrl: DataTypes.STRING,
+    img: DataTypes.TEXT,
     address: DataTypes.STRING,
-    startingHour: DataTypes.TIME,
-    startingDay: DataTypes.STRING,
-    endingHour: DataTypes.TIME,
-    endingDay: DataTypes.STRING,
+    monday: DataTypes.ARRAY(DataTypes.JSON),
+    tuesday: DataTypes.ARRAY(DataTypes.JSON),
+    wednesday: DataTypes.ARRAY(DataTypes.JSON),
+    thursday: DataTypes.ARRAY(DataTypes.JSON),
+    friday: DataTypes.ARRAY(DataTypes.JSON),
+    saturday: DataTypes.ARRAY(DataTypes.JSON),
+    sunday: DataTypes.ARRAY(DataTypes.JSON),
+    order: DataTypes.INTEGER,
+    serviceLink: DataTypes.TEXT,
   })
 
   const ServiceType = database.define('serviceType', {
