@@ -34,8 +34,13 @@ export default async (models) => {
 
   const pharmaciesJson = require('./pharmacies')
   const restaurantsJson = require('./restaurants')
+  const atmsJson = require('./atms')
   servicesList = mergeServiceJsonId(
-    mergeServiceJsonId(servicesList, restaurantsJson, serviceType[1].id),
+    mergeServiceJsonId(
+      mergeServiceJsonId(atmsJson, serviceType[2], serviceType[2].id),
+      restaurantsJson,
+      serviceType[1].id
+    ),
     pharmaciesJson,
     serviceType[0].id
   )

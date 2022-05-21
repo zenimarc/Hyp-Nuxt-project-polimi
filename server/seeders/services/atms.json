@@ -1,0 +1,284 @@
+[
+  {
+    "order": "1653150005-108",
+    "service-link-href": "https://www.google.com/maps/place/Credit+Agricole/data=!4m6!3m5!1s0x131411a1eb59fe91:0xd36a1f83e3e3106!8m2!3d37.8535436!4d15.2884365!16s%2Fg%2F1tfws1p8?authuser=0&hl=en&rclk=1",
+    "name": "Credit Agricole",
+    "address": "Largo Santa Caterina, 12, 98039 Taormina ME",
+    "monday": [
+      {
+        "monday": "8:30AM–1:30PM"
+      },
+      {
+        "monday": "2:30–4PM"
+      }
+    ],
+    "tuesday": [
+      {
+        "tuesday": "8:30AM–1:30PM"
+      },
+      {
+        "tuesday": "2:30–4PM"
+      }
+    ],
+    "wednesday": [
+      {
+        "wednesday": "8:30AM–1:30PM"
+      },
+      {
+        "wednesday": "2:30–4PM"
+      }
+    ],
+    "thursday": [
+      {
+        "thursday": "8:30AM–1:30PM"
+      },
+      {
+        "thursday": "2:30–4PM"
+      }
+    ],
+    "friday": [
+      {
+        "friday": "8:30AM–1:30PM"
+      },
+      {
+        "friday": "2:30–4PM"
+      }
+    ],
+    "saturday": [
+      {
+        "saturday": "Closed"
+      }
+    ],
+    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ej51t4mWrBtVDgts4kO5KQ&cb_client=search.gws-prod.gps&w=408&h=240&yaw=200.42032&pitch=0&thumbfov=100",
+    "sunday": [
+      {
+        "sunday": "Closed"
+      }
+    ]
+  },
+  {
+    "order": "1653150022-113",
+    "service-link-href": "https://www.google.com/maps/place/Euronet+cash+machine/data=!4m6!3m5!1s0x1314117ce1904161:0x84d8c5038ac047f6!8m2!3d37.8291413!4d15.2686106!16s%2Fg%2F11g0thxk7p?authuser=0&hl=en&rclk=1",
+    "name": "Euronet cash machine",
+    "address": "Lungomare Tysandros, 122, 98035 Giardini Naxos ME",
+    "monday": [{}],
+    "tuesday": [{}],
+    "wednesday": [{}],
+    "thursday": [{}],
+    "friday": [{}],
+    "saturday": [{}],
+    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ekJfDOe61CRNCMt746CXsA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=277.6853&pitch=0&thumbfov=100",
+    "sunday": [{}]
+  },
+  {
+    "order": "1653150019-112",
+    "service-link-href": "https://www.google.com/maps/place/ATM/data=!4m6!3m5!1s0x13141131d2b86527:0xeb22dd677ff143ae!8m2!3d37.8212314!4d15.2679598!16s%2Fg%2F11gh_b0t6x?authuser=0&hl=en&rclk=1",
+    "name": "ATM",
+    "address": "Via Stracina, 16/14, 98035 Giardini Naxos ME",
+    "monday": [{}],
+    "tuesday": [{}],
+    "wednesday": [{}],
+    "thursday": [{}],
+    "friday": [{}],
+    "saturday": [{}],
+    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=NjHgDzmSNQsvmSM2BVtElA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=331.30804&pitch=0&thumbfov=100",
+    "sunday": [{}]
+  },
+  {
+    "order": "1653150002-107",
+    "service-link-href": "https://www.google.com/maps/place/Unicredit/data=!4m6!3m5!1s0x131411a22b93c7a9:0xead2b7d6f8386dd8!8m2!3d37.8525411!4d15.287151!16s%2Fg%2F1tl5_lc8?authuser=0&hl=en&rclk=1",
+    "name": "Unicredit",
+    "address": "Corso Umberto, 104, 98039 Taormina ME",
+    "monday": [
+      {
+        "monday": "8:20AM–1:20PM"
+      },
+      {
+        "monday": "2:30–4PM"
+      }
+    ],
+    "tuesday": [
+      {
+        "tuesday": "8:20AM–1:20PM"
+      },
+      {
+        "tuesday": "2:30–4PM"
+      }
+    ],
+    "wednesday": [
+      {
+        "wednesday": "8:20AM–1:20PM"
+      },
+      {
+        "wednesday": "2:30–4PM"
+      }
+    ],
+    "thursday": [
+      {
+        "thursday": "8:20AM–1:20PM"
+      },
+      {
+        "thursday": "2:30–4PM"
+      }
+    ],
+    "friday": [
+      {
+        "friday": "8:20AM–1:20PM"
+      },
+      {
+        "friday": "2:30–4PM"
+      }
+    ],
+    "saturday": [
+      {
+        "saturday": "Closed"
+      }
+    ],
+    "img": "https://lh5.googleusercontent.com/p/AF1QipNKABTtxldFqii8DLJR3ScOhRxI3bRxEdN0OnCz=w408-h725-k-no",
+    "sunday": [
+      {
+        "sunday": "Closed"
+      }
+    ]
+  },
+  {
+    "order": "1653150016-111",
+    "service-link-href": "https://www.google.com/maps/place/Unipol+Banca/data=!4m6!3m5!1s0x131411a391089883:0xa4ea57cad9d58437!8m2!3d37.8514042!4d15.2848295!16s%2Fg%2F11xyfpmh_?authuser=0&hl=en&rclk=1",
+    "name": "Unipol Banca",
+    "address": "Corso Umberto I, 159, 98039 Taormina ME",
+    "monday": [
+      {
+        "monday": "Open 24 hours"
+      }
+    ],
+    "tuesday": [
+      {
+        "tuesday": "Open 24 hours"
+      }
+    ],
+    "wednesday": [
+      {
+        "wednesday": "Open 24 hours"
+      }
+    ],
+    "thursday": [
+      {
+        "thursday": "Open 24 hours"
+      }
+    ],
+    "friday": [
+      {
+        "friday": "Open 24 hours"
+      }
+    ],
+    "saturday": [
+      {
+        "saturday": "Open 24 hours"
+      }
+    ],
+    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=sw3my9NcOGCZKatPfbUwMA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=288.31598&pitch=0&thumbfov=100",
+    "sunday": [
+      {
+        "sunday": "Open 24 hours"
+      }
+    ]
+  },
+  {
+    "order": "1653150026-114",
+    "service-link-href": "https://www.google.com/maps/place/ATM/data=!4m6!3m5!1s0x1314112bb98c263f:0x945e21a9fabbb453!8m2!3d37.8536744!4d15.3000912!16s%2Fg%2F11gmc7bzwg?authuser=0&hl=en&rclk=1",
+    "name": "ATM",
+    "address": "98039 Mazzarò Metropolitan City of Messina",
+    "monday": [
+      {
+        "monday": "Open 24 hours"
+      }
+    ],
+    "tuesday": [
+      {
+        "tuesday": "Open 24 hours"
+      }
+    ],
+    "wednesday": [
+      {
+        "wednesday": "Open 24 hours"
+      }
+    ],
+    "thursday": [
+      {
+        "thursday": "Open 24 hours"
+      }
+    ],
+    "friday": [
+      {
+        "friday": "Open 24 hours"
+      }
+    ],
+    "saturday": [
+      {
+        "saturday": "Open 24 hours"
+      }
+    ],
+    "img": "https://lh5.googleusercontent.com/p/AF1QipPNsXhqjv2HSgavC4j73m57kPD9cDRjUnJkTYS8=w408-h725-k-no",
+    "sunday": [
+      {
+        "sunday": "Open 24 hours"
+      }
+    ]
+  },
+  {
+    "order": "1653150029-115",
+    "service-link-href": "https://www.google.com/maps/place/Bancomat/data=!4m6!3m5!1s0x131411a8003e4549:0x575ae0fb74251acf!8m2!3d37.8591841!4d15.2778634!16s%2Fg%2F11f0w__w33?authuser=0&hl=en&rclk=1",
+    "name": "Bancomat",
+    "address": "Contrada Dammari, 98030 Castelmola ME",
+    "monday": [{}],
+    "tuesday": [{}],
+    "wednesday": [{}],
+    "thursday": [{}],
+    "friday": [{}],
+    "saturday": [{}],
+    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=7kVCSBRX-PnsUpHmRJW3zg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=234.33224&pitch=0&thumbfov=100",
+    "sunday": [{}]
+  },
+  {
+    "order": "1653150012-110",
+    "service-link-href": "https://www.google.com/maps/place/ATM+BAPR/data=!4m6!3m5!1s0x1314056d214ecc3b:0x6cbda61000493b00!8m2!3d37.8101292!4d15.1756!16s%2Fg%2F11sq537zwp?authuser=0&hl=en&rclk=1",
+    "name": "ATM BAPR",
+    "address": "Corso Vittorio Emanuele II, 2, 95017 Piedimonte etneo CT",
+    "monday": [{}],
+    "tuesday": [{}],
+    "wednesday": [{}],
+    "thursday": [{}],
+    "friday": [{}],
+    "saturday": [{}],
+    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=z-CJg4_cnI_OSoimVpZe_A&cb_client=search.gws-prod.gps&w=408&h=240&yaw=47.4201&pitch=0&thumbfov=100",
+    "sunday": [{}]
+  },
+  {
+    "order": "1653150032-116",
+    "service-link-href": "https://www.google.com/maps/place/BNL/data=!4m6!3m5!1s0x13141128339475ab:0x3706b377de0146ca!8m2!3d37.8541441!4d15.2913832!16s%2Fg%2F11g4ctyqvg?authuser=0&hl=en&rclk=1",
+    "name": "BNL",
+    "address": "98039 Taormina, Metropolitan City of Messina",
+    "monday": [{}],
+    "tuesday": [{}],
+    "wednesday": [{}],
+    "thursday": [{}],
+    "friday": [{}],
+    "saturday": [{}],
+    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=uJ8tlA8ccjEQViEAcQ_RnA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=229.66605&pitch=0&thumbfov=100",
+    "sunday": [{}]
+  },
+  {
+    "order": "1653150009-109",
+    "service-link-href": "https://www.google.com/maps/place/Messina+Alfio/data=!4m6!3m5!1s0x131405c201ec78bb:0x3d0350bdecb42065!8m2!3d37.7609104!4d15.1955916!16s%2Fg%2F1td9mrtj?authuser=0&hl=en&rclk=1",
+    "name": "Messina Alfio",
+    "address": "Via Roma, 1, 95016 Mascali CT",
+    "monday": [{}],
+    "tuesday": [{}],
+    "wednesday": [{}],
+    "thursday": [{}],
+    "friday": [{}],
+    "saturday": [{}],
+    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=LVapuXTlAaumVcrpq3X-Ew&cb_client=search.gws-prod.gps&w=408&h=240&yaw=260.38034&pitch=0&thumbfov=100",
+    "sunday": [{}]
+  }
+]
