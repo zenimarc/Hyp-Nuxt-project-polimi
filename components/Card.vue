@@ -9,7 +9,7 @@
       <p class="card-text">
         {{ breed }}
       </p>
-      <nuxt-link :to="`/details/${id}`">
+      <nuxt-link :to="`/${cardType}/${id}`">
         <div class="btn btn-primary btn-orange">See Details</div>
       </nuxt-link>
     </div>
@@ -36,10 +36,14 @@ export default {
       type: String,
       required: true,
     },
+    cardType: {
+      type: String,
+      required: true,
+    },
   },
   methods: {
     goToDetails() {
-      this.$router.push(`/details/${this.id}`)
+      this.$router.push(`/${this.cardType}/${this.id}`)
     },
   },
 }

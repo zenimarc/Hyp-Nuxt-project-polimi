@@ -47,31 +47,21 @@ async function initializeDatabaseConnection() {
   Service.belongsTo(ServiceType)
   // Point of Interest
   // ========================================================
-  const PoiImage = database.define('image', {
-    description: DataTypes.STRING,
-    src: DataTypes.STRING,
-  })
   const PointOfInterest = database.define('pointOfInterest', {
     name: DataTypes.STRING,
     visitInformation: DataTypes.TEXT,
     shortDescription: DataTypes.TEXT,
     address: DataTypes.STRING,
+    images: DataTypes.ARRAY(DataTypes.TEXT),
   })
-  PointOfInterest.hasMany(PoiImage)
-  PoiImage.belongsTo(PointOfInterest)
   // ========================================================
   // Itinerary
-  const ItineraryImage = database.define('image', {
-    description: DataTypes.STRING,
-    src: DataTypes.STRING,
-  })
   const Itinerary = database.define('itinerary', {
     title: DataTypes.STRING,
     durationMinutes: DataTypes.INTEGER,
     shortDescription: DataTypes.TEXT,
+    images: DataTypes.ARRAY(DataTypes.TEXT),
   })
-  Itinerary.hasMany(ItineraryImage)
-  ItineraryImage.belongsTo(Itinerary)
   // ========================================================
   // Involves bridge table
   // look here for documentation: https://sequelize.org/docs/v6/advanced-association-concepts/advanced-many-to-many/
@@ -104,9 +94,7 @@ async function initializeDatabaseConnection() {
     Cat,
     Location,
     TeamMember,
-    PoiImage,
     PointOfInterest,
-    ItineraryImage,
     Itinerary,
     Involves,
     Service,
@@ -150,6 +138,31 @@ async function runMainApi() {
       include: [{ model: models.Location }],
     })
     return res.json(result)
+  })
+
+  app.get('/poi/:id', async (req, res) => {
+    const id = Number(req.params.id)
+    const result = await models.PointOfInterest.findOne({
+      where: { id },
+    })
+    return res.json(result)
+  })
+
+  // HTTP GET api that returns all the POIs in our actual database
+  app.get('/pois', async (req, res) => {
+    const result = await models.PointOfInterest.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        visitInformation: element.visitInformation,
+        // shortDescription: element.shortDescription,
+        address: element.address,
+        images: element.images,
+      })
+    }
+    return res.json(filtered)
   })
 
   // HTTP GET api that returns all the cats in our actual database

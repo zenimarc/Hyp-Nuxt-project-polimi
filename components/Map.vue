@@ -1,6 +1,6 @@
 <template>
   <div id="mapWrapper">
-    <h3>Decide if we want to put something here</h3>
+    <h3>{{ title }}</h3>
     <!--The div element for the map -->
     <div id="map">
       <iframe
@@ -26,15 +26,21 @@ export default {
       type: String,
       required: true,
     },
+    title: {
+      type: String,
+      required: true,
+    },
   },
 }
 </script>
 
 <style scoped>
 #map {
-  height: 100%;
+  flex: 1;
 }
 #mapWrapper {
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 </style>
