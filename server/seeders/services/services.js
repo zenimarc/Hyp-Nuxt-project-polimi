@@ -19,16 +19,24 @@ export default async (models) => {
   ]
 
   const serviceType = {}
-  for (let i = 0; i < serviceTypeList.length; i++) {
+  for (let i = 0; i < serviceTypeList.length; i++)
     serviceType[i] = await models.ServiceType.create(serviceTypeList[i])
-    // console.log(JSON.stringify(serviceType[i]) + '~')
+
+  //  function that integrates the external json with the current array and dynamically adds the forign key Id
+  //  ==========================================================0
+  function mergeServiceJsonId(arrayJson, externalJson, id) {
+    for (let i = 0; i < externalJson.length; i++)
+      externalJson[i].serviceTypeId = id
+    return arrayJson.concat(externalJson)
   }
+  //  ==========================================================0
+  let servicesList = new Array(JSON)
+
   const pharmaciesJson = require('./pharmacies')
-
-  for (let i = 0; i < pharmaciesJson.length; i++) {
-    console.log(JSON.stringify(pharmaciesJson))
-    pharmaciesJson[i].serviceTypeId = serviceType[0].id
-  }
-
-  await models.Service.bulkCreate(pharmaciesJson)
+  servicesList = mergeServiceJsonId(
+    servicesList,
+    pharmaciesJson,
+    serviceType[0].id
+  )
+  await models.Service.bulkCreate(servicesList)
 }

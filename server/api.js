@@ -39,7 +39,7 @@ async function initializeDatabaseConnection() {
     friday: DataTypes.ARRAY(DataTypes.JSON),
     saturday: DataTypes.ARRAY(DataTypes.JSON),
     sunday: DataTypes.ARRAY(DataTypes.JSON),
-    order: DataTypes.INTEGER,
+    order: DataTypes.STRING,
     serviceLink: DataTypes.TEXT,
   })
 
