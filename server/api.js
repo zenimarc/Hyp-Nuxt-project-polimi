@@ -201,6 +201,31 @@ async function runMainApi() {
     return res.json(filtered)
   })
 
+  // HTTP GET api that returns all the services in our actual database
+  app.get('/services', async (req, res) => {
+    const result = await models.Service.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        img: element.img,
+        monday: element.monday,
+        tuesday: element.tuesday,
+        wednesday: element.wednesday,
+        thursday: element.thursday,
+        friday: element.friday,
+        saturday: element.saturday,
+        sunday: element.sunday,
+        address: element.address,
+        order: element.order,
+        serviceLink: element.serviceLink,
+        serviceTypeId: element.serviceTypeId,
+      })
+    }
+    return res.json(filtered)
+  })
+
   // HTTP POST api, that will push (and therefore create) a new element in
   // our actual database
   app.post('/cats', async (req, res) => {

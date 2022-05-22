@@ -30,18 +30,19 @@ export default async (models) => {
     return arrayJson.concat(externalJson)
   }
   //  ==========================================================0
-  let servicesList = new Array(JSON)
+  let servicesList = new Array(0)
 
-  const pharmaciesJson = require('./json/pharmacies')
-  const restaurantsJson = require('./json/restaurants')
   const atmsJson = require('./json/atms')
+  const restaurantsJson = require('./json/restaurants')
+  const pharmaciesJson = require('./json/pharmacies')
+
   servicesList = mergeServiceJsonId(
     mergeServiceJsonId(
-      mergeServiceJsonId(servicesList, atmsJson, serviceType[2].id),
+      mergeServiceJsonId(servicesList, pharmaciesJson, serviceType[2].id),
       restaurantsJson,
       serviceType[1].id
     ),
-    pharmaciesJson,
+    atmsJson,
     serviceType[0].id
   )
   await models.Service.bulkCreate(servicesList)
