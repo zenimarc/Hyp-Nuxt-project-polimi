@@ -1,6 +1,6 @@
 import VueTypeText from '@/vue-type-text.vue';
 <template>
-  <div @click="goToDetails()" class="col-md-4 card-wrapper">
+  <div @click="goToDetails" class="col-md-4 card-wrapper">
     <div class="card-image">
       <img :src="img" />
     </div>
