@@ -51,10 +51,6 @@ export default {
     return {
       headerList: [
         {
-          name: 'List',
-          path: '/list',
-        },
-        {
           name: 'Places',
           path: '/all-point-of-interests',
         },

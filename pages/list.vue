@@ -17,6 +17,7 @@
 </template>
 
 <script>
+// TODO: this page has to be removed
 import Card from '~/components/Card.vue'
 export default {
   name: 'ListPage',
