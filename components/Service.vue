@@ -101,6 +101,7 @@ img {
   border-radius: 5%;
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 table {
   height: 100%;

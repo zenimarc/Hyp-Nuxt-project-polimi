@@ -7,7 +7,7 @@
           Lorem ipsum dolor sit amet consectetur.
         </h3>
       </div>
-      <div class="row text-center">
+      <div class="row text-center gy-5">
         <Service
           v-for="(service, serviceIndex) of servicesList"
           :id="service.id"
