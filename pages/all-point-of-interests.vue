@@ -1,27 +1,33 @@
 <template>
-  <div class="page container mt-5">
-    <h1 class="display-4">ovviamente layout da cambiare</h1>
-    <div class="row mt-3">
-      <card
-        v-for="(poi, poiIndex) of poiList"
-        class="col-sm-2 m-2"
-        :key="`poi-index-${poiIndex}`"
-        :id="poi.id"
-        :name="poi.name"
-        :img="poi.images[0]"
-        breed="boh"
-        card-type="poi"
-      />
+  <section id="pois" class="page-section">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">Places</h2>
+        <h3 class="section-subheading text-muted">
+          Lorem ipsum dolor sit amet consectetur.
+        </h3>
+      </div>
+      <div class="row text-center gy-5">
+        <card-element
+          v-for="(poi, poiIndex) of poiList"
+          :id="poi.id"
+          :key="`poi-index-${poiIndex}`"
+          :name="poi.name"
+          :img="poi.images[0]"
+          :address="poi.address"
+          :cardType="'poi'"
+        />
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-import Card from '~/components/Card.vue'
+import CardElement from '~/components/CardElement.vue'
 export default {
-  name: 'ListPage',
+  name: 'PoiListPage',
   components: {
-    Card,
+    CardElement,
   },
   data() {
     return {
