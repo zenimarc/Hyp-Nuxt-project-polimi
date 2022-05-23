@@ -2,6 +2,7 @@ import initializeServiceList from './seeders/services/services'
 import initializeMemberList from './seeders/teamMembers/members'
 import initializeCatList from './seeders/cats/cats'
 import initializePoiList from './seeders/poi/poi'
+import initializeItinerariesList from './seeders/itineraries/itineraries'
 
 export default async (models) => {
   //  init services
@@ -12,4 +13,6 @@ export default async (models) => {
   await initializeCatList(models)
   //  init poi
   await initializePoiList(models)
+  //  init itineraries
+  await initializeItinerariesList(models)
 }

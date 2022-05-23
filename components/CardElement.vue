@@ -57,5 +57,6 @@ img {
 .card-image {
   height: 19rem;
   width: 15rem;
+  padding: 1rem;
 }
 </style>

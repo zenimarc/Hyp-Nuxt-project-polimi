@@ -53,7 +53,7 @@ async function initializeDatabaseConnection() {
   Service.belongsTo(ServiceType)
   // Point of Interest
   // ========================================================
-  const PointOfInterest = database.define('pointOfInterest', {
+  const PointOfInterest = database.define('PointOfInterest', {
     name: DataTypes.STRING,
     visitInformation: DataTypes.TEXT,
     shortDescription: DataTypes.TEXT,
@@ -62,7 +62,7 @@ async function initializeDatabaseConnection() {
   })
   // ========================================================
   // Itinerary
-  const Itinerary = database.define('itinerary', {
+  const Itinerary = database.define('Itinerary', {
     title: DataTypes.STRING,
     durationMinutes: DataTypes.INTEGER,
     shortDescription: DataTypes.TEXT,
@@ -80,8 +80,8 @@ async function initializeDatabaseConnection() {
   )
   Itinerary.belongsToMany(PointOfInterest, { through: Involves })
   PointOfInterest.belongsToMany(Itinerary, { through: Involves })
-  PointOfInterest.belongsToMany(Service, { through: Involves })
-  Service.belongsToMany(PointOfInterest, { through: Involves })
+  PointOfInterest.belongsToMany(Service, { through: 'isSurrounded' })
+  Service.belongsToMany(PointOfInterest, { through: 'isSurrounded' })
 
   const Cat = database.define('cat', {
     name: DataTypes.STRING,
