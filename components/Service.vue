@@ -7,42 +7,81 @@ import VueTypeText from '@/vue-type-text.vue';
     <h4 class="my-3">{{ name }}</h4>
 
     <p class="text-muted my-3">{{ address }}</p>
-    <!--  <table class="table">
-      <thead>
+
+    <table class="table">
+      <thead class="thead-dark">
         <tr>
-          <th>Day</th>
-          <th>Opening hours</th>
+          <th scope="col">Week day</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
-        <td v-for="(row, rowIndex) in weekDay" :key="`row${rowIndex}`">
-          <td>{{row}}</td>
-          <td v-for="(column, colIndex) in monday" :key="`column${colIndex}`">
-            {{ column[weekday[rowIndex]] }}
+        <!-- ======================Opening hours========================= -->
+        <!-- To put in a component or dinamically find prop -->
+        <tr v-for="(row, rowIndex) of { monday }" :key="`row${rowIndex}`">
+          <th>{{ rowIndex }}</th>
+          <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
+            <div v-if="row2.monday != null">{{ row2.monday }}</div>
+            <div v-if="row2.monday == null">Not found</div>
           </td>
-             <td v-for="(column, indexColumn) in tuesday" :key="indexColumn">{{item[column].tuesday}}</td>
-              <td v-for="(column, indexColumn) in wednesday" :key="indexColumn">{{item[column].wednesday}}</td>
-              <td v-for="(column, indexColumn) in thursday" :key="indexColumn">{{item[column].thursday}}</td>
-              <td v-for="(column, indexColumn) in friday" :key="indexColumn">{{item[column].friday}}</td>
-              <td v-for="(column, indexColumn) in saturday" :key="indexColumn">{{item[column].saturday}}</td>
-              <td v-for="(column, indexColumn) in sunday" :key="indexColumn">{{item[column].sunday}}</td>  
-        </td>
+        </tr>
+        <tr v-for="(row, rowIndex) of { tuesday }" :key="`row${rowIndex}`">
+          <th>{{ rowIndex }}</th>
+          <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
+            <div v-if="row2.tuesday != null">{{ row2.tuesday }}</div>
+            <div v-if="row2.tuesday == null">Not found</div>
+          </td>
+        </tr>
+        <tr v-for="(row, rowIndex) of { wednesday }" :key="`row${rowIndex}`">
+          <th>{{ rowIndex }}</th>
+          <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
+            <div v-if="row2.wednesday != null">{{ row2.wednesday }}</div>
+            <div v-if="row2.wednesday == null">Not found</div>
+          </td>
+        </tr>
+
+        <tr v-for="(row, rowIndex) of { thursday }" :key="`row${rowIndex}`">
+          <th>{{ rowIndex }}</th>
+          <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
+            <div v-if="row2.thursday != null">{{ row2.thursday }}</div>
+            <div v-if="row2.thursday == null">Not found</div>
+          </td>
+        </tr>
+
+        <tr v-for="(row, rowIndex) of { friday }" :key="`row${rowIndex}`">
+          <th>{{ rowIndex }}</th>
+          <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
+            <div v-if="row2.friday != null">{{ row2.friday }}</div>
+            <div v-if="row2.friday == null">Not found</div>
+          </td>
+        </tr>
+
+        <tr v-for="(row, rowIndex) of { saturday }" :key="`row${rowIndex}`">
+          <th>{{ rowIndex }}</th>
+          <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
+            <div v-if="row2.saturday != null">{{ row2.saturday }}</div>
+            <div v-if="row2.saturday == null">Not found</div>
+          </td>
+        </tr>
+
+        <tr v-for="(row, rowIndex) of { sunday }" :key="`row${rowIndex}`">
+          <th>{{ rowIndex }}</th>
+          <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
+            <div v-if="row2.sunday != null">{{ row2.sunday }}</div>
+            <div v-if="row2.sunday == null">Not found</div>
+          </td>
+        </tr>
+        <!-- ==================================================================== -->
       </tbody>
-    </table> -->
+    </table>
   </div>
 </template>
 <script>
 export default {
   name: 'ServiceComponent',
-  weekDay: [
-    'monday',
-    'tuesday',
-    'wednesday',
-    'thursday',
-    'friday',
-    'saturday',
-    'sunday',
-  ],
   props: {
     id: {
       type: Number,
@@ -93,6 +132,20 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      weekDay: [
+        'monday',
+        'tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+      ],
+      weekDayCut: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
+    }
+  },
 }
 </script>
 
@@ -103,14 +156,15 @@ img {
   width: 100%;
   object-fit: cover;
 }
-table {
-  height: 100%;
-  table-layout: fixed;
-  width: 100%;
+tr {
+  font-size: 0.8vw;
 }
+td,
 th {
-  word-wrap: break-word;
+  padding: 0;
+  vertical-align: middle;
+}
+div {
   height: 100%;
-  width: 100%;
 }
 </style>
