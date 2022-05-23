@@ -21,6 +21,28 @@ import VueTypeText from '@/vue-type-text.vue';
       <tbody>
         <!-- ======================Opening hours========================= -->
         <!-- To put in a component or dinamically find prop -->
+        <!--      <tr>
+          <th
+            v-for="(day, dayIndex) of weekDay"
+            :key="`day${dayIndex}`"
+            scope="col"
+          >
+            {{ day }}
+          </th>
+        </tr>
+        <tr v-for="(row, rowIndex) of days" :key="`row${rowIndex}`">
+          <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
+            {{ row2[weekDay[row2Index]] }}
+                      <div v-if="row2.weekDay[row2Index] != null">
+              {{ row2.weekDay[row2Index] }}
+            </div>
+            <div v-if="row2.weekDay[row2Index] == null">Not found</div> 
+          </td>
+        </tr>
+-->
+
+        <!-- ======================Opening hours========================= -->
+        <!-- To put in a component or dinamically find prop -->
         <tr v-for="(row, rowIndex) of { monday }" :key="`row${rowIndex}`">
           <th>{{ rowIndex }}</th>
           <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
@@ -51,14 +73,6 @@ import VueTypeText from '@/vue-type-text.vue';
           </td>
         </tr>
 
-        <tr v-for="(row, rowIndex) of { friday }" :key="`row${rowIndex}`">
-          <th>{{ rowIndex }}</th>
-          <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
-            <div v-if="row2.friday != null">{{ row2.friday }}</div>
-            <div v-if="row2.friday == null">Not found</div>
-          </td>
-        </tr>
-
         <tr v-for="(row, rowIndex) of { saturday }" :key="`row${rowIndex}`">
           <th>{{ rowIndex }}</th>
           <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
@@ -74,6 +88,8 @@ import VueTypeText from '@/vue-type-text.vue';
             <div v-if="row2.sunday == null">Not found</div>
           </td>
         </tr>
+        <!-- ==================================================================== -->
+
         <!-- ==================================================================== -->
       </tbody>
     </table>
@@ -99,6 +115,10 @@ export default {
       type: String,
       required: true,
     },
+    /*     days: {
+      type: Array[Array],
+      required: true,
+    }, */
     monday: {
       type: Array[JSON],
       required: true,

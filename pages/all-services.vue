@@ -15,6 +15,7 @@
           :name="service.name"
           :address="service.address"
           :img="service.img"
+          :link="service.serviceLink"
           :monday="service.monday"
           :tuesday="service.tuesday"
           :wednesday="service.wednesday"
@@ -22,7 +23,6 @@
           :friday="service.friday"
           :saturday="service.saturday"
           :sunday="service.sunday"
-          :link="service.serviceLink"
         />
       </div>
     </div>
@@ -35,10 +35,24 @@ export default {
   name: 'ServicesPage',
   components: { Service },
   async asyncData({ $axios }) {
-    // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('/api/services')
+    /*     const arrayData = Object.values(data)
+    const days = new Array(0)
+
+    for (let i = 0; i < arrayData.length; i++) {
+      days[i] = [
+        { monday: arrayData[i].monday },
+        { tuesday: arrayData[i].tuesday },
+        { wednesday: arrayData[i].wednesday },
+        { thursday: arrayData[i].thursday },
+        { friday: arrayData[i].friday },
+        { saturday: arrayData[i].saturday },
+        { sunday: arrayData[i].sunday },
+      ]
+    } */
     return {
       servicesList: data,
+      /* daysList: days, */
     }
   },
 }
