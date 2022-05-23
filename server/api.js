@@ -1,3 +1,5 @@
+import res from 'express/lib/response'
+
 const express = require('express')
 const app = express()
 const { Sequelize, DataTypes } = require('sequelize')
@@ -63,6 +65,14 @@ async function initializeDatabaseConnection() {
     images: DataTypes.ARRAY(DataTypes.TEXT),
   })
   // ========================================================
+  // Events
+  const Event = database.define('event', {
+    name: DataTypes.STRING,
+    shortDescription: DataTypes.TEXT,
+    practicalInfo: DataTypes.STRING,
+    images: DataTypes.ARRAY(DataTypes.TEXT),
+  })
+  // ========================================================
   // Involves bridge table
   // look here for documentation: https://sequelize.org/docs/v6/advanced-association-concepts/advanced-many-to-many/
   const Involves = database.define(
@@ -76,6 +86,7 @@ async function initializeDatabaseConnection() {
   PointOfInterest.belongsToMany(Itinerary, { through: Involves })
   PointOfInterest.belongsToMany(Service, { through: Involves })
   Service.belongsToMany(PointOfInterest, { through: Involves })
+  Event.belongsToMany(PointOfInterest, { through: Involves })
 
   const Cat = database.define('cat', {
     name: DataTypes.STRING,
@@ -99,6 +110,7 @@ async function initializeDatabaseConnection() {
     Involves,
     Service,
     ServiceType,
+    Event,
   }
 }
 // ========================================================
@@ -191,6 +203,31 @@ async function runMainApi() {
         surname: element.surname,
         id: element.id,
         jobTitle: element.jobTitle,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  //event details page
+  app.get('/event/:id', async (req, res) => {
+    const id = Number(req.params.id)
+    const result = await models.Event.findOne({
+      where: { id },
+    })
+    return res.json(result)
+  })
+
+  //events page
+  app.get('/events', async (req, res) => {
+    const result = await models.Event.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        shortDescription: element.shortDescription,
+        practicalInfo: element.practicalInfo,
+        images: element.images,
       })
     }
     return res.json(filtered)
