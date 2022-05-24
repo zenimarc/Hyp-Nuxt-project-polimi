@@ -67,7 +67,6 @@ async function initializeDatabaseConnection() {
     title: DataTypes.STRING,
     durationMinutes: DataTypes.INTEGER,
     shortDescription: DataTypes.TEXT,
-    images: DataTypes.ARRAY(DataTypes.TEXT),
   })
   // ========================================================
   // Involves bridge table
@@ -167,6 +166,33 @@ async function runMainApi() {
         // shortDescription: element.shortDescription,
         address: element.address,
         images: element.images,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  app.get('/itinerary/:id', async (req, res) => {
+    const id = Number(req.params.id)
+    const result = await models.Itinerary.findOne({
+      where: { id },
+      include: models.PointOfInterest,
+    })
+    return res.json(result)
+  })
+
+  // HTTP GET api that returns all the itineraries in our actual database
+  app.get('/itineraries', async (req, res) => {
+    const result = await models.Itinerary.findAll({
+      include: models.PointOfInterest,
+    })
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        title: element.title,
+        durationMinutes: element.durationMinutes,
+        shortDescription: element.shortDescription,
+        img: element.PointOfInterests[0].images[0],
+        id: element.id,
       })
     }
     return res.json(filtered)
