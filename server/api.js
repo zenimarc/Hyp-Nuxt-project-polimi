@@ -51,6 +51,7 @@ async function initializeDatabaseConnection() {
   })
   ServiceType.hasMany(Service)
   Service.belongsTo(ServiceType)
+  // ========================================================
   // Point of Interest
   // ========================================================
   const PointOfInterest = database.define('PointOfInterest', {

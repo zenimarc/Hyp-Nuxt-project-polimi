@@ -45,5 +45,9 @@ export default async (models) => {
     atmsJson,
     serviceType[0].id
   )
+  const sorting = (arrayList) => {
+    return arrayList.sort(() => Math.random() - 0.5)
+  }
+  sorting(servicesList)
   await models.Service.bulkCreate(servicesList)
 }
