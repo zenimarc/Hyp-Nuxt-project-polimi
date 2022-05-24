@@ -9,16 +9,13 @@ import VueTypeText from '@/vue-type-text.vue';
     <p class="text-muted my-3">{{ address }}</p>
 
     <table class="table">
-      <thead class="thead-dark">
+      <thead class="thead-dark headtr">
         <tr>
-          <th scope="col">Week day</th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
+          <th class="col1" scope="col">Week day</th>
+          <th class="col2" scope="col">Opening hours</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="bodytr">
         <!-- ======================Opening hours========================= -->
         <!-- To put in a component or dinamically find prop -->
         <!--      <tr>
@@ -178,13 +175,43 @@ img {
 }
 tr {
   font-size: 0.8vw;
+  border: 1px solid currentColor;
+  border-width: 1px;
+  border-style: solid;
+  border-color: 212529;
+}
+tbody > tr {
+  border-left: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.05);
 }
 td,
 th {
   padding: 0;
   vertical-align: middle;
 }
+tbody > tr > th {
+  border-right: 1px solid currentColor;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.05);
+}
 div {
   height: 100%;
+}
+.col2 {
+  border-left: 1px solid #212529;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #212529;
+}
+.col1 {
+  border: 1px solid #212529;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #212529;
 }
 </style>
