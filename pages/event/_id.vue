@@ -4,9 +4,7 @@
       <div class="col-lg-6 ms-auto description-wrapper">
         <h1 class="title">{{ name }}</h1>
         <p class="description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-          laboriosam veritatis, quos non quis ad perspiciatis, totam corporis
-          ea, alias ut unde.
+          {{ shortDescription }}
         </p>
         <button
           type="button"
@@ -16,7 +14,7 @@
           Back to events list
         </button>
       </div>
-      <div class="col-lg-6 ms-auto image-wrapper">
+      <div>
         <img :src="images[0]" :alt="name" width="100%" />
       </div>
     </div>

@@ -51,8 +51,8 @@ export default {
     return {
       headerList: [
         {
-          name: 'List',
-          path: '/list',
+          name: 'Places',
+          path: '/all-point-of-interests',
         },
         {
           name: 'Events',
@@ -61,6 +61,8 @@ export default {
         {
           name: 'Point of interests',
           path: '/all-point-of-interests',
+          name: 'Services',
+          path: '/all-services',
         },
         {
           name: 'About',

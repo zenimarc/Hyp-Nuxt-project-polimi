@@ -6,18 +6,19 @@ const { Sequelize, DataTypes } = require('sequelize')
 const initialize = require('./initialize').default
 app.use(express.json())
 
-// Development
-const database = new Sequelize(
-  'postgres://postgres:postgres@localhost:5432/hyp'
-)
-
+let database = null
 // Production (use this code when deploying to production in Heroku)
-// const pg = require('pg')
-// pg.defaults.ssl = true
-// const database = new Sequelize(process.env.DATABASE_URL, {
-//   ssl: true,
-//   dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
-// })
+if (process.env.NODE_ENV === 'production') {
+  const pg = require('pg')
+  pg.defaults.ssl = true
+  database = new Sequelize(process.env.DATABASE_URL, {
+    ssl: true,
+    dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
+  })
+} else {
+  // Development
+  database = new Sequelize('postgres://postgres:postgres@localhost:5432/hyp')
+}
 
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
@@ -32,12 +33,17 @@ async function initializeDatabaseConnection() {
   // ========================================================
   const Service = database.define('service', {
     name: DataTypes.STRING,
-    imgUrl: DataTypes.STRING,
+    img: DataTypes.TEXT,
     address: DataTypes.STRING,
-    startingHour: DataTypes.TIME,
-    startingDay: DataTypes.STRING,
-    endingHour: DataTypes.TIME,
-    endingDay: DataTypes.STRING,
+    monday: DataTypes.ARRAY(DataTypes.JSON),
+    tuesday: DataTypes.ARRAY(DataTypes.JSON),
+    wednesday: DataTypes.ARRAY(DataTypes.JSON),
+    thursday: DataTypes.ARRAY(DataTypes.JSON),
+    friday: DataTypes.ARRAY(DataTypes.JSON),
+    saturday: DataTypes.ARRAY(DataTypes.JSON),
+    sunday: DataTypes.ARRAY(DataTypes.JSON),
+    order: DataTypes.STRING,
+    serviceLink: DataTypes.TEXT,
   })
 
   const ServiceType = database.define('serviceType', {
@@ -47,9 +53,10 @@ async function initializeDatabaseConnection() {
   })
   ServiceType.hasMany(Service)
   Service.belongsTo(ServiceType)
+  // ========================================================
   // Point of Interest
   // ========================================================
-  const PointOfInterest = database.define('pointOfInterest', {
+  const PointOfInterest = database.define('PointOfInterest', {
     name: DataTypes.STRING,
     visitInformation: DataTypes.TEXT,
     shortDescription: DataTypes.TEXT,
@@ -58,7 +65,7 @@ async function initializeDatabaseConnection() {
   })
   // ========================================================
   // Itinerary
-  const Itinerary = database.define('itinerary', {
+  const Itinerary = database.define('Itinerary', {
     title: DataTypes.STRING,
     durationMinutes: DataTypes.INTEGER,
     shortDescription: DataTypes.TEXT,
@@ -84,9 +91,9 @@ async function initializeDatabaseConnection() {
   )
   Itinerary.belongsToMany(PointOfInterest, { through: Involves })
   PointOfInterest.belongsToMany(Itinerary, { through: Involves })
-  PointOfInterest.belongsToMany(Service, { through: Involves })
-  Service.belongsToMany(PointOfInterest, { through: Involves })
-  Event.belongsToMany(PointOfInterest, { through: Involves })
+  PointOfInterest.belongsToMany(Service, { through: 'isSurrounded' })
+  Service.belongsToMany(PointOfInterest, { through: 'isSurrounded' })
+  Event.belongsTo(PointOfInterest)
 
   const Cat = database.define('cat', {
     name: DataTypes.STRING,
@@ -228,6 +235,30 @@ async function runMainApi() {
         shortDescription: element.shortDescription,
         practicalInfo: element.practicalInfo,
         images: element.images,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  app.get('/services', async (req, res) => {
+    const result = await models.Service.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        img: element.img,
+        monday: element.monday,
+        tuesday: element.tuesday,
+        wednesday: element.wednesday,
+        thursday: element.thursday,
+        friday: element.friday,
+        saturday: element.saturday,
+        sunday: element.sunday,
+        address: element.address,
+        order: element.order,
+        serviceLink: element.serviceLink,
+        serviceTypeId: element.serviceTypeId,
       })
     }
     return res.json(filtered)
