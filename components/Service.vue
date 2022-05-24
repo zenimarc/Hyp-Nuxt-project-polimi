@@ -2,12 +2,15 @@ import VueTypeText from '@/vue-type-text.vue';
 <template>
   <div class="col-md-4">
     <span class="fa-stack fa-8x">
-      <img :src="img" />
+      <img id="preview" :src="img" />
     </span>
     <h4 class="my-3">{{ name }}</h4>
-
-    <p class="text-muted my-3">{{ address }}</p>
-
+    <span>
+      <a :href="`${link}`"
+        ><p class="text-muted my-3 mr-3">
+          {{ address + '  ' }}<i class="fa-solid fa-location-dot"></i></p
+      ></a>
+    </span>
     <table class="table">
       <thead class="thead-dark headtr">
         <tr>
@@ -167,7 +170,7 @@ export default {
 </script>
 
 <style scoped>
-img {
+#preview {
   border-radius: 5%;
   height: 100%;
   width: 100%;
@@ -178,6 +181,7 @@ tr {
   border-width: 1px;
   border-style: solid;
   border-color: 212529;
+  height: 100%;
 }
 tbody > tr {
   border-left: 1px solid currentColor;
