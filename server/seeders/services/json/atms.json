@@ -57,34 +57,6 @@
     ]
   },
   {
-    "order": "1653150022-113",
-    "serviceLink": "https://www.google.com/maps/place/Euronet+cash+machine/data=!4m6!3m5!1s0x1314117ce1904161:0x84d8c5038ac047f6!8m2!3d37.8291413!4d15.2686106!16s%2Fg%2F11g0thxk7p?authuser=0&hl=en&rclk=1",
-    "name": "Euronet cash machine",
-    "address": "Lungomare Tysandros, 122, 98035 Giardini Naxos ME",
-    "monday": [{}],
-    "tuesday": [{}],
-    "wednesday": [{}],
-    "thursday": [{}],
-    "friday": [{}],
-    "saturday": [{}],
-    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ekJfDOe61CRNCMt746CXsA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=277.6853&pitch=0&thumbfov=100",
-    "sunday": [{}]
-  },
-  {
-    "order": "1653150019-112",
-    "serviceLink": "https://www.google.com/maps/place/ATM/data=!4m6!3m5!1s0x13141131d2b86527:0xeb22dd677ff143ae!8m2!3d37.8212314!4d15.2679598!16s%2Fg%2F11gh_b0t6x?authuser=0&hl=en&rclk=1",
-    "name": "ATM",
-    "address": "Via Stracina, 16/14, 98035 Giardini Naxos ME",
-    "monday": [{}],
-    "tuesday": [{}],
-    "wednesday": [{}],
-    "thursday": [{}],
-    "friday": [{}],
-    "saturday": [{}],
-    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=NjHgDzmSNQsvmSM2BVtElA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=331.30804&pitch=0&thumbfov=100",
-    "sunday": [{}]
-  },
-  {
     "order": "1653150002-107",
     "serviceLink": "https://www.google.com/maps/place/Unicredit/data=!4m6!3m5!1s0x131411a22b93c7a9:0xead2b7d6f8386dd8!8m2!3d37.8525411!4d15.287151!16s%2Fg%2F1tl5_lc8?authuser=0&hl=en&rclk=1",
     "name": "Unicredit",
@@ -224,61 +196,5 @@
         "sunday": "Open 24 hours"
       }
     ]
-  },
-  {
-    "order": "1653150029-115",
-    "serviceLink": "https://www.google.com/maps/place/Bancomat/data=!4m6!3m5!1s0x131411a8003e4549:0x575ae0fb74251acf!8m2!3d37.8591841!4d15.2778634!16s%2Fg%2F11f0w__w33?authuser=0&hl=en&rclk=1",
-    "name": "Bancomat",
-    "address": "Contrada Dammari, 98030 Castelmola ME",
-    "monday": [{}],
-    "tuesday": [{}],
-    "wednesday": [{}],
-    "thursday": [{}],
-    "friday": [{}],
-    "saturday": [{}],
-    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=7kVCSBRX-PnsUpHmRJW3zg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=234.33224&pitch=0&thumbfov=100",
-    "sunday": [{}]
-  },
-  {
-    "order": "1653150012-110",
-    "serviceLink": "https://www.google.com/maps/place/ATM+BAPR/data=!4m6!3m5!1s0x1314056d214ecc3b:0x6cbda61000493b00!8m2!3d37.8101292!4d15.1756!16s%2Fg%2F11sq537zwp?authuser=0&hl=en&rclk=1",
-    "name": "ATM BAPR",
-    "address": "Corso Vittorio Emanuele II, 2, 95017 Piedimonte etneo CT",
-    "monday": [{}],
-    "tuesday": [{}],
-    "wednesday": [{}],
-    "thursday": [{}],
-    "friday": [{}],
-    "saturday": [{}],
-    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=z-CJg4_cnI_OSoimVpZe_A&cb_client=search.gws-prod.gps&w=408&h=240&yaw=47.4201&pitch=0&thumbfov=100",
-    "sunday": [{}]
-  },
-  {
-    "order": "1653150032-116",
-    "serviceLink": "https://www.google.com/maps/place/BNL/data=!4m6!3m5!1s0x13141128339475ab:0x3706b377de0146ca!8m2!3d37.8541441!4d15.2913832!16s%2Fg%2F11g4ctyqvg?authuser=0&hl=en&rclk=1",
-    "name": "BNL",
-    "address": "98039 Taormina, Metropolitan City of Messina",
-    "monday": [{}],
-    "tuesday": [{}],
-    "wednesday": [{}],
-    "thursday": [{}],
-    "friday": [{}],
-    "saturday": [{}],
-    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=uJ8tlA8ccjEQViEAcQ_RnA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=229.66605&pitch=0&thumbfov=100",
-    "sunday": [{}]
-  },
-  {
-    "order": "1653150009-109",
-    "serviceLink": "https://www.google.com/maps/place/Messina+Alfio/data=!4m6!3m5!1s0x131405c201ec78bb:0x3d0350bdecb42065!8m2!3d37.7609104!4d15.1955916!16s%2Fg%2F1td9mrtj?authuser=0&hl=en&rclk=1",
-    "name": "Messina Alfio",
-    "address": "Via Roma, 1, 95016 Mascali CT",
-    "monday": [{}],
-    "tuesday": [{}],
-    "wednesday": [{}],
-    "thursday": [{}],
-    "friday": [{}],
-    "saturday": [{}],
-    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=LVapuXTlAaumVcrpq3X-Ew&cb_client=search.gws-prod.gps&w=408&h=240&yaw=260.38034&pitch=0&thumbfov=100",
-    "sunday": [{}]
   }
 ]

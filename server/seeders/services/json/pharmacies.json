@@ -60,20 +60,6 @@
     ]
   },
   {
-    "order": "1653148011-96",
-    "serviceLink": "https://www.google.co.uk/maps/place/Farmacia+British/data=!4m6!3m5!1s0x131411a18c056be9:0x476548d2dfb4ad91!8m2!3d37.851653!4d15.2860379!16s%2Fg%2F1tg4hm00?authuser=0&hl=en&rclk=1",
-    "name": "Farmacia British",
-    "address": "Piazza IX Aprile, 1, 98039 Taormina ME",
-    "monday": [{}],
-    "tuesday": [{}],
-    "wednesday": [{}],
-    "thursday": [{}],
-    "friday": [{}],
-    "saturday": [{}],
-    "img": "https://lh5.googleusercontent.com/p/AF1QipMmuOIqUBzpk0sW3WbHS3qnQPhbL-rsPtG5pZHm=w426-h240-k-no",
-    "sunday": [{}]
-  },
-  {
     "order": "1653148008-95",
     "serviceLink": "https://www.google.co.uk/maps/place/Farmacia+Ragusa/data=!4m6!3m5!1s0x131411a460eaba93:0xd80027f33eb6cdbd!8m2!3d37.8510486!4d15.2824954!16s%2Fg%2F1tcv3jxd?authuser=0&hl=en&rclk=1",
     "name": "Farmacia Ragusa",
@@ -309,20 +295,6 @@
         "sunday": "Closed"
       }
     ]
-  },
-  {
-    "order": "1653147990-90",
-    "serviceLink": "https://www.google.co.uk/maps/place/Studio+Catena/data=!4m6!3m5!1s0x131411a43052bf4d:0x8adac24b1700a9b8!8m2!3d37.8527863!4d15.2814777!16s%2Fg%2F11fnwh8380?authuser=0&hl=en&rclk=1",
-    "name": "Studio Catena",
-    "address": "Via Dionisio I, 27, 98039 Taormina ME",
-    "monday": [{}],
-    "tuesday": [{}],
-    "wednesday": [{}],
-    "thursday": [{}],
-    "friday": [{}],
-    "saturday": [{}],
-    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=SsPGXh9_7r7J7TiGzMkgOw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=87.62611&pitch=0&thumbfov=100",
-    "sunday": [{}]
   },
   {
     "order": "1653147980-87",
