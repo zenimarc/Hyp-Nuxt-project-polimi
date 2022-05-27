@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row gy-5">
-      <div class="col-sm-5 col-md-6">
+      <div class="col-sm-9">
         <h1 class="title">{{ name }}</h1>
         <p class="description">
           {{ shortDescription }}
@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     backToList() {
-      this.$router.push('/events')
+      this.$router.push('/all-year-events')
     },
   },
 }

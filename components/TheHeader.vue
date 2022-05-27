@@ -56,7 +56,7 @@ export default {
         },
         {
           name: 'Events',
-          path: '/events'
+          path: '/all-year-events'
         },
         {
           name: 'Itineraries',
