@@ -1,7 +1,7 @@
 import VueTypeText from '@/vue-type-text.vue';
 <template>
   <div class="col-md-4">
-    <span class="fa-stack fa-4x">
+    <span class="fa-stack fa-8x">
       <img :src="img" />
     </span>
     <h4 class="my-3">{{ name }}</h4>
@@ -174,7 +174,6 @@ img {
   object-fit: cover;
 }
 tr {
-  font-size: 0.8vw;
   border: 1px solid currentColor;
   border-width: 1px;
   border-style: solid;

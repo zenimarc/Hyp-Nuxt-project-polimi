@@ -1,27 +1,33 @@
 <template>
-  <div class="page container mt-5">
-    <h1 class="display-4">Events</h1>
-    <div class="row row-cols-4">
-      <card
-        v-for="(event, eventIndex) of eventList"
-        class="col-sm-2 m-2"
-        :key="`event-index-${eventIndex}`"
-        :id="event.id"
-        :name="event.name"
-        :img="event.images[0]"
-        breed="boh"
-        card-type="event"
-      />
-    </div>
+  <section id="events" class="page-section">
+    <div class="container">
+      <div class="text-center">
+          <h2 class="section-heading text-uppercase">Events</h2>
+          <h3 class="section-subheading text-muted">
+            Lorem ipsum.
+          </h3>
+        </div>
+      <div class="row text-center gy-5">
+        <card-element
+          v-for="(event, eventIndex) of eventList"
+          :key="`event-index-${eventIndex}`"
+          :id="event.id"
+          :name="event.name"
+          :img="event.images[0]"
+          :address="event.practicalInfo"
+          :card-type="'event'"
+        />
+      </div>
   </div>
+  </section>
 </template>
 
 <script>
-import Card from '~/components/Card.vue'
+import CardElement from '~/components/CardElement.vue'
 export default {
   name: 'EventsPage',
   components: {
-    Card,
+    CardElement,
   },
   data() {
     return {

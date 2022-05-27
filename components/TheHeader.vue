@@ -59,8 +59,6 @@ export default {
           path: '/events'
         },
         {
-          name: 'Point of interests',
-          path: '/all-point-of-interests',
           name: 'Services',
           path: '/all-services',
         },
