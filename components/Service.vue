@@ -12,18 +12,19 @@ import VueTypeText from '@/vue-type-text.vue';
       ></a>
     </span>
     <span>
-      <a
-        class="btn btn-primary"
-        data-bs-toggle="collapse"
-        :href="`.collapseExample${id}`"
-        role="button"
-        aria-expanded="false"
-        aria-controls="collapseExample"
-        @click="toggleTimetableOpening"
-      >
-        {{ timeOpened ? 'Hide' : 'Show' }} opening hours
-        <i class="fas fa-calendar-day"></i>
-      </a>
+      <div @click="toggleTimetableOpening">
+        <a
+          class="btn btn-primary"
+          data-bs-toggle="collapse"
+          :href="`.collapseExample${id}`"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          {{ timeOpened ? 'Hide' : 'Show' }} opening hours
+          <i class="fas fa-calendar-day"></i>
+        </a>
+      </div>
       <div :class="`collapse collapseExample${id} mt-2`">
         <table class="table styled-table">
           <thead class="thead-dark">
