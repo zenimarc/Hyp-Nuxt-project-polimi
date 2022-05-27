@@ -25,34 +25,25 @@ import VueTypeText from '@/vue-type-text.vue';
       <div :class="`collapse collapseExample${id}`">
         <table class="table styled-table">
           <thead class="thead-dark">
-            <div>
-              <tr>
-                <th class="headCell" scope="col">Week day</th>
-                <th class="headCell" scope="col" colspan="5">
-                  <div>Opening hours</div>
-                </th>
-              </tr>
-            </div>
+            <tr>
+              <th class="headCell" scope="col">Week day</th>
+              <th class="headCell" scope="col" :colspan="colspanHours">
+                Opening hours
+              </th>
+            </tr>
           </thead>
           <!-- ======================Opening hours========================= -->
           <!-- To put in a component or dinamically find prop -->
-          <tbody
-            v-for="(sched, schedIndex) of { week }"
-            :key="`sched${schedIndex}`"
-          >
-            <div v-for="(day, dayIndex) of sched" :key="`day${dayIndex}`">
-              <tr v-for="(day2, day2Index) of day" :key="`day2${day2Index}`">
-                <th class="bodyCell" scope="row">
-                  {{ day2Index }}
-                </th>
-                <td v-for="(hour, hourIndex) of day2" :key="`hour${hourIndex}`">
-                  <div v-if="hour[day2Index] != null">
-                    {{ hour[day2Index] }}
-                  </div>
-                  <div v-if="hour[day2Index] == null">Not Found</div>
-                </td>
-              </tr>
-            </div>
+          <tbody>
+            <tr
+              v-for="(day, dayKey, dayIndex) in weekTimetable"
+              :key="dayIndex"
+            >
+              <th class="bodyCell" scope="row">{{ dayKey }}</th>
+              <td v-for="(opening, openingIndex) of day" :key="openingIndex">
+                {{ opening[dayKey] || 'Not found' }}
+              </td>
+            </tr>
           </tbody>
           <!-- ==================================================================== -->
         </table>
@@ -63,6 +54,7 @@ import VueTypeText from '@/vue-type-text.vue';
 <script>
 export default {
   name: 'ServiceComponent',
+
   props: {
     id: {
       type: Number,
@@ -88,6 +80,26 @@ export default {
       type: String,
       required: true,
     },
+  },
+  computed: {
+    weekTimetable() {
+      return this.week[0]
+    },
+    colspanHours() {
+      // calculate the max number of openings in a day to choose a colspan
+      let maxOpenings = 0
+      for (const key in this.weekTimetable) {
+        const opening = this.weekTimetable[key]
+        const currLength = opening.length
+        if (currLength > maxOpenings) {
+          maxOpenings = currLength
+        }
+      }
+      return maxOpenings
+    },
+  },
+  mounted() {
+    console.log('orari: ', JSON.stringify(this.weekTimetable))
   },
 }
 </script>
