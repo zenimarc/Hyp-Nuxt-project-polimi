@@ -6,7 +6,7 @@ import VueTypeText from '@/vue-type-text.vue';
     </span>
     <h4 class="my-3">{{ name }}</h4>
     <span>
-      <a :href="`${link}`" class="link-info"
+      <a :href="`${link}`" target="_blank" class="link-info"
         ><p class="text-muted my-3 mr-3">
           {{ address + '  ' }}<i class="fa-solid fa-location-dot"></i></p
       ></a>

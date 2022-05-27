@@ -1,8 +1,9 @@
 <template>
   <a
     class="btn btn-dark btn-social mx-2"
-    href="#!"
+    :href="`${url}`"
     :aria-label="`${name} ${surname} ${social} profile`"
+    target="_blank"
     ><i :class="`fab fa-${social}`"></i
   ></a>
 </template>
@@ -20,6 +21,10 @@ export default {
       required: true,
     },
     social: {
+      type: String,
+      required: true,
+    },
+    url: {
       type: String,
       required: true,
     },

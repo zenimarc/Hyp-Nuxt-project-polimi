@@ -2,9 +2,11 @@
   <section id="services" class="page-section">
     <div class="container">
       <div class="text-center">
-        <h2 class="section-heading text-uppercase">Services</h2>
+        <h2 class="section-heading text-uppercase">
+          {{ infoPage.introduction }}
+        </h2>
         <h3 class="section-subheading text-muted">
-          Lorem ipsum dolor sit amet consectetur.
+          {{ infoPage.description }}
         </h3>
       </div>
       <div class="row text-center gy-5">
@@ -30,8 +32,11 @@ export default {
   components: { Service },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/services')
+    const info = await $axios.get('/api/page-info/services')
+    const data2 = info.data
     return {
       servicesList: data,
+      infoPage: data2,
     }
   },
 }

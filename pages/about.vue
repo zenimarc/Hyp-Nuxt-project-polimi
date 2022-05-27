@@ -4,9 +4,11 @@
   <section id="team" class="page-section bg-light">
     <div class="container">
       <div class="text-center">
-        <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+        <h2 class="section-heading text-uppercase">
+          {{ infoPage.introduction }}
+        </h2>
         <h3 class="section-subheading text-muted">
-          Lorem ipsum dolor sit amet consectetur.
+          {{ infoPage.description }}
         </h3>
       </div>
       <!-- Team members-->
@@ -21,8 +23,8 @@
           :surname="member.surname"
           :job-title="member.jobTitle"
           :img="member.img"
-          :socials-list="socialsList"
-        />
+          :socials="socials[member.id - 1]"
+        ></TeamMember>
       </div>
 
       <!-- Team members footer-->
@@ -30,9 +32,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
           <p class="large text-muted">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-            laboriosam veritatis, quos non quis ad perspiciatis, totam corporis
-            ea, alias ut unde.
+            {{ infoPage.footer }}
           </p>
         </div>
       </div>
@@ -49,13 +49,20 @@ export default {
     TeamMember,
   },
   async asyncData({ $axios }) {
-    // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('api/teamMembers')
-    const data2 = await $axios.get('/api/page-info/about')
-    // console.log("~" + JSON.stringify(data2.data.socialsList));
+
+    const info = await $axios.get('/api/page-info/about')
+    const data2 = info.data
+    const data3 = new Array(0)
+
+    for (let i = 1; i <= Object.values(data).length; i++) {
+      const infoMember = await $axios.get('/api/socials/' + i)
+      data3[i - 1] = infoMember.data
+    }
     return {
       membersList: data,
-      socialsList: data2.data.socialsList,
+      infoPage: data2,
+      socials: data3,
     }
   },
   data() {

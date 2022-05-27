@@ -1,5 +1,3 @@
-import res from 'express/lib/response'
-
 const express = require('express')
 const app = express()
 const { Sequelize, DataTypes } = require('sequelize')
@@ -23,12 +21,22 @@ if (process.env.NODE_ENV === 'production') {
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
   await database.authenticate()
+  // Team member
+  // ========================================================
   const TeamMember = database.define('teamMember', {
     name: DataTypes.STRING,
     surname: DataTypes.STRING,
     jobTitle: DataTypes.STRING,
     img: DataTypes.STRING,
   })
+  // Social
+  // ========================================================
+  const Social = database.define('socials', {
+    name: DataTypes.STRING,
+    url: DataTypes.TEXT,
+  })
+  Social.belongsTo(TeamMember)
+  TeamMember.hasMany(Social)
   // Service
   // ========================================================
   const Service = database.define('service', {
@@ -105,6 +113,7 @@ async function initializeDatabaseConnection() {
     Cat,
     Location,
     TeamMember,
+    Social,
     PointOfInterest,
     Itinerary,
     Involves,
@@ -126,10 +135,14 @@ const pageContentObject = {
   },
   about: {
     title: 'About',
-    image: 'https://fs.i3lab.group/hypermedia/images/about.jpeg',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
-        Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.`,
-    socialsList: ['instagram', 'twitter', 'facebook', 'linkedin'],
+    introduction: `OUR AMAZING TEAM`,
+    description: `Pleasure to meet you! You can know us better by looking at our socials`,
+    footer: 'We are always improving to offer you the best content!',
+  },
+  services: {
+    title: 'Services',
+    introduction: `ALL SERVICES`,
+    description: `Here for you the list of the Taormina city services! You can open the map link to know more`,
   },
 }
 
@@ -235,7 +248,7 @@ async function runMainApi() {
     return res.json(filtered)
   })
 
-  //event details page
+  // event details page
   app.get('/event/:id', async (req, res) => {
     const id = Number(req.params.id)
     const result = await models.Event.findOne({
@@ -244,7 +257,7 @@ async function runMainApi() {
     return res.json(result)
   })
 
-  //events page
+  // events page
   app.get('/events', async (req, res) => {
     const result = await models.Event.findAll()
     const filtered = []
@@ -259,7 +272,23 @@ async function runMainApi() {
     }
     return res.json(filtered)
   })
-
+  // HTTP GET api that returns all the socials in our actual database
+  app.get('/socials/:idMember', async (req, res) => {
+    const idMember = Number(req.params.idMember)
+    const result = await models.Social.findAll({
+      where: { teamMemberId: idMember },
+    })
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        url: element.url,
+        teamMemberId: element.teamMemberId,
+      })
+    }
+    return res.json(filtered)
+  })
+  // HTTP GET api that returns all the services in our actual database
   app.get('/services', async (req, res) => {
     const result = await models.Service.findAll()
     const filtered = []
