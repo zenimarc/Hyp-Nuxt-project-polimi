@@ -108,9 +108,6 @@ export default {
       return maxOpenings
     },
   },
-  mounted() {
-    console.log('orari: ', JSON.stringify(this.weekTimetable))
-  },
 }
 </script>
 
