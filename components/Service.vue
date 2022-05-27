@@ -12,19 +12,17 @@ import VueTypeText from '@/vue-type-text.vue';
       ></a>
     </span>
     <span>
-      <div @click="toggleTimetableOpening">
-        <a
-          class="btn btn-primary"
-          data-bs-toggle="collapse"
-          :href="`.collapseExample${id}`"
-          role="button"
-          aria-expanded="false"
-          aria-controls="collapseExample"
-        >
-          {{ timeOpened ? 'Hide' : 'Show' }} opening hours
-          <i class="fas fa-calendar-day"></i>
-        </a>
-      </div>
+      <a
+        class="btn btn-primary"
+        data-bs-toggle="collapse"
+        :href="`.collapseExample${id}`"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapseExample"
+      >
+        Show opening hours
+        <i class="fas fa-calendar-day"></i>
+      </a>
       <div :class="`collapse collapseExample${id} mt-2`">
         <table class="table styled-table">
           <thead class="thead-dark">
@@ -92,15 +90,6 @@ export default {
     return {
       timeOpened: false,
     }
-  },
-  methods: {
-    toggleTimetableOpening() {
-      if (this.timeOpened) {
-        this.timeOpened = false
-      } else {
-        this.timeOpened = true
-      }
-    },
   },
   computed: {
     weekTimetable() {
