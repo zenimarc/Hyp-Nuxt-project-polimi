@@ -19,10 +19,12 @@ import VueTypeText from '@/vue-type-text.vue';
         role="button"
         aria-expanded="false"
         aria-controls="collapseExample"
+        @click="toggleTimetableOpening"
       >
-        Show opening hours <i class="fas fa-calendar-day"></i>
+        {{ timeOpened ? 'Hide' : 'Show' }} opening hours
+        <i class="fas fa-calendar-day"></i>
       </a>
-      <div :class="`collapse collapseExample${id}`">
+      <div :class="`collapse collapseExample${id} mt-2`">
         <table class="table styled-table">
           <thead class="thead-dark">
             <tr>
@@ -40,7 +42,11 @@ import VueTypeText from '@/vue-type-text.vue';
               :key="dayIndex"
             >
               <th class="bodyCell" scope="row">{{ dayKey }}</th>
-              <td v-for="(opening, openingIndex) of day" :key="openingIndex">
+              <td
+                v-for="(opening, openingIndex) of day"
+                :key="openingIndex"
+                :colspan="day.length === 1 ? 2 : 1"
+              >
                 {{ opening[dayKey] || 'Not found' }}
               </td>
             </tr>
@@ -79,6 +85,20 @@ export default {
     link: {
       type: String,
       required: true,
+    },
+  },
+  data() {
+    return {
+      timeOpened: false,
+    }
+  },
+  methods: {
+    toggleTimetableOpening() {
+      if (this.timeOpened) {
+        this.timeOpened = false
+      } else {
+        this.timeOpened = true
+      }
     },
   },
   computed: {
