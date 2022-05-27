@@ -12,85 +12,49 @@ import VueTypeText from '@/vue-type-text.vue';
       ></a>
     </span>
     <span>
-      <p>
-        <a
-          class="btn btn-primary"
-          data-bs-toggle="collapse"
-          :href="`.collapseExample${id}`"
-          role="button"
-          aria-expanded="false"
-          aria-controls="collapseExample"
-        >
-          Show opening hours <i class="fas fa-calendar-day"></i>
-        </a>
-      </p>
+      <a
+        class="btn btn-primary"
+        data-bs-toggle="collapse"
+        :href="`.collapseExample${id}`"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapseExample"
+      >
+        Show opening hours <i class="fas fa-calendar-day"></i>
+      </a>
       <div :class="`collapse collapseExample${id}`">
         <table class="table styled-table">
           <thead class="thead-dark">
-            <tr>
-              <th class="headCell" scope="col">Week day</th>
-              <th class="headCell" scope="col" colspan="10">Opening hours</th>
-            </tr>
+            <div>
+              <tr>
+                <th class="headCell" scope="col">Week day</th>
+                <th class="headCell" scope="col" colspan="5">
+                  <div>Opening hours</div>
+                </th>
+              </tr>
+            </div>
           </thead>
-          <tbody>
-            <!-- ======================Opening hours========================= -->
-            <!-- To put in a component or dinamically find prop -->
-            <tr v-for="(row, rowIndex) of { monday }" :key="`row${rowIndex}`">
-              <th class="bodyCell">{{ rowIndex }}</th>
-              <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
-                <div v-if="row2.monday != null">{{ row2.monday }}</div>
-                <div v-if="row2.monday == null">Not found</div>
-              </td>
-            </tr>
-            <tr v-for="(row, rowIndex) of { tuesday }" :key="`row${rowIndex}`">
-              <th class="bodyCell">{{ rowIndex }}</th>
-              <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
-                <div v-if="row2.tuesday != null">{{ row2.tuesday }}</div>
-                <div v-if="row2.tuesday == null">Not found</div>
-              </td>
-            </tr>
-            <tr
-              v-for="(row, rowIndex) of { wednesday }"
-              :key="`row${rowIndex}`"
-            >
-              <th class="bodyCell">{{ rowIndex }}</th>
-              <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
-                <div v-if="row2.wednesday != null">
-                  {{ row2.wednesday }}
-                </div>
-                <div v-if="row2.wednesday == null">Not found</div>
-              </td>
-            </tr>
-
-            <tr v-for="(row, rowIndex) of { thursday }" :key="`row${rowIndex}`">
-              <th class="bodyCell">{{ rowIndex }}</th>
-              <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
-                <div v-if="row2.thursday != null">{{ row2.thursday }}</div>
-                <div v-if="row2.thursday == null">Not found</div>
-              </td>
-            </tr>
-
-            <tr v-for="(row, rowIndex) of { saturday }" :key="`row${rowIndex}`">
-              <th class="bodyCell">{{ rowIndex }}</th>
-              <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
-                <div v-if="row2.saturday != null">{{ row2.saturday }}</div>
-                <div v-if="row2.saturday == null">Not found</div>
-              </td>
-            </tr>
-
-            <tr v-for="(row, rowIndex) of { sunday }" :key="`row${rowIndex}`">
-              <th class="bodyCell">{{ rowIndex }}</th>
-              <td v-for="(row2, row2Index) of row" :key="`row2${row2Index}`">
-                <div v-if="row2.sunday != null">
-                  {{ row2.sunday }}
-                </div>
-                <div v-if="row2.sunday == null">Not found</div>
-              </td>
-            </tr>
-            <!-- ==================================================================== -->
-
-            <!-- ==================================================================== -->
+          <!-- ======================Opening hours========================= -->
+          <!-- To put in a component or dinamically find prop -->
+          <tbody
+            v-for="(sched, schedIndex) of { week }"
+            :key="`sched${schedIndex}`"
+          >
+            <div v-for="(day, dayIndex) of sched" :key="`day${dayIndex}`">
+              <tr v-for="(day2, day2Index) of day" :key="`day2${day2Index}`">
+                <th class="bodyCell" scope="row">
+                  {{ day2Index }}
+                </th>
+                <td v-for="(hour, hourIndex) of day2" :key="`hour${hourIndex}`">
+                  <div v-if="hour[day2Index] != null">
+                    {{ hour[day2Index] }}
+                  </div>
+                  <div v-if="hour[day2Index] == null">Not Found</div>
+                </td>
+              </tr>
+            </div>
           </tbody>
+          <!-- ==================================================================== -->
         </table>
       </div>
     </span>
@@ -116,35 +80,7 @@ export default {
       type: String,
       required: true,
     },
-    /*     days: {
-      type: Array[Array],
-      required: true,
-    }, */
-    monday: {
-      type: Array[JSON],
-      required: true,
-    },
-    tuesday: {
-      type: Array[JSON],
-      required: true,
-    },
-    wednesday: {
-      type: Array[JSON],
-      required: true,
-    },
-    thursday: {
-      type: Array[JSON],
-      required: true,
-    },
-    friday: {
-      type: Array[JSON],
-      required: true,
-    },
-    saturday: {
-      type: Array[JSON],
-      required: true,
-    },
-    sunday: {
+    week: {
       type: Array[JSON],
       required: true,
     },
@@ -152,19 +88,6 @@ export default {
       type: String,
       required: true,
     },
-  },
-  data() {
-    return {
-      weekDay: [
-        'monday',
-        'tuesday',
-        'wednesday',
-        'thursday',
-        'friday',
-        'saturday',
-        'sunday',
-      ],
-    }
   },
 }
 </script>
