@@ -32,7 +32,6 @@ function formatData(arrayList) {
 function sorting(arrayList) {
   return arrayList.sort(() => Math.random() - 0.5)
 }
-
 //  ==========================================================0
 function mergeServiceJsonId(arrayJson, externalJson, id) {
   //  function that integrates the external json with the current array and dynamically adds the forign key Id

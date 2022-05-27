@@ -8,11 +8,12 @@
     <!-- Socials-->
     <!-- ========================================= -->
     <Social
-      v-for="(social, socialIndex) of socialsList"
+      v-for="(social, socialIndex) of socials"
       :key="`social${socialIndex}`"
       :name="name"
       :surname="surname"
-      :social="social"
+      :social="social.name"
+      :url="social.url"
     />
     <!-- ========================================= -->
   </div>
@@ -44,8 +45,8 @@ export default {
       type: String,
       required: true,
     },
-    socialsList: {
-      type: Array,
+    socials: {
+      type: Array[JSON],
       required: true,
     },
   },
