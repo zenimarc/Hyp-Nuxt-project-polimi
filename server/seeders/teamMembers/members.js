@@ -9,15 +9,15 @@ export default async (models) => {
     },
     {
       name: 'Luca',
-      surname: 'Rossi',
+      surname: 'Bianchi',
       jobTitle: 'city expert',
       img: 'https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg',
     },
     {
-      name: 'Franca',
-      surname: 'Garzotto',
+      name: 'Marta',
+      surname: 'Rossi',
       jobTitle: 'researcher',
-      img: 'https://garzotto.faculty.polimi.it/images/download.jpeg',
+      img: 'https://preview.redd.it/oh309qc0sp981.jpg?auto=webp&s=232e87535b77746ae8b97a33c8511cd44343cf45',
     },
   ]
   await models.TeamMember.bulkCreate(membersList)

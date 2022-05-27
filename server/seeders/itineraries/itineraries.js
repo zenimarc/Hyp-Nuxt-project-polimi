@@ -5,15 +5,13 @@ export default async (models) => {
       title: 'itine1',
       durationMinutes: 120,
       shortDescription: 'sdss',
-      images: [],
       involvedPois: [1, 2],
     },
     {
       title: 'itine2',
       durationMinutes: 120,
       shortDescription: 'sdss',
-      images: [],
-      involvedPois: [1, 2, 3],
+      involvedPois: [2, 1, 3],
     },
   ]
 

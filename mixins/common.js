@@ -1,8 +1,13 @@
-
 export default {
-    methods: {
-        formatMyDate(val){
-            return "Date: " + val
-        }
-    }
+  methods: {
+    formatMyDate(val) {
+      return 'Date: ' + val
+    },
+    truncateString(str, num) {
+      if (str.length <= num) {
+        return str
+      }
+      return str.slice(0, num) + '...'
+    },
+  },
 }
