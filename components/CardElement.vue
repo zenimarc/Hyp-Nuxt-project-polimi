@@ -43,10 +43,18 @@ export default {
 
 <style scoped>
 img {
-  border-radius: 5%;
   height: 100%;
   width: 100%;
+  border-radius: 5%;
   object-fit: cover;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+img:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
 .card-wrapper {
   display: flex;
@@ -55,8 +63,9 @@ img {
   cursor: pointer;
 }
 .card-image {
+  overflow: hidden;
+  border-radius: 5%;
   height: 19rem;
   width: 15rem;
-  padding: 1rem;
 }
 </style>

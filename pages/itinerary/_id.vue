@@ -15,6 +15,7 @@
           :name="poi.name"
           :short-description="poi.shortDescription"
           :inverted="poiIndex % 2 !== 0"
+          :poi-id="poi.id"
         />
 
         <li class="timeline-inverted">

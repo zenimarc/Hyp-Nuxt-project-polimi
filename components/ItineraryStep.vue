@@ -3,7 +3,9 @@
     <div class="timeline-image" :style="imgStyle" :alt="`${name}`"></div>
     <div class="timeline-panel">
       <div class="timeline-heading">
-        <h4 class="subheading mt-4">{{ name }}</h4>
+        <nuxt-link :to="`/poi/${poiId}`">
+          <h4 class="subheading mt-4">{{ name }}</h4>
+        </nuxt-link>
       </div>
       <div class="timeline-body">
         <p class="text-muted">
@@ -35,6 +37,10 @@ export default {
     inverted: {
       type: Boolean,
       required: false,
+    },
+    poiId: {
+      type: Number,
+      required: true,
     },
   },
   computed: {

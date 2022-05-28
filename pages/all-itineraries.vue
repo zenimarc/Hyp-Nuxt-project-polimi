@@ -15,7 +15,7 @@
           :name="itinerary.title"
           :img="itinerary.img"
           :address="''"
-          :cardType="'itinerary'"
+          :card-type="'itinerary'"
         />
       </div>
     </div>
