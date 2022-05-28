@@ -144,6 +144,11 @@ const pageContentObject = {
     introduction: `ALL SERVICES`,
     description: `Here for you the list of the Taormina city services! You can open the map link to know more`,
   },
+  contacts: {
+    title: 'Contacts',
+    introduction: `CONTACT US`,
+    description: `Fill the form below if you want to ask/inform us about something!`,
+  },
 }
 
 async function runMainApi() {
