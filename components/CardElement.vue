@@ -2,7 +2,7 @@ import VueTypeText from '@/vue-type-text.vue';
 <template>
   <div @click="goToDetails" class="col-md-4 card-wrapper">
     <div class="card-image">
-      <img :src="img" />
+      <img :src="img" :alt="`${name}`" />
     </div>
     <h4 class="my-3">{{ name }}</h4>
     <p class="text-muted">{{ address }}</p>

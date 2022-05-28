@@ -2,7 +2,11 @@
   <!-- Team member-->
   <!-- ========================================= -->
   <div class="team-member">
-    <img class="mx-auto rounded-circle" :src="img" alt="..." />
+    <img
+      class="mx-auto rounded-circle"
+      :src="img"
+      :alt="`${name}` + ` ` + `${surname}`"
+    />
     <h4>{{ name }} {{ surname }}</h4>
     <p class="text-muted">{{ jobTitle }}</p>
     <!-- Socials-->

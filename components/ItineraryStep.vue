@@ -1,6 +1,6 @@
 <template>
   <li :class="{ 'timeline-inverted': inverted }">
-    <div class="timeline-image" :style="imgStyle"></div>
+    <div class="timeline-image" :style="imgStyle" :alt="`${name}`"></div>
     <div class="timeline-panel">
       <div class="timeline-heading">
         <h4 class="subheading mt-4">{{ name }}</h4>

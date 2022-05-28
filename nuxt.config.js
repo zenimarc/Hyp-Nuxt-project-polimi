@@ -18,7 +18,11 @@ export default {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
       },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Tormina tour website',
+      },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
