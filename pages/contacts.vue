@@ -18,7 +18,7 @@
                 id="name"
                 class="form-control"
                 type="text"
-                placeholder="Your Name *"
+                placeholder="Your Full Name *"
                 data-sb-validations="required"
               />
               <div class="invalid-feedback" data-sb-feedback="name:required">

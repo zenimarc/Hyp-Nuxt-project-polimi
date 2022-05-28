@@ -1,6 +1,6 @@
 import VueTypeText from '@/vue-type-text.vue';
 <template>
-  <div class="col-md-4">
+  <div class="col-md-4 cardService">
     <span class="fa-stack fa-8x">
       <img id="serviceImage" :src="img" :alt="`${name}`" />
     </span>
@@ -123,6 +123,7 @@ table {
   width: 100%;
   object-fit: cover;
   font-size: 1vw;
+  border: solid #212529 8px;
 }
 .headCell {
   border-bottom: solid #212529 1px;
