@@ -55,7 +55,8 @@ export default {
   },
   methods: {
     backToList() {
-      this.$router.push('/all-point-of-interests')
+      // this.$router.push('/all-point-of-interests')
+      this.$router.back()
     },
   },
 }
