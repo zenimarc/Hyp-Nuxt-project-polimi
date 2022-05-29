@@ -1,6 +1,6 @@
 import VueTypeText from '@/vue-type-text.vue';
 <template>
-  <div @click="goToDetails" class="col-md-4 card-wrapper">
+  <div class="col-md-4 card-wrapper" @click="goToDetails">
     <div class="card-image">
       <img :src="img" :alt="`${name}`" />
     </div>
@@ -28,14 +28,14 @@ export default {
       type: String,
       required: true,
     },
-    cardType: {
+    cardtype: {
       type: String,
       required: true,
     },
   },
   methods: {
     goToDetails() {
-      this.$router.push(`/${this.cardType}/${this.id}`)
+      this.$router.push(`/${this.cardtype}/${this.id}`)
     },
   },
 }

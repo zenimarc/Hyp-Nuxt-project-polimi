@@ -15,7 +15,7 @@
           :name="poi.name"
           :img="poi.images[0]"
           :address="poi.address"
-          :cardType="'poi'"
+          :cardtype="'poi'"
         />
       </div>
     </div>
@@ -29,12 +29,6 @@ export default {
   components: {
     CardElement,
   },
-  data() {
-    return {
-      // catList: []
-    }
-  },
-  // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
     // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('/api/pois')
@@ -42,6 +36,12 @@ export default {
       poiList: data,
     }
   },
+  data() {
+    return {
+      // catList: []
+    }
+  },
+  // Note: This happens on backend (server) side
 
   // Note: This would happen on frontend (client) side
   // async mounted() {

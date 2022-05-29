@@ -56,3 +56,20 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.team-member {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+img {
+  width: 14rem;
+  height: 14rem;
+  border: 0.5rem solid rgba(0, 0, 0, 0.1);
+}
+h4,
+.h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+</style>

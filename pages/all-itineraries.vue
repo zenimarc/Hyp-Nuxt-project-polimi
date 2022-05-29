@@ -15,7 +15,7 @@
           :name="itinerary.title"
           :img="itinerary.img"
           :address="''"
-          :card-type="'itinerary'"
+          :cardtype="'itinerary'"
         />
       </div>
     </div>
@@ -29,21 +29,20 @@ export default {
   components: {
     CardElement,
   },
+  // Note: This happens on backend (server) side
+  async asyncData({ $axios }) {
+    // const { data } = await $axios.get('http://localhost:3000/api/cats')
+    const { data } = await $axios.get('/api/itineraries')
+    // console.log(data)
+    return {
+      itineraryList: data,
+    }
+  },
   data() {
     return {
       // catList: []
     }
   },
-  // Note: This happens on backend (server) side
-  async asyncData({ $axios }) {
-    // const { data } = await $axios.get('http://localhost:3000/api/cats')
-    const { data } = await $axios.get('/api/itineraries')
-    console.log(data)
-    return {
-      itineraryList: data,
-    }
-  },
-
   // Note: This would happen on frontend (client) side
   // async mounted() {
   //   const { data } = await this.$axios.get('/api/cats')

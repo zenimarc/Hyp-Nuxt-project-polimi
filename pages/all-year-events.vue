@@ -2,23 +2,21 @@
   <section id="events" class="page-section">
     <div class="container">
       <div class="text-center">
-          <h2 class="section-heading text-uppercase">Events</h2>
-          <h3 class="section-subheading text-muted">
-            Lorem ipsum.
-          </h3>
-        </div>
+        <h2 class="section-heading text-uppercase">Events</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum.</h3>
+      </div>
       <div class="row text-center gy-5">
         <card-element
           v-for="(event, eventIndex) of eventList"
-          :key="`event-index-${eventIndex}`"
           :id="event.id"
+          :key="`event-index-${eventIndex}`"
           :name="event.name"
           :img="event.images[0]"
           :address="event.practicalInfo"
-          :card-type="'event'"
+          :cardtype="'event'"
         />
       </div>
-  </div>
+    </div>
   </section>
 </template>
 
@@ -29,17 +27,17 @@ export default {
   components: {
     CardElement,
   },
-  data() {
-    return {
-      // catList: []
-    }
-  },
   // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
     // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('/api/events')
     return {
       eventList: data,
+    }
+  },
+  data() {
+    return {
+      // catList: []
     }
   },
 
@@ -50,4 +48,3 @@ export default {
   // },
 }
 </script>
-
