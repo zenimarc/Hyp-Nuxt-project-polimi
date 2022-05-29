@@ -3,6 +3,9 @@
     <div class="row gy-5">
       <div class="col-lg-6 ms-auto description-wrapper">
         <h1 class="title">{{ name }}</h1>
+        <p class="visitInformation">
+          {{ visitInformation }}
+        </p>
         <p class="description">
           {{ shortDescription }}
         </p>
@@ -28,8 +31,8 @@
 import Map from '~/components/Map.vue'
 import CommonMixin from '~/mixins/common'
 export default {
-  components: { Map },
   name: 'PoidetailsPage',
+  components: { Map },
   mixins: [CommonMixin],
   async asyncData({ route, $axios }) {
     const { id } = route.params
@@ -63,6 +66,11 @@ export default {
 </script>
 
 <style scoped>
+.visitInformation {
+  --bs-text-opacity: 1;
+  color: #6c757d !important;
+  font-size: smaller;
+}
 .map-container {
   width: 100%;
   height: 36rem;
