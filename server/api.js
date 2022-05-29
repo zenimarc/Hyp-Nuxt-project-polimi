@@ -44,7 +44,6 @@ async function initializeDatabaseConnection() {
     img: DataTypes.TEXT,
     address: DataTypes.STRING,
     weekDay: DataTypes.ARRAY(DataTypes.JSON),
-    order: DataTypes.STRING,
     serviceLink: DataTypes.TEXT,
   })
 
@@ -304,7 +303,6 @@ async function runMainApi() {
         img: element.img,
         weekDay: element.weekDay,
         address: element.address,
-        order: element.order,
         serviceLink: element.serviceLink,
         serviceTypeId: element.serviceTypeId,
       })
