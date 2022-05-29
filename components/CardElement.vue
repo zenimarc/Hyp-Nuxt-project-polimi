@@ -1,12 +1,12 @@
 import VueTypeText from '@/vue-type-text.vue';
 <template>
-  <div class="col-md-4 card-wrapper" @click="goToDetails">
+  <a class="col-md-4 card-wrapper" @click="goToDetails">
     <div class="card-image">
       <img :src="img" :alt="`${name}`" />
     </div>
     <h4 class="my-3">{{ name }}</h4>
     <p class="text-muted">{{ address }}</p>
-  </div>
+  </a>
 </template>
 <script>
 export default {
@@ -42,6 +42,10 @@ export default {
 </script>
 
 <style scoped>
+a {
+  color: unset;
+  text-decoration: unset;
+}
 img {
   height: 100%;
   width: 100%;
