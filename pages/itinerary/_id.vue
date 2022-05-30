@@ -1,5 +1,5 @@
 <template>
-  <section class="page-section" id="about">
+  <section id="about" class="page-section">
     <div class="container">
       <div class="text-center">
         <h2 class="section-heading text-uppercase">{{ title }}</h2>
@@ -15,6 +15,7 @@
           :name="poi.name"
           :short-description="poi.shortDescription"
           :inverted="poiIndex % 2 !== 0"
+          :poi-id="poi.id"
         />
 
         <li class="timeline-inverted">

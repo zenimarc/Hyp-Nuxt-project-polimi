@@ -21,6 +21,7 @@ function formatData(arrayList) {
     delete dataVals[i].friday
     delete dataVals[i].saturday
     delete dataVals[i].sunday
+    delete dataVals[i].order
 
     i++
   }

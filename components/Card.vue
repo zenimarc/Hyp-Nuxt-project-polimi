@@ -3,6 +3,7 @@
     <div
       class="card-img-top card-image"
       :style="{ 'background-image': 'url(' + img + ')' }"
+      :alt="`${name}`"
     ></div>
     <div class="card-body">
       <h5 class="card-title">{{ name }}</h5>

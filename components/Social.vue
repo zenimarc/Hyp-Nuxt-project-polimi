@@ -31,3 +31,15 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.btn-social {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 100%;
+}
+</style>

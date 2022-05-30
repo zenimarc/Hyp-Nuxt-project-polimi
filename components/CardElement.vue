@@ -1,12 +1,12 @@
 import VueTypeText from '@/vue-type-text.vue';
 <template>
-  <div @click="goToDetails" class="col-md-4 card-wrapper">
+  <a class="col-md-4 card-wrapper" @click="goToDetails">
     <div class="card-image">
-      <img :src="img" />
+      <img :src="img" :alt="`${name}`" />
     </div>
     <h4 class="my-3">{{ name }}</h4>
     <p class="text-muted">{{ address }}</p>
-  </div>
+  </a>
 </template>
 <script>
 export default {
@@ -28,25 +28,37 @@ export default {
       type: String,
       required: true,
     },
-    cardType: {
+    cardtype: {
       type: String,
       required: true,
     },
   },
   methods: {
     goToDetails() {
-      this.$router.push(`/${this.cardType}/${this.id}`)
+      this.$router.push(`/${this.cardtype}/${this.id}`)
     },
   },
 }
 </script>
 
 <style scoped>
+a {
+  color: unset;
+  text-decoration: unset;
+}
 img {
-  border-radius: 5%;
   height: 100%;
   width: 100%;
+  border-radius: 5%;
   object-fit: cover;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+img:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
 .card-wrapper {
   display: flex;
@@ -55,8 +67,9 @@ img {
   cursor: pointer;
 }
 .card-image {
+  overflow: hidden;
+  border-radius: 5%;
   height: 19rem;
   width: 15rem;
-  padding: 1rem;
 }
 </style>

@@ -76,4 +76,7 @@ export default {
     Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
+.img-brand {
+  height: 2.75rem;
+}
 </style>

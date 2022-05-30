@@ -44,7 +44,6 @@ async function initializeDatabaseConnection() {
     img: DataTypes.TEXT,
     address: DataTypes.STRING,
     weekDay: DataTypes.ARRAY(DataTypes.JSON),
-    order: DataTypes.STRING,
     serviceLink: DataTypes.TEXT,
   })
 
@@ -144,6 +143,11 @@ const pageContentObject = {
     introduction: `ALL SERVICES`,
     description: `Here for you the list of the Taormina city services! You can open the map link to know more`,
   },
+  contacts: {
+    title: 'Contacts',
+    introduction: `CONTACT US`,
+    description: `Fill the form below if you want to ask/inform us about something!`,
+  },
 }
 
 async function runMainApi() {
@@ -194,7 +198,7 @@ async function runMainApi() {
     const id = Number(req.params.id)
     const result = await models.Itinerary.findOne({
       where: { id },
-      include: models.PointOfInterest,
+      include: [{ model: models.PointOfInterest }],
     })
     return res.json(result)
   })
@@ -299,7 +303,6 @@ async function runMainApi() {
         img: element.img,
         weekDay: element.weekDay,
         address: element.address,
-        order: element.order,
         serviceLink: element.serviceLink,
         serviceTypeId: element.serviceTypeId,
       })

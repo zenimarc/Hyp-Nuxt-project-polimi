@@ -20,15 +20,15 @@
       <div class="row text-center gy-5">
         <card-element
           v-for="(event, eventIndex) of eventList"
-          :key="`event-index-${eventIndex}`"
           :id="event.id"
+          :key="`event-index-${eventIndex}`"
           :name="event.name"
           :img="event.images[0]"
           :address="event.practicalInfo"
-          :card-type="'event'"
+          :cardtype="'event'"
         />
       </div>
-  </div>
+    </div>
   </section>
 </template>
 
@@ -38,11 +38,6 @@ export default {
   name: 'EventsPage',
   components: {
     CardElement,
-  },
-  data() {
-    return {
-      // catList: []
-    }
   },
   // Note: This happens on backend (server) side
   async asyncData({ route,$axios }) {
@@ -62,6 +57,10 @@ export default {
     goToWinterEventsList() {
       this.$router.push('../winter-events')
     },
+  data() {
+    return {
+      // catList: []
+    }
   },
 
   // Note: This would happen on frontend (client) side
