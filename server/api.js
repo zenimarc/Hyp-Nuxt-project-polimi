@@ -1,7 +1,9 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const { Sequelize, DataTypes } = require('sequelize')
 const initialize = require('./initialize').default
+app.use(cors())
 app.use(express.json())
 
 let database = null
