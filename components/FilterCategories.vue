@@ -9,7 +9,7 @@
         aria-expanded="false"
         @click.once="initActive()"
       >
-        Categories
+        {{ categories[activeNumber].name }}
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li
