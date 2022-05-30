@@ -7,7 +7,7 @@
             Lorem ipsum.
           </h3>
         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-          <input type="radio" id="btnradio1" class="btn-check" name="btnradio" autocomplete="off" checked>
+          <input type="radio" class="btn-check" name="btnradio" autocomplete="off" checked="">
           <label id="btnall" class="btn btn-outline-primary" for="btnradi1o" @click="goToAllEventsList">All Events</label>
     
           <input type="radio" class="btn-check" name="btnradio" autocomplete="off">
@@ -18,27 +18,15 @@
         </div>
       </div>
       <div class="row text-center gy-5">
-        <card-element
-          v-for="(event, eventIndex) of eventList"
-          :key="`event-index-${eventIndex}`"
-          :id="event.id"
-          :name="event.name"
-          :img="event.images[0]"
-          :address="event.practicalInfo"
-          :card-type="'event'"
-        />
+        <p>List here</p>
       </div>
   </div>
   </section>
 </template>
 
 <script>
-import CardElement from '~/components/CardElement.vue'
 export default {
   name: 'EventsPage',
-  components: {
-    CardElement,
-  },
   data() {
     return {
       // catList: []

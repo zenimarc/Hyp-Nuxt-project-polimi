@@ -6,6 +6,9 @@
         <p class="description">
           {{ shortDescription }}
         </p>
+        <p class="infos fw-bold">
+          Dove e Quando : {{ practicalInfo }}
+        </p>
         <button
           type="button"
           class="btn btn-outline-secondary btn-lg px-4"
@@ -54,6 +57,7 @@ export default {
       shortDescription: data.shortDescription,
       practicalInfo: data.practicalInfo,
       images: data.images,
+      season: data.season,
     }
   },
   head() {
