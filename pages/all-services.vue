@@ -8,18 +8,25 @@
         <h3 class="section-subheading text-muted">
           {{ infoPage.description }}
         </h3>
-      </div>
-      <div class="row text-center gy-5">
-        <Service
-          v-for="(service, serviceIndex) of servicesList"
-          :id="service.id"
-          :key="`service${serviceIndex}`"
-          :name="service.name"
-          :address="service.address"
-          :img="service.img"
-          :link="service.serviceLink"
-          :week="service.weekDay"
-        />
+
+        <div class="row text-center gy-5">
+          <FilterCategories
+            id="filter"
+            :categories="servicesType"
+            @categoryChanged=";(idCategory = $event), updateData()"
+          />
+
+          <Service
+            v-for="(service, serviceIndex) of servicesList"
+            :id="service.id"
+            :key="`service${serviceIndex}`"
+            :name="service.name"
+            :address="service.address"
+            :img="service.img"
+            :link="service.serviceLink"
+            :week="service.weekDay"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -27,17 +34,32 @@
 
 <script>
 import Service from '~/components/Service.vue'
+import FilterCategories from '~/components/FilterCategories.vue'
 export default {
   name: 'ServicesPage',
-  components: { Service },
+  components: { Service, FilterCategories },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/services')
-    const info = await $axios.get('/api/page-info/services')
-    const data2 = info.data
+    const data2 = (await $axios.get('/api/page-info/services/')).data
+    const data3 = (await $axios.get('/api/servicesType')).data
+    const categories = [{ id: 0, name: 'Show all' }].concat(data3)
     return {
       servicesList: data,
       infoPage: data2,
+      servicesType: categories,
     }
+  },
+  data() {
+    return {
+      idCategory: 0,
+    }
+  },
+  methods: {
+    async updateData() {
+      const categoryNumber = this.idCategory
+      const data = await (await fetch('/api/services/' + categoryNumber)).json()
+      this.servicesList = data
+    },
   },
 }
 </script>
