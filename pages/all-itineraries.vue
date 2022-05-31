@@ -2,12 +2,12 @@
   <section id="pois" class="page-section">
     <div class="container">
       <div class="text-center">
-        <h2 class="section-heading text-uppercase">Places</h2>
+        <h2 class="section-heading text-uppercase">Itineraries</h2>
         <h3 class="section-subheading text-muted">
           Lorem ipsum dolor sit amet consectetur.
         </h3>
       </div>
-      <div class="row text-center gy-5">
+      <div class="row text-center gy-5 gx-10">
         <card-element
           v-for="(itinerary, itineraryIndex) of itineraryList"
           :id="itinerary.id"
