@@ -1,5 +1,5 @@
 export default async (models) => {
-  const eventList = [
+  const eventList2 = [
     {
       name: 'TAOBOK - Festival del Libro',
       shortDescription:
@@ -10,7 +10,6 @@ export default async (models) => {
         'https://blog.taobuk.it/wp-content/uploads/2020/07/5_dMSKQg.jpg',
         'https://www.add-design.it/wp-content/uploads/2020/09/logo-taobuk-10anni.gif',
       ],
-      season: '',
     },
     {
       name: 'Achille Lauro in concerto',
@@ -21,7 +20,6 @@ export default async (models) => {
         'https://i0.wp.com/www.hiphopstarztour.com/wp-content/uploads/2020/02/achille-lauro-superstar-tour-2022.jpg?fit=400%2C300&ssl=1',
         'https://www.traveltaormina.com/images/icagenda/thumbs/themes/ic_large_w900h600q100_achille-lauro-taormina-2022.jpg',
       ],
-      season: 'summer',
     },
     {
       name: 'Taormina Film Fest',
@@ -33,8 +31,11 @@ export default async (models) => {
         'https://www.askanews.it/wp-content/uploads/2021/01/20210121_194150_A61B774C.jpg',
         'https://sicilianews24.it/wp-content/uploads/2018/07/Taormina-Film-Fest-19-Luglio-2018-Gianvito-Casadonte-dir-art-64tff_-Luciano-Cannito-coreografo_-Rossella-Brescia-showgirl_-Dale-Hildebrand-regista-1024x683.jpg',
       ],
-      season: '',
     },
   ]
+  const eventList = require('./json/events').concat(eventList2)
+  for (const element of eventList) {
+    delete element.link
+  }
   await models.Event.bulkCreate(eventList)
 }

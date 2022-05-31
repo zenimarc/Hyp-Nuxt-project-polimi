@@ -39,6 +39,7 @@ export default {
   components: {
     CardElement,
   },
+  
   // Note: This happens on backend (server) side
   async asyncData({ route,$axios }) {
     // const { data } = await $axios.get('http://localhost:3000/api/cats')
@@ -68,6 +69,7 @@ export default {
   //   const { data } = await this.$axios.get('/api/cats')
   //   this.catList = data
   // },
+  }
 }
 </script>
 
