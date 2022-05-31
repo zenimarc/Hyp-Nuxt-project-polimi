@@ -1,7 +1,9 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const { Sequelize, DataTypes } = require('sequelize')
 const initialize = require('./initialize').default
+app.use(cors())
 app.use(express.json())
 
 let database = null
@@ -292,6 +294,28 @@ async function runMainApi() {
     }
     return res.json(filtered)
   })
+  // HTTP GET api that returns the filtered services type by category
+  app.get('/servicesType/:category', async (req, res) => {
+    const category = +req.params.category
+    const result = await models.ServiceType.findOne({
+      where: { name: category },
+    })
+    return res.json(result)
+  })
+
+  // HTTP GET api that returns all the services type in our actual database
+  app.get('/servicesType', async (req, res) => {
+    const result = await models.ServiceType.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+      })
+    }
+    return res.json(filtered)
+  })
+
   // HTTP GET api that returns all the services in our actual database
   app.get('/services', async (req, res) => {
     const result = await models.Service.findAll()
@@ -305,6 +329,31 @@ async function runMainApi() {
         address: element.address,
         serviceLink: element.serviceLink,
         serviceTypeId: element.serviceTypeId,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  // HTTP GET api that returns all the services in our actual database filtered by serviceType
+  app.get('/services/:idType', async (req, res) => {
+    const id = Number(req.params.idType)
+    let result = new Array(0)
+    if (id !== 0) {
+      result = await models.Service.findAll({
+        where: { serviceTypeId: id },
+      })
+    } else {
+      result = await models.Service.findAll()
+    }
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        img: element.img,
+        weekDay: element.weekDay,
+        address: element.address,
+        serviceLink: element.serviceLink,
       })
     }
     return res.json(filtered)

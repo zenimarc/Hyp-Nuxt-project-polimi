@@ -5,18 +5,12 @@ export default async (models) => {
   const serviceTypeList = [
     {
       name: 'Pharmacies',
-      title: 'Title 1',
-      introduction: 'Introduction 1',
     },
     {
       name: 'Restaurants',
-      title: 'Title 3',
-      introduction: 'Introduction 3',
     },
     {
       name: 'ATMs',
-      title: 'Title 2',
-      introduction: 'Introduction 2',
     },
   ]
 

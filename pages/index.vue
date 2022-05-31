@@ -3,7 +3,7 @@
     <the-header class="homepageNav" :is-fixed-pos="true" />
     <header class="masthead">
       <div class="container">
-        <div class="masthead-subheading">Welcome To Our Studio!</div>
+        <div class="masthead-subheading">Explore the city!</div>
         <div class="masthead-heading text-uppercase">Taormina</div>
         <a
           class="btn btn-primary btn-xl text-uppercase"
