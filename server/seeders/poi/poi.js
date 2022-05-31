@@ -39,7 +39,6 @@ export default async (models) => {
   const poiList = require('./json/poi')
   console.log(JSON.stringify(poiList))
   for (const poi of poiList) {
-    delete poi.coords
     delete poi.order
   }
   await models.PointOfInterest.bulkCreate(poiList)

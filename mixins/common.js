@@ -9,5 +9,9 @@ export default {
       }
       return str.slice(0, num) + '...'
     },
+    parseCoords(stringCoords) {
+      const [latString, lngString] = stringCoords.split(',')
+      return { lat: Number(latString), lng: Number(lngString) }
+    },
   },
 }

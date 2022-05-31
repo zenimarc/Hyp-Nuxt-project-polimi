@@ -64,6 +64,7 @@ async function initializeDatabaseConnection() {
     visitInformation: DataTypes.TEXT,
     shortDescription: DataTypes.TEXT,
     address: DataTypes.STRING,
+    coords: DataTypes.STRING,
     images: DataTypes.ARRAY(DataTypes.TEXT),
   })
   // ========================================================

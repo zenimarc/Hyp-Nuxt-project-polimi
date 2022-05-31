@@ -2,16 +2,16 @@ export default async (models) => {
   // Point of interest seeder
   const rawItinerariesList = [
     {
-      title: 'itine1',
+      title: 'Un giorno a Taormina',
       durationMinutes: 120,
-      shortDescription: 'sdss',
-      involvedPois: [1, 2],
+      shortDescription: 'un giorno senza perdere nulla',
+      involvedPois: [1, 2, 3, 4, 5, 6, 7],
     },
     {
       title: 'itine2',
       durationMinutes: 120,
       shortDescription: 'sdss',
-      involvedPois: [2, 1, 3],
+      involvedPois: [8, 9, 10, 11],
     },
   ]
 
