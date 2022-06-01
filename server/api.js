@@ -46,6 +46,7 @@ async function initializeDatabaseConnection() {
     img: DataTypes.TEXT,
     address: DataTypes.STRING,
     weekDay: DataTypes.ARRAY(DataTypes.JSON),
+    coords: DataTypes.STRING,
     serviceLink: DataTypes.TEXT,
   })
 
@@ -330,6 +331,7 @@ async function runMainApi() {
         address: element.address,
         serviceLink: element.serviceLink,
         serviceTypeId: element.serviceTypeId,
+        coords: element.coords,
       })
     }
     return res.json(filtered)
@@ -355,6 +357,7 @@ async function runMainApi() {
         weekDay: element.weekDay,
         address: element.address,
         serviceLink: element.serviceLink,
+        coords: element.coords,
       })
     }
     return res.json(filtered)

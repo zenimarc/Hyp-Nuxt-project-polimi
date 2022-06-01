@@ -1,4 +1,9 @@
-import { mergeServiceJsonId, formatData, sorting } from './scriptService/script'
+import {
+  mergeServiceJsonId,
+  formatData,
+  sorting,
+  convertAddressToCoords,
+} from './scriptService/script'
 
 export default async (models) => {
   // Service types
@@ -32,6 +37,8 @@ export default async (models) => {
     pharmaciesJson,
     serviceType[0].id
   )
+  for (const element of servicesList)
+    element.coords = await convertAddressToCoords(element.address)
 
   servicesList = formatData(servicesList)
   servicesList = sorting(servicesList)
