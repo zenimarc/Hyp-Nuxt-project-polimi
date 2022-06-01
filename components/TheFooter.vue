@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-4 text-lg-start">
-          Copyright &copy; Your Website 2022
+          Copyright &copy; TaorminaTour 2022
         </div>
         <div class="col-lg-4 my-3 my-lg-0">
           <!-- Partners -->
@@ -51,10 +51,18 @@
           <!-- ========================== -->
         </div>
         <div class="col-lg-4 text-lg-end">
-          <a class="link-dark text-decoration-none me-3" href="#!"
+          <a
+            class="link-dark text-decoration-none me-3"
+            href="https://www.privacypolicygenerator.info/live.php?token=ZlDQwb5lSIEf6R8OKuYE2xl3Ld0Gy6fx"
+            target="_blank"
             >Privacy Policy</a
           >
-          <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+          <a
+            class="link-dark text-decoration-none"
+            href="https://www.termsofusegenerator.net/live.php?token=tGb2cv97ussueNTB5PYxUQ51xE6FLTyj"
+            target="_blank"
+            >Terms of Use</a
+          >
         </div>
       </div>
     </div>

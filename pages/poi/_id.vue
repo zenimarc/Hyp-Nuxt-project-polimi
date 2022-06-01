@@ -39,7 +39,7 @@ export default {
     const { data } = await $axios.get('/api/poi/' + id)
     return {
       id: data.id,
-      name: data.name,
+      name: data.nonDetailedName,
       visitInformation: data.visitInformation,
       shortDescription: data.shortDescription,
       address: data.address,
