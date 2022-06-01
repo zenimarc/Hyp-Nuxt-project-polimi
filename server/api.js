@@ -62,6 +62,7 @@ async function initializeDatabaseConnection() {
   // ========================================================
   const PointOfInterest = database.define('PointOfInterest', {
     name: DataTypes.STRING,
+    nonDetailedName: DataTypes.STRING,
     visitInformation: DataTypes.TEXT,
     shortDescription: DataTypes.TEXT,
     address: DataTypes.STRING,
@@ -193,6 +194,7 @@ async function runMainApi() {
         // shortDescription: element.shortDescription,
         address: element.address,
         images: element.images,
+        nonDetailedName: element.nonDetailedName,
       })
     }
     return res.json(filtered)

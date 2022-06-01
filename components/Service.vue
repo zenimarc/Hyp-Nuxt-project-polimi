@@ -123,7 +123,7 @@ table {
   width: 100%;
   object-fit: cover;
   font-size: 1vw;
-  border: solid #212529 2px;
+  border: solid #ced4da 2px;
 }
 .headCell {
   border-bottom: solid #212529 1px;

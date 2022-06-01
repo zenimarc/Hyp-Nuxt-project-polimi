@@ -12,7 +12,7 @@
           v-for="(poi, poiIndex) of poiList"
           :id="poi.id"
           :key="`poi-index-${poiIndex}`"
-          :name="poi.name"
+          :name="poi.nonDetailedName"
           :img="poi.images[0]"
           :address="poi.address"
           :cardtype="'poi'"
