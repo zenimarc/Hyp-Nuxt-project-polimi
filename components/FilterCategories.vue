@@ -1,29 +1,29 @@
 <template>
   <div>
-    <div class="dropdown">
-      <button
-        id="dropdownMenuButton1"
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-        @click.once="initActive()"
+    <div
+      class="btn-group"
+      role="group"
+      aria-label="Basic radio toggle button group"
+    >
+      <div
+        v-for="(category, categoryIndex) of categories"
+        :key="`category${categoryIndex}`"
       >
-        {{ categories[activeNumber].name }}
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li
-          v-for="(category, categoryIndex) of categories"
-          :key="`category${categoryIndex}`"
+        <input
+          :id="`btnradio${category.id}`"
+          type="radio"
+          class="btn-check category"
+          name="btnradio"
+          autocomplete="off"
+          :checked="category.id === 0 ? 1 : 0"
+          @click="readClick(category.id)"
+        />
+        <label
+          class="btn btn-outline-primary"
+          :for="`btnradio${category.id}`"
+          >{{ category.name }}</label
         >
-          <a
-            class="dropdown-item category"
-            href="#"
-            @click="readClick(category.id)"
-            >{{ category.name }}</a
-          >
-        </li>
-      </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -43,15 +43,12 @@ export default {
     }
   },
   methods: {
-    initActive() {
-      document.getElementsByClassName('category')[0].classList.add('active')
-    },
     readClick(id) {
       if (id !== this.activeNumber) {
-        document
-          .getElementsByClassName('category')
-          [this.activeNumber].classList.remove('active')
-        document.getElementsByClassName('category')[id].classList.add('active')
+        document.getElementsByClassName('category')[
+          this.activeNumber
+        ].checked = false
+        document.getElementsByClassName('category')[id].checked = true
         this.$emit('categoryChanged', id)
         this.activeNumber = id
       }
@@ -60,9 +57,24 @@ export default {
 }
 </script>
 <style scoped>
-#dropdownMenuButton1 {
+.btn-outline-primary {
+  background-color: #fff;
+  border-color: #212529;
+  color: #212529;
+  margin-right: 5 px;
+}
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.activeInput {
+  color: #fff;
   background-color: #212529;
   border-color: #212529;
-  color: #ced4da;
+}
+.btn-check:focus + .btn-outline-primary,
+.btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.25rem #212529;
 }
 </style>
