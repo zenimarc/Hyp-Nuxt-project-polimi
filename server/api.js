@@ -82,6 +82,11 @@ async function initializeDatabaseConnection() {
     images: DataTypes.ARRAY(DataTypes.TEXT),
   })
   // ========================================================
+  // EventType
+  const EventType = database.define('eventType', {
+    name: DataTypes.STRING,
+  })
+  // ========================================================
   // Involves bridge table
   // look here for documentation: https://sequelize.org/docs/v6/advanced-association-concepts/advanced-many-to-many/
   const Involves = database.define(
@@ -121,6 +126,7 @@ async function initializeDatabaseConnection() {
     Service,
     ServiceType,
     Event,
+    EventType,
   }
 }
 // ========================================================
@@ -278,6 +284,19 @@ async function runMainApi() {
     }
     return res.json(filtered)
   })
+
+  app.get('/eventType', async (req, res) => {
+    const result = await models.EventType.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+      })
+    }
+    return res.json(filtered)
+  })
+
   // HTTP GET api that returns all the socials in our actual database
   app.get('/socials/:idMember', async (req, res) => {
     const idMember = Number(req.params.idMember)

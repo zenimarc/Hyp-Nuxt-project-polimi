@@ -7,7 +7,7 @@
             Lorem ipsum.
           </h3>
         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-          <input type="radio" id="btnradio1" class="btn-check" name="btnradio" autocomplete="off" checked>
+          <input id="btnradio1" type="radio" class="btn-check" name="btnradio" autocomplete="off" checked>
           <label id="btnall" class="btn btn-outline-primary" for="btnradi1o" @click="goToAllEventsList">All Events</label>
     
           <input type="radio" class="btn-check" name="btnradio" autocomplete="off">
@@ -17,7 +17,7 @@
           <label id="btnwint" class="btn btn-outline-primary" for="btnradio3">Winter Events</label>
         </div>
       </div>
-      <div class="row text-center gy-5">
+      <div class="row text-center gy-5 gx-10">
         <card-element
           v-for="(event, eventIndex) of eventList"
           :id="event.id"

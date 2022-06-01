@@ -7,7 +7,7 @@
           Lorem ipsum dolor sit amet consectetur.
         </h3>
       </div>
-      <div class="row text-center gy-5">
+      <div class="row text-center gy-5 gx-10">
         <card-element
           v-for="(itinerary, itineraryIndex) of itineraryList"
           :id="itinerary.id"
