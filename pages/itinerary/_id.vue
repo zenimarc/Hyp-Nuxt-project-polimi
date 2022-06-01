@@ -7,6 +7,7 @@
           {{ shortDescription }}
         </h3>
       </div>
+
       <ul class="timeline">
         <itinerary-step
           v-for="(poi, poiIndex) of poiList"
@@ -17,28 +18,19 @@
           :inverted="poiIndex % 2 !== 0"
           :poi-id="poi.id"
         />
-
-        <li class="timeline-inverted">
-          <div class="timeline-image">
-            <h4>
-              Be Part
-              <br />
-              Of Our
-              <br />
-              Story!
-            </h4>
-          </div>
-        </li>
       </ul>
     </div>
+    <div id="itinerary-map"></div>
   </section>
 </template>
 
 <script>
 import ItineraryStep from '~/components/ItineraryStep.vue'
+import CommonMixin from '~/mixins/common'
 export default {
   name: 'ItineraryPage',
   components: { ItineraryStep },
+  mixins: [CommonMixin],
   async asyncData({ route, $axios }) {
     const { id } = route.params
     const { data } = await $axios.get('/api/itinerary/' + id)
@@ -57,6 +49,49 @@ export default {
       title: this.name,
     }
   },
+  mounted() {
+    // Create the script tag, set the appropriate attributes
+    const script = document.createElement('script')
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${this.$config.GOOGLE_API_KEY}&callback=initMap`
+    script.async = true
+    const tourStops = this.poiList.map((poi) => {
+      return [this.parseCoords(poi.coords), poi.name]
+    })
+    function initMap() {
+      // Create an info window to share between markers.
+      const infoWindow = new window.google.maps.InfoWindow()
+
+      const map = new window.google.maps.Map(
+        document.getElementById('itinerary-map'),
+        {
+          zoom: 15,
+          center: tourStops[0][0],
+        }
+      )
+
+      tourStops.forEach(([position, title], i) => {
+        const marker = new window.google.maps.Marker({
+          position,
+          map,
+          title: `${i + 1}. ${title}`,
+          label: `${i + 1}`,
+          optimized: false,
+        })
+
+        // Add a click listener for each marker, and set up the info window.
+        marker.addListener('click', () => {
+          infoWindow.close()
+          infoWindow.setContent(marker.getTitle())
+          infoWindow.open(marker.getMap(), marker)
+        })
+      })
+    }
+
+    window.initMap = initMap
+
+    // Append the 'script' element to 'head'
+    document.head.appendChild(script)
+  },
   methods: {
     backToList() {
       this.$router.push('/all-point-of-interests')
@@ -64,3 +99,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+#itinerary-map {
+  height: 500px;
+}
+</style>
