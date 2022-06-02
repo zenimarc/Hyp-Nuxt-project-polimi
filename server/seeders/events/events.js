@@ -1,4 +1,4 @@
-import { mergeServiceJsonId } from '../../script'
+import { mergeEventJsonId } from '../../script'
 
 export default async (models) => {
   const eventTypeList = [
@@ -23,9 +23,9 @@ export default async (models) => {
   const summerJson = require('./json/summerEvents')
   const winterJson = require('./json/winterEvents')
 
-  eventsList = mergeServiceJsonId(
-    mergeServiceJsonId(
-      mergeServiceJsonId(eventsList, winterJson, eventType[2].id),
+  eventsList = mergeEventJsonId(
+    mergeEventJsonId(
+      mergeEventJsonId(eventsList, winterJson, eventType[2].id),
       summerJson,
       eventType[1].id
     ),
@@ -33,10 +33,7 @@ export default async (models) => {
     eventType[0].id
   )
 
-  for (const element of otherJson) {
-    delete element.link
-  }
-  for (const element of summerJson) {
+  for (const element of eventsList) {
     delete element.link
   }
   await models.Event.bulkCreate(eventsList)
