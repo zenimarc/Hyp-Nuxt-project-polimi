@@ -12,6 +12,7 @@
         <FilterButtons
           id="filter"
           :categories="eventType"
+          :active-number="idCategory"
           @categoryChanged=";(idCategory = $event), updateData()"
         />
         <div class="row text-center gy-5 gx-10">
