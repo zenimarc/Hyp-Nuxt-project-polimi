@@ -1,5 +1,15 @@
 [
   {
+    "order": "1653833484-785",
+    "name": "Inizia la giornata da Porta Messina",
+    "nonDetailedName": "Porta Messina",
+    "visitInformation": "La porta simbolo di Taormina",
+    "images": ["https://a.cdn-hotels.com/gdcs/production199/d1302/9b00548a-3d7d-4d70-a65e-3f3c6a8e3499.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"],
+    "shortDescription": "Sotto questo portale ad arco in pietra si assapora la miscela di antichità e vibrante modernità di Taormina. Da qui si accede a Corso Umberto, la principale via pedonale che attraversa la città passando per la panoramica Piazza IX Aprile, che si trova a metà strada. Porta Messina è uno dei due portali dell'antica fortificazione della città. L'altro è Porta Catania, che si trova all'estremità opposta del Corso a circa 800 metri di distanza in direzione sud ovest. Per arrivare a Porta Messina si può prendere un autobus blu Interbus dalla stazione ferroviaria.",
+    "address": "Corso Umberto 1, Taormina",
+    "coords": "37.854426, 15.288926"
+  },
+  {
     "order": "1653833484-789",
     "name": "Da vedere: il Teatro Greco",
     "nonDetailedName": "Teatro Greco",
@@ -48,16 +58,6 @@
     "shortDescription": "Per una serata fashion in centro a Taormina, basta scendere di pochi gradini da Corso Umberto ed entrare al Morgana Lounge Bar. All'interno stupisce con i suoi affreschi glam alle pareti e un cocktail bar in stile art déco. Le consumazioni hanno un prezzo abbastanza ragionevole, a partire da circa 6 €. Offre anche un giardino in cui rilassarsi all'aperto sotto gli aranci in fiori. Prova il Passion Sicily, un cocktail dal sapore fresco e intenso firmato Morgana che miscela Bacardi, arancia, frutto della passione, menta, zucchero di canna e soda. È richiesta la prenotazione, soprattutto nei fine settimana.",
     "address": "Scesa Morgana 4, Taormina, Messina",
     "coords": "37.852010, 15.286796"
-  },
-  {
-    "order": "1653833484-785",
-    "name": "Inizia la giornata da Porta Messina",
-    "nonDetailedName": "Porta Messina",
-    "visitInformation": "La porta simbolo di Taormina",
-    "images": ["https://a.cdn-hotels.com/gdcs/production199/d1302/9b00548a-3d7d-4d70-a65e-3f3c6a8e3499.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"],
-    "shortDescription": "Sotto questo portale ad arco in pietra si assapora la miscela di antichità e vibrante modernità di Taormina. Da qui si accede a Corso Umberto, la principale via pedonale che attraversa la città passando per la panoramica Piazza IX Aprile, che si trova a metà strada. Porta Messina è uno dei due portali dell'antica fortificazione della città. L'altro è Porta Catania, che si trova all'estremità opposta del Corso a circa 800 metri di distanza in direzione sud ovest. Per arrivare a Porta Messina si può prendere un autobus blu Interbus dalla stazione ferroviaria.",
-    "address": "Corso Umberto 1, Taormina",
-    "coords": "37.854426, 15.288926"
   },
   {
     "order": "1653833484-796",
@@ -118,5 +118,76 @@
     "shortDescription": "Questo splendido palazzo-fortezza medievale in pietra è a pochi minuti a piedi da Porta Messina. Nel suo cortile interno si trovano rilievi e finestre ad arco di epoca cristiana con influenze arabeggianti. Oggi Palazzo Corvaja è adibito a museo e galleria d'arte, con frequenti mostre pittoriche e multimediali. Esternamente si erge alto e maestoso e conserva gran parte delle sue antiche caratteristiche architettoniche, in netto contrasto con i moderni edifici circostanti nella piazza. Questa è una delle particolarità che lo rendono una location molto apprezzata per i servizi fotografici dei matrimoni.",
     "address": "Piazza Vittorio Emanuele II, Taormina",
     "coords": "37.853934, 15.288422"
+  },
+  {
+    "order": "1653833484-786",
+    "name": "Tre spettacoli in uno: Piazza Sant’Antonio, l’Antico Arco Romano e l’Auditorium",
+    "nonDetailedName": "Piazza Saint Antonio in Castelmola",
+    "visitInformation": "L'antica piazza del borgo",
+    "images": ["https://www.theworldofsicily.com/wp-content/uploads/2018/11/Piazza-SantAntonio-a-Castelmola.jpg"],
+    "shortDescription": "L’itinerario delle cose da vedere a Castelmola inizia da Piazza Sant’Antonio. Si tratta di una vera e propria terrazza da cui è possibile ammirare un panorama mozzafiato che abbraccia lo Stretto di Messina e Taormina. La piazza, realizzata nel 1954, ha una splendida pavimentazione a mosaico creata alternando pietre laviche, a pietre bianche. In Piazza Sant’Antonio si trova un Antico Arco Romano del 900 d.C. Inizialmente si trovava al vertice di una scalinata scavata nella roccia, subito dopo la “Porta di Mola”, l’ingresso principale al borgo. Nel 1954, durante i lavori di costruzione di Piazza Sant’Antonio, l’arco è stato isolato e posizionato su una gradinata in pietra calcarea. Proprio accanto all’arco c’è invece l’Auditorium di Castelmola. Questo inizialmente era una chiesa dedicata a Sant’Antonio che nel 1953 è stata trasformata in oratorio parrocchiale. Oggi è utilizzato per convegni, eventi e per celebrare matrimoni secondo il rito civile.",
+    "address": "98030 Castelmola, Metropolitan City of Messina",
+    "coords": "37.8594206,15.2753689"
+  },
+  {
+    "order": "1653833484-786",
+    "name": "Da provare: L’Antico Caffè San Giorgio",
+    "nonDetailedName": "L’Antico Caffè San Giorgio",
+    "visitInformation": "Un caffè storico",
+    "images": ["https://www.theworldofsicily.com/wp-content/uploads/2018/11/Prospetto-dellAntico-Caffe%CC%80-San-Giorgio-a-Castelmola.jpg"],
+    "shortDescription": "Proprio di fronte all’Antico Arco Romano c’è uno dei locali storici assolutamente da vedere a Castelmola. È l’Antico Caffè San Giorgio, fondato nel 1700 da alcuni monaci come osteria. Il grande successo di questo locale inizia quando la proprietà passa a Don Vincenzo Blandano. Le sue intuizioni infatti permetteranno all’Antico Caffè San Giorgio di farsi conoscere e attrarre i tanti turisti stranieri che, a partire dall’Ottocento, iniziarono ad arrivare a Taormina. Questo locale è famoso, ormai in tutto il mondo, per essere il luogo dove è stato inventato il prodotto tipico di Castelmola: il vino alla mandorla. C’è anche un altro motivo per visitare l’Antico Caffè San Giorgio ed è il suo “Libro dei Centomila autografi”” Don Vincenzo Blandano, infatti, era solito chiedere una firma a tutti i personaggi famosi che visitavano il suo locale. La tradizione è stata poi portata avanti anche dai discendenti.Tra le tante firme presenti ci sono quelli di: Guglielmo Marconi, Winston Churchill e Papa Wojtyla.",
+    "address": "Piazza Sant'Antonino, 98030 Castelmola ME",
+    "coords": "37.8588944, 15.2759559"
+  },
+  {
+  "order": "1653833484-786",
+  "name": "Ammirare i resti del Castello di Mola",
+  "nonDetailedName": "Il Castello di Mola",
+  "visitInformation": "Il castello che da il nome al borgo",
+  "shortDescription":"Percorrendo le scale alla sinistra dell’Auditorium di Castelmola si arriva al Castello di Mola. Si può apprezzare così ancora meglio il panorama sullo Stretto di Messina. Si capisce così anche l’importanza difensiva che il castello aveva non solo per Castelmola. Da questa posizione infatti si ha anche una vista perfetta sul Castello di Taormina che si trova sul Monte Tauro. Le informazioni sulla storia del castello sono molto scarse. L’unica indicazione arriva da una lapide con incisioni in greco bizantino che si trova nel prospetto principale del Duomo di Castelmola. Secondo gli storici è molto probabile che la prima costruzione dell’edificio risale al periodo romano. All’interno è allestito un piccolo museo medievale e ha sede la Scuola Internazionale di Falconeria. ",
+  "images": ["https://www.theworldofsicily.com/wp-content/uploads/2018/11/Castello-di-Mola-nel-borgo-di-Castelmola.jpg"],
+  "address": "SP10, 98030 Castelmola ME",
+  "coords": "37.8593163, 15.2752132"
+  } ,
+  {
+    "order": "1653833484-786",
+    "name": "La particolare Chiesa di San Giorgio",
+    "nonDetailedName": "La Chiesa di San Giorgio",
+    "visitInformation": "Una tipica chiesa",
+    "images": ["https://www.theworldofsicily.com/wp-content/uploads/2018/11/La-facciata-della-Chiesa-di-San-Giorgio-a-Castelmola.jpg"],
+    "shortDescription": "Iniziando ad avventurarsi tra le vie del borgo di Castelmola si incontra subito la Chiesa di San Giorgio. È una piccola chiesa ad una sola navata costruita intorno al 1450. L’elemento più interessante dell’edificio è sicuramente il suo campanile. È costituito da una breve torre inglobata nel corpo edilizio e nei quattro angoli sono presenti quattro pinnacoli piramidali (clocheton). Ognuno di questi regge una piccola palla di pietra. All’interno della chiesa si trova la statua che ogni 23 aprile, in occasione della Festa di San Giorgio di Castelmola, viene portata in processione per le vie del borgo.",
+    "address": "Via della Rabbia, 98030 Castelmola ME",
+    "coords": "37.8587133, 15.276234"
+  },
+  {
+    "order": "1653833484-786",
+    "name": "Da ammirare: il Duomo di San Nicola",
+    "nonDetailedName": "Il Duomo di San Nicola",
+    "visitInformation": "Lo stile unico",
+    "images": ["https://www.theworldofsicily.com/wp-content/uploads/2018/11/Duomo-di-San-Nicola-a-Castelmola.jpg"],
+    "shortDescription": "La prossima tappa alla scoperta delle cose da vedere a Castelmola porta a Piazza Chiesa Madre. Qui ci sono il Duomo di San Nicola, la Biblioteca Comunale e un bellissimo belvedere da cui ammirare il panorama. Su questa piazza affaccia anche il famoso Bar Turrisi. Il Duomo di San Nicola, ricostruito negli anni 1934-35, è oggi uno splendido esempio di fusione di stili architettonici diversi. Si riconoscono infatti elementi che vanno dal romano al gotico e dall’arabo al normanno. L’interno è ad una sola navata e mantiene elementi originali del Cinquecento solo nel portale laterale e nell’arcata del coro. Nel Duomo di Castelmola sono conservate anche alcune interessanti opere d’arte come le due statue del Settecento della Maddalena e della Madonna del Rosario.",
+    "address": "Piazza Chiesa Madre, 8, 98030 Castelmola ME",
+    "coords": "37.858577, 15.2774865"
+  },
+  {
+    "order": "1653833484-786",
+    "name": "Esplora: Il Bar Turrisi",
+    "nonDetailedName": "Il Bar Turrisi",
+    "visitInformation": "Prenditi una piacevole pausa",
+    "images": ["https://www.theworldofsicily.com/wp-content/uploads/2018/11/Una-delle-sale-del-Bar-Turrisi.jpg"],
+    "shortDescription": "Tra le cose da vedere assolutamente a Castelmola c’è ovviamente il Bar Turrisi. Se non lo sapete si tratta di un locale molto particolare che la rivista Focus ha inserito tra i “sette locali più particolari al mondo”. Il motivo è semplice: ogni elemento dell’arredamento dell’interno è a forma di fallo. I menù, i braccioli delle sedie, le maniglie delle porte o le piastrelle del pavimento hanno la forma o richiamano espressamente l’organo maschile. Questo non vuol dire però che non sia un posto piacevolissimo dove pranzare o trascorrere del tempo in compagnia. L’atmosfera che si respira all’interno rende la permanenza sicuramente strana ma anche affascinante. Anche nel Bar Turrisi viene servito il caratteristico vino alla mandorla. Se preferite potete scegliere di degustarlo in un bicchiere, ovviamente a forma di fallo, che poi potete portare con voi.",
+    "address": "Via Papa Pio IX, 19, 98030 Castelmola ME",
+    "coords": "37.8584636, 15.2774057"
+  },
+  {
+    "order": "1653833484-786",
+    "name": "Per terminare: La Chiesa di San Biagio",
+    "nonDetailedName": "La Chiesa di San Biagio",
+    "visitInformation": "L'arte e la storia ti stupiranno",
+    "images": ["https://www.theworldofsicily.com/wp-content/uploads/2018/11/La-Chiesa-di-San-Biagio-a-Castelmola.jpg"],
+    "shortDescription": "Spostandosi verso la periferia di Castelmola si trova la Chiesa di San Biagio. Per raggiungerla è necessario percorrere un breve tratto lastricato in pietra e poi alcune scale. La fatica, non eccessiva, è sicuramente ripagata. La Chiesa di San Biagio è sicuramente una delle cose da vedere assolutamente a Castelmola. Si trova infatti in uno dei punti più belli del borgo dove ammirare il paesaggio. La chiesa stessa offre un panorama scenografico davvero suggestivo, immersa tra in un grandissima quantità di fichi d’india. La Chiesa di San Biagio è una delle più antiche di Castelmola e al suo interno è possibile ammirare alcuni resti di un ciclo di affreschi del Settecento che raffigura una “Madonna col Bambino, San Biagio e figure angeliche”. Proseguendo il cammino della scalinata si incontra la Porta dei Saraceni per poi arrivare a Taormina.",
+    "address": "98030 Castelmola ME",
+    "coords": "37.8575468, 15.2757272"
   }
+
 ]

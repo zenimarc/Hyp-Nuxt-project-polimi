@@ -4,14 +4,20 @@ export default async (models) => {
     {
       title: 'Un giorno a Taormina',
       durationMinutes: 120,
-      shortDescription: 'un giorno senza perdere nulla',
+      shortDescription: 'Un giorno senza perdere nulla',
       involvedPois: [1, 2, 3, 4, 5, 6, 7],
     },
     {
-      title: 'itine2',
+      title: 'Per le vie del centro',
       durationMinutes: 120,
-      shortDescription: 'sdss',
-      involvedPois: [8, 9, 10, 11],
+      shortDescription: `Ammira l'unicità delle vie del centro`,
+      involvedPois: [8, 10, 11],
+    },
+    {
+      title: `Uno dei borghi più belli d'Italia: Castelmola`,
+      durationMinutes: 120,
+      shortDescription: 'Preparati per viste mozzafiato e luoghi stupendi',
+      involvedPois: [13, 14, 15, 16, 17, 18, 19],
     },
   ]
 
