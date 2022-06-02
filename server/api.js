@@ -319,7 +319,7 @@ async function runMainApi() {
     const id = Number(req.params.idType)
     let result = new Array(0)
     if (id !== 0) {
-      result = await models.Service.findAll({
+      result = await models.Event.findAll({
         where: { eventTypeId: id },
       })
     } else {

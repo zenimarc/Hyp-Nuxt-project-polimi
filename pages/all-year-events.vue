@@ -2,26 +2,29 @@
   <section id="events" class="page-section">
     <div class="container">
       <div class="text-center">
-          <h2 class="section-heading text-uppercase">Events</h2>
-          <h3 class="section-subheading text-muted">
-            Lorem ipsum.
-          </h3>
-      </div>
-      <filter-categories
-        id="filter"
-        :categories="eventType"
-        @categoryChanged=";(idCategory = $event), updateData()"
+        <h2 class="section-heading text-uppercase">
+          {{ infoPage.introduction }}
+        </h2>
+        <h3 class="section-subheading text-muted">
+          {{ infoPage.description }}
+        </h3>
+
+        <FilterButtons
+          id="filter"
+          :categories="eventType"
+          @categoryChanged=";(idCategory = $event), updateData()"
         />
-      <div class="row text-center gy-5 gx-10">
-        <card-element
-          v-for="(event, eventIndex) of eventList"
-          :id="event.id"
-          :key="`event-index-${eventIndex}`"
-          :name="event.name"
-          :img="event.images[0]"
-          :address="event.practicalInfo"
-          :cardtype="'event'"
-        />
+        <div class="row text-center gy-5 gx-10">
+          <card-element
+            v-for="(event, eventIndex) of eventList"
+            :id="event.id"
+            :key="`event-index-${eventIndex}`"
+            :name="event.name"
+            :img="event.images[0]"
+            :address="event.practicalInfo"
+            :cardtype="'event'"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -29,21 +32,23 @@
 
 <script>
 import CardElement from '~/components/CardElement.vue'
-import FilterCategories from '~/components/FilterCategories.vue'
+import FilterButtons from '~/components/FilterButtons.vue'
 export default {
   name: 'EventsPage',
   components: {
     CardElement,
-    FilterCategories,
-},
+    FilterButtons,
+  },
 
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/events')
-    const { data2 } = (await $axios.get('/api/eventType')).data
-    const { categories } = [{id: 0, name: 'All Events'}].concat(data2)
+    const data2 = (await $axios.get('/api/eventType')).data
+    const data3 = (await $axios.get('/api/page-info/events/')).data
+    const categories = [{ id: 0, name: 'Tutti' }].concat(data2)
     return {
       eventList: data,
       eventType: categories,
+      infoPage: data3,
     }
   },
 
@@ -59,12 +64,12 @@ export default {
       const data = await (await fetch('/api/events/' + categoryNumber)).json()
       this.eventList = data
     },
-  }
+  },
 }
 </script>
 
 <style>
-  .text-center {
-    margin-top: 0.5rem;
-  }
+.text-center {
+  margin-top: 0.5rem;
+}
 </style>
