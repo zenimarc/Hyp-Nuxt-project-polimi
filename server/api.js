@@ -144,19 +144,35 @@ const pageContentObject = {
   },
   about: {
     title: 'About',
-    introduction: `OUR AMAZING TEAM`,
-    description: `Pleasure to meet you! You can know us better by looking at our socials`,
-    footer: 'We are always improving to offer you the best content!',
+    introduction: `IL NOSTRO TEAM`,
+    description: `Piacere di fare la tua conoscenza! Esplora i nostri social per più informazioni!`,
+    footer:
+      'Cerchiamo di migliorare sempre per offrirti il miglior contenuto possibile!',
   },
   services: {
     title: 'Services',
-    introduction: `ALL SERVICES`,
-    description: `Here for you the list of the Taormina city services! You can open the map link to know more`,
+    introduction: `TUTTI I SERVIZI`,
+    description: `Ecco per te la lista dei servizi di Taormina!`,
   },
   contacts: {
     title: 'Contacts',
-    introduction: `CONTACT US`,
-    description: `Fill the form below if you want to ask/inform us about something!`,
+    introduction: `CONTATTI`,
+    description: `Compila il form se vuoi chiederci/farci sapere qualunque cosa!`,
+  },
+  pois: {
+    title: 'Pois',
+    introduction: 'PUNTI DI INTERESSE',
+    description: `Scopri le maggiori attrazioni di Taormina!`,
+  },
+  itineraries: {
+    title: 'Itineraries',
+    introduction: 'ITINERARI',
+    description: `Segui queste guide per provare sulla tua pelle esperienze che non dimenticherai!`,
+  },
+  events: {
+    title: 'Events',
+    introduction: 'EVENTI',
+    description: `Non perderti gli eventi della città!`,
   },
 }
 

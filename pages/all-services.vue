@@ -45,7 +45,7 @@ export default {
     const { data } = await $axios.get('/api/services')
     const data2 = (await $axios.get('/api/page-info/services/')).data
     const data3 = (await $axios.get('/api/servicesType')).data
-    const categories = [{ id: 0, name: 'All' }].concat(data3)
+    const categories = [{ id: 0, name: 'Tutti' }].concat(data3)
     return {
       servicesList: data,
       infoPage: data2,

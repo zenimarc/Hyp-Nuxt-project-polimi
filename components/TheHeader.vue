@@ -51,19 +51,19 @@ export default {
     return {
       headerList: [
         {
-          name: 'Places',
+          name: 'Posti',
           path: '/all-point-of-interests',
         },
         {
-          name: 'Events',
-          path: '/all-year-events'
+          name: 'Eventi',
+          path: '/all-year-events',
         },
         {
-          name: 'Itineraries',
+          name: 'Itinerari',
           path: '/all-itineraries',
         },
         {
-          name: 'Services',
+          name: 'Servizi',
           path: '/all-services',
         },
         {
@@ -71,7 +71,7 @@ export default {
           path: '/about',
         },
         {
-          name: 'Contacts',
+          name: 'Contatti',
           path: '/contacts',
         },
       ],

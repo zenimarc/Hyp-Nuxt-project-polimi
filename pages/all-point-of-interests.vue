@@ -2,9 +2,11 @@
   <section id="pois" class="page-section">
     <div class="container">
       <div class="text-center">
-        <h2 class="section-heading text-uppercase">Places</h2>
+        <h2 class="section-heading text-uppercase">
+          {{ infoPage.introduction }}
+        </h2>
         <h3 class="section-subheading text-muted">
-          Lorem ipsum dolor sit amet consectetur.
+          {{ infoPage.description }}
         </h3>
       </div>
       <div class="row text-center gy-5 gx-10">
@@ -30,23 +32,15 @@ export default {
     CardElement,
   },
   async asyncData({ $axios }) {
-    // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('/api/pois')
+    const data2 = (await $axios.get('/api/page-info/pois/')).data
     return {
       poiList: data,
+      infoPage: data2,
     }
   },
   data() {
-    return {
-      // catList: []
-    }
+    return {}
   },
-  // Note: This happens on backend (server) side
-
-  // Note: This would happen on frontend (client) side
-  // async mounted() {
-  //   const { data } = await this.$axios.get('/api/cats')
-  //   this.catList = data
-  // },
 }
 </script>

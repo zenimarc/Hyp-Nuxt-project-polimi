@@ -9,22 +9,22 @@ export default async (models) => {
   // Service types
   const serviceTypeList = [
     {
-      name: 'Pharmacies',
+      name: 'Farmacie',
     },
     {
-      name: 'Restaurants',
+      name: 'Ristoranti',
     },
     {
-      name: 'Museums',
+      name: 'Musei',
     },
     {
-      name: 'Coffee shops',
+      name: 'Bar',
     },
     {
-      name: 'ATMs',
+      name: 'Bancomat',
     },
     {
-      name: 'Gas stations',
+      name: 'Benzinai',
     },
   ]
 
