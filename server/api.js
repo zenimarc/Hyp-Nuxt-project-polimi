@@ -94,10 +94,17 @@ async function initializeDatabaseConnection() {
     },
     { timestamps: false }
   )
+  const isSurrounded = database.define(
+    'IsSurrounded',
+    {
+      distanceMeters: DataTypes.INTEGER,
+    },
+    { timestamps: false }
+  )
   Itinerary.belongsToMany(PointOfInterest, { through: Involves })
   PointOfInterest.belongsToMany(Itinerary, { through: Involves })
-  PointOfInterest.belongsToMany(Service, { through: 'isSurrounded' })
-  Service.belongsToMany(PointOfInterest, { through: 'isSurrounded' })
+  PointOfInterest.belongsToMany(Service, { through: isSurrounded })
+  Service.belongsToMany(PointOfInterest, { through: isSurrounded })
   Event.belongsTo(PointOfInterest)
 
   const Cat = database.define('cat', {
@@ -178,6 +185,9 @@ async function runMainApi() {
     const id = Number(req.params.id)
     const result = await models.PointOfInterest.findOne({
       where: { id },
+      include: [
+        { model: models.Service, include: [{ model: models.ServiceType }] },
+      ],
     })
     return res.json(result)
   })
