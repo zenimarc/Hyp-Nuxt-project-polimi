@@ -11,8 +11,15 @@
 
         <div class="row text-center gy-3">
           <FilterButtons
-            id="filter"
+            id="filterButtons"
             :categories="servicesType"
+            :active-number="idCategory"
+            @categoryChanged=";(idCategory = $event), updateData()"
+          />
+          <FilterDropdown
+            id="filterDropdown"
+            :categories="servicesType"
+            :active-number="idCategory"
             @categoryChanged=";(idCategory = $event), updateData()"
           />
           <br />
@@ -38,9 +45,10 @@
 <script>
 import Service from '~/components/Service.vue'
 import FilterButtons from '~/components/FilterButtons.vue'
+import FilterDropdown from '~/components/FilterDropdown.vue'
 export default {
   name: 'ServicesPage',
-  components: { Service, FilterButtons },
+  components: { Service, FilterButtons, FilterDropdown },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/services')
     const data2 = (await $axios.get('/api/page-info/services/')).data
@@ -66,3 +74,15 @@ export default {
   },
 }
 </script>
+<style scoped>
+@media (max-width: 768px) {
+  #filterButtons {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  #filterDropdown {
+    display: none;
+  }
+}
+</style>
