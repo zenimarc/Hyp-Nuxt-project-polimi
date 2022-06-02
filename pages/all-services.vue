@@ -74,15 +74,3 @@ export default {
   },
 }
 </script>
-<style scoped>
-@media (max-width: 768px) {
-  #filterButtons {
-    display: none;
-  }
-}
-@media (min-width: 768px) {
-  #filterDropdown {
-    display: none;
-  }
-}
-</style>

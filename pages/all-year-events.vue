@@ -10,7 +10,13 @@
         </h3>
 
         <FilterButtons
-          id="filter"
+          id="filterButtons"
+          :categories="eventType"
+          :active-number="idCategory"
+          @categoryChanged=";(idCategory = $event), updateData()"
+        />
+        <FilterDropdown
+          id="filterDropdown"
           :categories="eventType"
           :active-number="idCategory"
           @categoryChanged=";(idCategory = $event), updateData()"
@@ -34,11 +40,13 @@
 <script>
 import CardElement from '~/components/CardElement.vue'
 import FilterButtons from '~/components/FilterButtons.vue'
+import FilterDropdown from '~/components/FilterDropdown.vue'
 export default {
   name: 'EventsPage',
   components: {
     CardElement,
     FilterButtons,
+    FilterDropdown,
   },
 
   async asyncData({ $axios }) {
