@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/escape-case */
 import {
   mergeServiceJsonId,
   formatData,
@@ -10,21 +11,27 @@ export default async (models) => {
   const serviceTypeList = [
     {
       name: 'Farmacie',
+      mapMarkerIcon: '\ue550',
     },
     {
       name: 'Ristoranti',
+      mapMarkerIcon: '\ue56c',
     },
     {
       name: 'Musei',
+      mapMarkerIcon: '\uea36',
     },
     {
       name: 'Bar',
+      mapMarkerIcon: '\ue540',
     },
     {
       name: 'Bancomat',
+      mapMarkerIcon: '\ue53e',
     },
     {
       name: 'Benzinai',
+      mapMarkerIcon: '\ue546',
     },
   ]
 

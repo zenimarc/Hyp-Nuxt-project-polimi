@@ -60,6 +60,7 @@ export default {
   },
   mounted() {
     // Create the script tag, set the appropriate attributes
+    window.google = {}
     const script = document.createElement('script')
     script.src = `https://maps.googleapis.com/maps/api/js?key=${this.$config.GOOGLE_API_KEY}&callback=initMap`
     script.async = true
@@ -70,7 +71,6 @@ export default {
     }
     const services = this.nearServices
     const parseCoordsFunction = this.parseCoords
-    const getGoogleFontsIconCode = this.getGoogleFontsIconCode
 
     function pinSymbol(color) {
       return {
@@ -117,7 +117,7 @@ export default {
             labelOrigin: new window.google.maps.Point(0, -29),
           },
           label: {
-            text: getGoogleFontsIconCode(service.serviceType.name), // codepoint from https://fonts.google.com/icons
+            text: service.serviceType.mapMarkerIcon, // codepoint from https://fonts.google.com/icons
             fontFamily: 'Material Icons',
             color: '#ffffff',
             fontSize: '20px',

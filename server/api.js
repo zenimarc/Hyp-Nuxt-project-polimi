@@ -52,6 +52,7 @@ async function initializeDatabaseConnection() {
 
   const ServiceType = database.define('serviceType', {
     name: DataTypes.STRING,
+    mapMarkerIcon: DataTypes.STRING,
   })
   ServiceType.hasMany(Service)
   Service.belongsTo(ServiceType)
