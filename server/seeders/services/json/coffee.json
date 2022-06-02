@@ -1,0 +1,212 @@
+[
+  {
+    "order": "1654157811-126",
+    "serviceLink": "https://www.google.com/maps/place/L'Obl%C3%B2+Caf%C3%A8/data=!4m6!3m5!1s0x131411b2bdcaffcd:0xf67b79069492dbd6!8m2!3d37.8515766!4d15.2956494!16s%2Fg%2F11fm74j5v0?authuser=0&hl=en&rclk=1",
+    "name": "L'Oblò Cafè",
+    "address": "Via Guardiola Vecchia, 46, 98039 Taormina ME",
+    "monday": [
+      {
+        "monday": "10AM–2:30AM"
+      }
+    ],
+    "tuesday": [
+      {
+        "tuesday": "10AM–2:30AM"
+      }
+    ],
+    "wednesday": [
+      {
+        "wednesday": "10AM–2:30AM"
+      }
+    ],
+    "thursday": [
+      {
+        "thursday": "10AM–2:30AM"
+      }
+    ],
+    "friday": [
+      {
+        "friday": "10AM–2:30AM"
+      }
+    ],
+    "saturday": [
+      {
+        "saturday": "10AM–2:30AM"
+      }
+    ],
+    "img": "https://lh5.googleusercontent.com/p/AF1QipPuuwvDLxg2M1G-pXEyaZ9TrRyVs-8lQ4rrU1nA=w408-h306-k-no",
+    "sunday": [
+      {
+        "sunday": "10AM–2:30AM"
+      }
+    ]
+  },
+  {
+    "order": "1654157818-128",
+    "serviceLink": "https://www.google.com/maps/place/Luraleo+Bar/data=!4m6!3m5!1s0x131411a456ef3f8f:0x4e2d5aa9699ed7b7!8m2!3d37.8511943!4d15.2814218!16s%2Fg%2F11b7m9gysb?authuser=0&hl=en&rclk=1",
+    "name": "Luraleo Bar",
+    "address": "Piazza S. Antonio Abate, 10, 98039 Taormina ME",
+    "monday": [
+      {
+        "monday": "7AM–12AM"
+      }
+    ],
+    "tuesday": [
+      {
+        "tuesday": "7AM–12AM"
+      }
+    ],
+    "wednesday": [
+      {
+        "wednesday": "7AM–12AM"
+      }
+    ],
+    "thursday": [
+      {
+        "thursday": "7AM–12AM"
+      }
+    ],
+    "friday": [
+      {
+        "friday": "7AM–12AM"
+      }
+    ],
+    "saturday": [
+      {
+        "saturday": "7AM–12AM"
+      }
+    ],
+    "img": "https://lh5.googleusercontent.com/p/AF1QipPgAQ8_LIa8cOmf_nw8NpZ3xt1DEU6FMsX6RiV_=w408-h544-k-no",
+    "sunday": [
+      {
+        "sunday": "7AM–12AM"
+      }
+    ]
+  },
+  {
+    "order": "1654157829-131",
+    "serviceLink": "https://www.google.com/maps/place/iBar+Coffee+e+Drink/data=!4m6!3m5!1s0x131411a4620fa109:0x3be4fd915775cf81!8m2!3d37.8510133!4d15.2825066!16s%2Fg%2F11cs3zls8b?authuser=0&hl=en&rclk=1",
+    "name": "iBar Coffee e Drink",
+    "address": "piazza Duomo, 2, 98039 Taormina ME",
+    "monday": [
+      {
+        "monday": "8AM–2AM"
+      }
+    ],
+    "tuesday": [
+      {
+        "tuesday": "8AM–2AM"
+      }
+    ],
+    "wednesday": [
+      {
+        "wednesday": "8AM–12AM"
+      }
+    ],
+    "thursday": [
+      {
+        "thursday": "8AM–2AM"
+      }
+    ],
+    "friday": [
+      {
+        "friday": "8AM–2AM"
+      }
+    ],
+    "saturday": [
+      {
+        "saturday": "8AM–2AM"
+      }
+    ],
+    "img": "https://lh5.googleusercontent.com/p/AF1QipPm96Dncywn0K1kHDo-LQgPCi8s9Ppnm02lvRcV=w408-h306-k-no",
+    "sunday": [
+      {
+        "sunday": "8AM–2AM"
+      }
+    ]
+  },
+  {
+    "order": "1654157822-129",
+    "serviceLink": "https://www.google.com/maps/place/Caff%C3%A8+Wunderbar/data=!4m6!3m5!1s0x131411a3b8679495:0xe48c07343f6f05bf!8m2!3d37.851581!4d15.28546!16s%2Fg%2F1tvrf8mt?authuser=0&hl=en&rclk=1",
+    "name": "Caffè Wunderbar",
+    "address": "Piazza IX Aprile, 7, 98039 Taormina ME",
+    "monday": [
+      {
+        "monday": "9AM–12AM"
+      }
+    ],
+    "tuesday": [
+      {
+        "tuesday": "9AM–12AM"
+      }
+    ],
+    "wednesday": [
+      {
+        "wednesday": "9AM–12AM"
+      }
+    ],
+    "thursday": [
+      {
+        "thursday": "9AM–12AM"
+      }
+    ],
+    "friday": [
+      {
+        "friday": "9AM–12AM"
+      }
+    ],
+    "saturday": [
+      {
+        "saturday": "9AM–12AM"
+      }
+    ],
+    "img": "https://lh5.googleusercontent.com/p/AF1QipMM7LEWuhxD_TJpZ3m3EdHtCAFcwrQp3oeEIhnR=w408-h408-k-no",
+    "sunday": [
+      {
+        "sunday": "9AM–12AM"
+      }
+    ]
+  },
+  {
+    "order": "1654157815-127",
+    "serviceLink": "https://www.google.com/maps/place/Bar+illy/data=!4m6!3m5!1s0x131411a1eb78a561:0xb4a83c44653e54e7!8m2!3d37.8536741!4d15.2884536!16s%2Fg%2F11fy555xb3?authuser=0&hl=en&rclk=1",
+    "name": "Bar illy",
+    "address": "Largo Santa Caterina, 7, 98039 Taormina ME",
+    "monday": [
+      {
+        "monday": "9AM–12AM"
+      }
+    ],
+    "tuesday": [
+      {
+        "tuesday": "9AM–12AM"
+      }
+    ],
+    "wednesday": [
+      {
+        "wednesday": "9AM–12AM"
+      }
+    ],
+    "thursday": [
+      {
+        "thursday": "8AM–11PM"
+      }
+    ],
+    "friday": [
+      {
+        "friday": "9AM–12AM"
+      }
+    ],
+    "saturday": [
+      {
+        "saturday": "9AM–12AM"
+      }
+    ],
+    "img": "https://lh5.googleusercontent.com/p/AF1QipMeTea0iCIBWdmI87LuqICPybuJHCv-lP5o-vKh=w408-h544-k-no",
+    "sunday": [
+      {
+        "sunday": "9AM–12AM"
+      }
+    ]
+  }
+]
