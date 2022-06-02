@@ -4,19 +4,19 @@ export default async (models) => {
     {
       name: 'Giorgio',
       surname: 'Verdi',
-      jobTitle: 'Head of office',
+      jobTitle: 'Capo ufficio',
       img: 'https://i.pinimg.com/originals/3d/fa/72/3dfa721da08c2977a0fe583bea20d7d4.jpg',
     },
     {
       name: 'Luca',
       surname: 'Bianchi',
-      jobTitle: 'Programmer',
+      jobTitle: 'Programmatore',
       img: 'https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg',
     },
     {
       name: 'Marta',
       surname: 'Rossi',
-      jobTitle: 'Researcher',
+      jobTitle: 'Designer',
       img: 'https://preview.redd.it/oh309qc0sp981.jpg?auto=webp&s=232e87535b77746ae8b97a33c8511cd44343cf45',
     },
   ]

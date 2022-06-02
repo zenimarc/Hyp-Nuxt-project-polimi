@@ -4,6 +4,7 @@ import initializeCatList from './seeders/cats/cats'
 import initializePoiList from './seeders/poi/poi'
 import initializeItinerariesList from './seeders/itineraries/itineraries'
 import initializeEventsList from './seeders/events/events'
+import initializeNearServices from './seeders/nearServices'
 
 export default async (models) => {
   //  init services
@@ -18,4 +19,6 @@ export default async (models) => {
   await initializeItinerariesList(models)
   //  init events
   await initializeEventsList(models)
+  // fill the near services in poi
+  initializeNearServices(models)
 }

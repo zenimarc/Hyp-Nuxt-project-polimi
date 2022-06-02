@@ -9,13 +9,22 @@ export default async (models) => {
   // Service types
   const serviceTypeList = [
     {
-      name: 'Pharmacies',
+      name: 'Farmacie',
     },
     {
-      name: 'Restaurants',
+      name: 'Ristoranti',
     },
     {
-      name: 'ATMs',
+      name: 'Musei',
+    },
+    {
+      name: 'Bar',
+    },
+    {
+      name: 'Bancomat',
+    },
+    {
+      name: 'Benzinai',
     },
   ]
 
@@ -27,10 +36,25 @@ export default async (models) => {
   const pharmaciesJson = require('./json/pharmacies')
   const restaurantsJson = require('./json/restaurants')
   const atmsJson = require('./json/atms')
+  const gasJson = require('./json/gas')
+  const coffeeJson = require('./json/coffee')
+  const museumsJson = require('./json/museums')
 
   servicesList = mergeServiceJsonId(
     mergeServiceJsonId(
-      mergeServiceJsonId(servicesList, atmsJson, serviceType[2].id),
+      mergeServiceJsonId(
+        mergeServiceJsonId(
+          mergeServiceJsonId(
+            mergeServiceJsonId(servicesList, gasJson, serviceType[5].id),
+            atmsJson,
+            serviceType[4].id
+          ),
+          coffeeJson,
+          serviceType[3].id
+        ),
+        museumsJson,
+        serviceType[2].id
+      ),
       restaurantsJson,
       serviceType[1].id
     ),
