@@ -7,11 +7,6 @@
             Lorem ipsum.
           </h3>
       </div>
-      <filter-categories
-        id="filter"
-        :categories="eventType"
-        @categoryChanged=";(idCategory = $event), updateData()"
-        />
       <div class="row text-center gy-5 gx-10">
         <card-element
           v-for="(event, eventIndex) of eventList"
@@ -29,12 +24,10 @@
 
 <script>
 import CardElement from '~/components/CardElement.vue'
-import FilterCategories from '~/components/FilterCategories.vue'
 export default {
   name: 'EventsPage',
   components: {
     CardElement,
-    FilterCategories,
 },
 
   async asyncData({ $axios }) {
