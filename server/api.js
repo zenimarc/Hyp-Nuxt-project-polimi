@@ -52,6 +52,7 @@ async function initializeDatabaseConnection() {
 
   const ServiceType = database.define('serviceType', {
     name: DataTypes.STRING,
+    mapMarkerIcon: DataTypes.STRING,
   })
   ServiceType.hasMany(Service)
   Service.belongsTo(ServiceType)
@@ -252,7 +253,7 @@ async function runMainApi() {
         title: element.title,
         durationMinutes: element.durationMinutes,
         shortDescription: element.shortDescription,
-        img: element.PointOfInterests[0].images[0],
+        img: element.PointOfInterests[2].images[0],
         id: element.id,
       })
     }
@@ -319,7 +320,7 @@ async function runMainApi() {
     const id = Number(req.params.idType)
     let result = new Array(0)
     if (id !== 0) {
-      result = await models.Service.findAll({
+      result = await models.Event.findAll({
         where: { eventTypeId: id },
       })
     } else {

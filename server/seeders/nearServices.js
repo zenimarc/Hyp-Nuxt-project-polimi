@@ -1,7 +1,7 @@
 export default async (models) => {
   const allServices = await models.Service.findAll()
   const allPois = await models.PointOfInterest.findAll()
-  const maxMetersToBeNear = 500
+  const maxMetersToBeNear = 300
   for (const service of allServices) {
     for (const poi of allPois) {
       const { lat: lat1, lng: lon1 } = parseCoords(poi.coords)

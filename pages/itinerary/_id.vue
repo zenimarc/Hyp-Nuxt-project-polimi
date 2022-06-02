@@ -51,6 +51,7 @@ export default {
   },
   mounted() {
     // Create the script tag, set the appropriate attributes
+    window.google = {}
     const script = document.createElement('script')
     script.src = `https://maps.googleapis.com/maps/api/js?key=${this.$config.GOOGLE_API_KEY}&callback=initMap`
     script.async = true
