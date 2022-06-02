@@ -253,7 +253,7 @@ async function runMainApi() {
         title: element.title,
         durationMinutes: element.durationMinutes,
         shortDescription: element.shortDescription,
-        img: element.PointOfInterests[0].images[0],
+        img: element.PointOfInterests[2].images[0],
         id: element.id,
       })
     }
