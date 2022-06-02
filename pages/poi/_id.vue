@@ -17,8 +17,8 @@
           Back to list
         </button>
       </div>
-      <div class="col-lg-6 ms-auto image-wrapper">
-        <img :src="images[0]" :alt="name" width="100%" />
+      <div class="col-lg-6 image-wrapper">
+        <carousel-element :images="images" />
       </div>
     </div>
     <div id="map" class="map-container mt-4"></div>
@@ -36,8 +36,10 @@
 
 <script>
 import CommonMixin from '~/mixins/common'
+import CarouselElement from '~/components/CarouselElement.vue'
 export default {
   name: 'PoidetailsPage',
+  components: { CarouselElement },
   mixins: [CommonMixin],
   async asyncData({ route, $axios }) {
     const { id } = route.params
