@@ -3,7 +3,7 @@ import {
   formatData,
   sorting,
   convertAddressToCoords,
-} from './scriptService/script'
+} from '../../script'
 
 export default async (models) => {
   // Service types

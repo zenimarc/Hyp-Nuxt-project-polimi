@@ -1,4 +1,4 @@
-import { mergeServiceJsonId } from '../services/scriptService/script'
+import { mergeServiceJsonId } from '../../script'
 
 export default async (models) => {
   const eventTypeList = [

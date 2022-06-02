@@ -104,6 +104,8 @@ async function initializeDatabaseConnection() {
   PointOfInterest.belongsToMany(Service, { through: 'isSurrounded' })
   Service.belongsToMany(PointOfInterest, { through: 'isSurrounded' })
   Event.belongsTo(PointOfInterest)
+  EventType.hasMany(Event)
+  Event.belongsTo(EventType)
 
   const Cat = database.define('cat', {
     name: DataTypes.STRING,
@@ -289,6 +291,29 @@ async function runMainApi() {
     return res.json(filtered)
   })
 
+  app.get('/events/:idType', async (req, res) => {
+    const id = Number(req.params.idType)
+    let result = new Array(0)
+    if (id !== 0) {
+      result = await models.Service.findAll({
+        where: { eventTypeId: id },
+      })
+    } else {
+      result = await models.Event.findAll()
+    }
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        shortDescription: element.shortDescription,
+        practicalInfo: element.practicalInfo,
+        images: element.images,
+      })
+    }
+    return res.json(filtered)
+  })
+
   app.get('/eventType', async (req, res) => {
     const result = await models.EventType.findAll()
     const filtered = []
@@ -299,6 +324,14 @@ async function runMainApi() {
       })
     }
     return res.json(filtered)
+  })
+
+  app.get('/eventType/:category', async (req, res) => {
+    const category = +req.params.category
+    const result = await models.EventType.findOne({
+      where: { name: category },
+    })
+    return res.json(result)
   })
 
   // HTTP GET api that returns all the socials in our actual database
