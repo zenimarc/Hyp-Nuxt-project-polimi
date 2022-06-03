@@ -32,20 +32,22 @@
               required
             />
             <div class="valid-tooltip feedback-pos">Perfetto!</div>
-            <div class="invalid-tooltip feedback-pos">Email Obbligatoria.</div>
+            <div class="invalid-tooltip feedback-pos">Email obbligatoria.</div>
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="input-group needs-validation">
-          <textarea
-            id="validationTextarea"
-            class="form-control"
-            placeholder="Messaggio *"
-            required
-          ></textarea>
-          <div class="test valid-tooltip feedback-pos">Perfetto!</div>
-          <div class="invalid-tooltip">Messaggio obbligatorio.</div>
+        <div class="form-group form-group-textarea mb-md-0">
+          <div class="input-group needs-validation">
+            <textarea
+              id="validationTextarea"
+              class="form-control"
+              placeholder="Messaggio *"
+              required
+            ></textarea>
+            <div class="test valid-tooltip feedback-pos">Perfetto!</div>
+            <div class="invalid-tooltip">Messaggio obbligatorio.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -74,11 +76,6 @@ export default {
       validEmail: false,
       validText: false,
     }
-  },
-  methods: {
-    onSubmit() {
-      console.log('Finito')
-    },
   },
 }
 </script>
