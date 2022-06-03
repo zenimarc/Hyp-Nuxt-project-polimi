@@ -20,16 +20,16 @@ import VueTypeText from '@/vue-type-text.vue';
         aria-expanded="false"
         aria-controls="collapseExample"
       >
-        Show opening hours
+        Mostra orari
         <i class="fas fa-calendar-day"></i>
       </a>
       <div :class="`collapse collapseExample${id} mt-2`">
         <table class="table styled-table">
           <thead class="thead-dark">
             <tr>
-              <th class="headCell" scope="col">Week day</th>
+              <th class="headCell" scope="col">Giorno</th>
               <th class="headCell" scope="col" :colspan="colspanHours">
-                Opening hours
+                Orari
               </th>
             </tr>
           </thead>
