@@ -9,6 +9,7 @@
             <input
               id="validationCustomUsername"
               type="text"
+              name="username"
               class="form-control"
               placeholder="Username *"
               aria-describedby="inputGroupPrepend"
@@ -41,6 +42,7 @@
           <div class="input-group needs-validation">
             <textarea
               id="validationTextarea"
+              name="message"
               class="form-control"
               placeholder="Messaggio *"
               required
