@@ -1,8 +1,8 @@
 <template>
-  <form id="contactForm" class="was-validated">
+  <form id="contactForm" @submit.prevent="onSubmit">
     <div class="row align-items-stretch mb-5">
       <div class="col-md-6">
-        <div class="form-group">
+        <div class="form-group" @input="checkUser">
           <!-- Username input-->
           <div class="input-group needs-validation">
             <span id="inputGroupPrepend" class="input-group-text">@</span>
@@ -20,7 +20,7 @@
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" @input="checkEmail">
           <!-- Email address input-->
           <div class="input-group needs-validation">
             <input
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="form-group form-group-textarea mb-md-0">
+        <div class="form-group form-group-textarea mb-md-0" @input="checkMsg">
           <div class="input-group needs-validation">
             <textarea
               id="validationTextarea"
@@ -56,12 +56,7 @@
     <!-- Submit Button-->
     <div class="text-center">
       <div class="col-12">
-        <button
-          id="submitButton"
-          class="btn btn-primary"
-          type="submit"
-          @onsubmit="onSubmit()"
-        >
+        <button id="submitButton" class="btn btn-primary" type="submit">
           Submit form
         </button>
       </div>
@@ -72,12 +67,26 @@
 <script>
 export default {
   name: 'SubmitComponent',
-  data() {
-    return {
-      validUsername: false,
-      validEmail: false,
-      validText: false,
-    }
+  methods: {
+    onSubmit() {
+      alert('Messaggio inviato correttamente!')
+      window.location.reload()
+    },
+    checkUser() {
+      document
+        .getElementsByClassName('form-group')[0]
+        .classList.add('was-validated')
+    },
+    checkEmail() {
+      document
+        .getElementsByClassName('form-group')[1]
+        .classList.add('was-validated')
+    },
+    checkMsg() {
+      document
+        .getElementsByClassName('form-group')[2]
+        .classList.add('was-validated')
+    },
   },
 }
 </script>
