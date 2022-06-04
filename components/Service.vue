@@ -16,44 +16,66 @@ import VueTypeText from '@/vue-type-text.vue';
         <span>
           <a
             class="btn btn-primary"
-            data-bs-toggle="collapse"
-            :href="`.collapseExample${id}`"
+            :href="`.modal`"
             role="button"
             aria-expanded="false"
-            aria-controls="collapseExample"
+            data-bs-toggle="modal"
+            :data-bs-target="`.exampleModal${id}`"
           >
             Mostra orari
             <i class="fas fa-calendar-day"></i>
           </a>
-          <div :class="`collapse collapseExample${id} mt-2`">
-            <table class="table styled-table">
-              <thead class="thead-dark">
-                <tr>
-                  <th class="headCell" scope="col">Giorno</th>
-                  <th class="headCell" scope="col" :colspan="colspanHours">
-                    Orari
-                  </th>
-                </tr>
-              </thead>
-              <!-- ======================Opening hours========================= -->
-              <!-- To put in a component or dinamically find prop -->
-              <tbody>
-                <tr
-                  v-for="(day, dayKey, dayIndex) in weekTimetable"
-                  :key="dayIndex"
-                >
-                  <th class="bodyCell" scope="row">{{ dayKey }}</th>
-                  <td
-                    v-for="(opening, openingIndex) of day"
-                    :key="openingIndex"
-                    :colspan="day.length === 1 ? 2 : 1"
-                  >
-                    {{ opening[dayKey] || 'Not found' }}
-                  </td>
-                </tr>
-              </tbody>
-              <!-- ==================================================================== -->
-            </table>
+
+          <div class="modal" :class="`exampleModal${id}`" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">{{ name }}</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <table class="table styled-table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th class="headCell" scope="col">Giorno</th>
+                        <th
+                          class="headCell"
+                          scope="col"
+                          :colspan="colspanHours"
+                        >
+                          Orari
+                        </th>
+                      </tr>
+                    </thead>
+                    <!-- ======================Opening hours========================= -->
+                    <!-- To put in a component or dinamically find prop -->
+                    <tbody>
+                      <tr
+                        v-for="(day, dayKey, dayIndex) in weekTimetable"
+                        :key="dayIndex"
+                      >
+                        <th class="bodyCell" scope="row">
+                          {{ itaDay[dayIndex] }}
+                        </th>
+                        <td
+                          v-for="(opening, openingIndex) of day"
+                          :key="openingIndex"
+                          :colspan="day.length === 1 ? 2 : 1"
+                        >
+                          {{ opening[dayKey] || 'Not found' }}
+                        </td>
+                      </tr>
+                    </tbody>
+                    <!-- ==================================================================== -->
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
         </span>
       </div>
@@ -63,7 +85,6 @@ import VueTypeText from '@/vue-type-text.vue';
 <script>
 export default {
   name: 'ServiceComponent',
-
   props: {
     id: {
       type: Number,
@@ -93,6 +114,15 @@ export default {
   data() {
     return {
       timeOpened: false,
+      itaDay: [
+        'Lunedì',
+        'Martedì',
+        'Mercoledì',
+        'Giovedì',
+        'Venerdì',
+        'Sabato',
+        'Domenica',
+      ],
     }
   },
   computed: {
@@ -154,5 +184,11 @@ th {
   border-color: #212529;
   color: #ced4da;
   width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.card {
+  height: 500px;
 }
 </style>
