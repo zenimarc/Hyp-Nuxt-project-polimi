@@ -10,7 +10,7 @@ export default {
   head: {
     title: 'Taormina',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ita',
     },
     meta: [
       { charset: 'utf-8' },
