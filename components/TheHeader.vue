@@ -7,7 +7,7 @@
   >
     <div class="container">
       <nuxt-link to="/" class="navbar-brand"
-        ><img src="/assets/img/navbar-logo.svg" alt="logo"
+        ><img id="logo" src="/assets/img/logo.png" alt="logo"
       /></nuxt-link>
       <button
         class="navbar-toggler"
