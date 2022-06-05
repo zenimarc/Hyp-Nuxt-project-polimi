@@ -113,22 +113,8 @@ async function initializeDatabaseConnection() {
   EventType.hasMany(Event)
   Event.belongsTo(EventType)
 
-  const Cat = database.define('cat', {
-    name: DataTypes.STRING,
-    description: DataTypes.STRING,
-    breed: DataTypes.STRING,
-    img: DataTypes.STRING,
-  })
-  const Location = database.define('location', {
-    name: DataTypes.STRING,
-    city: DataTypes.STRING,
-  })
-  Location.hasMany(Cat)
-  Cat.belongsTo(Location)
   await database.sync({ force: true })
   return {
-    Cat,
-    Location,
     TeamMember,
     Social,
     PointOfInterest,
@@ -194,15 +180,6 @@ async function runMainApi() {
     return res.json(result)
   })
 
-  app.get('/cats/:id', async (req, res) => {
-    const id = +req.params.id
-    const result = await models.Cat.findOne({
-      where: { id },
-      include: [{ model: models.Location }],
-    })
-    return res.json(result)
-  })
-
   app.get('/poi/:id', async (req, res) => {
     const id = Number(req.params.id)
     const result = await models.PointOfInterest.findOne({
@@ -253,21 +230,6 @@ async function runMainApi() {
         durationMinutes: element.durationMinutes,
         shortDescription: element.shortDescription,
         img: element.PointOfInterests[2].images[0],
-        id: element.id,
-      })
-    }
-    return res.json(filtered)
-  })
-
-  // HTTP GET api that returns all the cats in our actual database
-  app.get('/cats', async (req, res) => {
-    const result = await models.Cat.findAll()
-    const filtered = []
-    for (const element of result) {
-      filtered.push({
-        name: element.name,
-        img: element.img,
-        breed: element.breed,
         id: element.id,
       })
     }
@@ -439,14 +401,6 @@ async function runMainApi() {
       })
     }
     return res.json(filtered)
-  })
-
-  // HTTP POST api, that will push (and therefore create) a new element in
-  // our actual database
-  app.post('/cats', async (req, res) => {
-    const { body } = req
-    await models.Cat.create(body)
-    return res.sendStatus(200)
   })
 }
 
