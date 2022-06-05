@@ -3,13 +3,13 @@ import { mergeEventJsonId } from '../../script'
 export default async (models) => {
   const eventTypeList = [
     {
-      name: 'Other',
+      name: 'Estate',
     },
     {
-      name: 'Summer',
+      name: 'Inverno',
     },
     {
-      name: 'Winter',
+      name: 'Altro',
     },
   ]
 
@@ -25,11 +25,11 @@ export default async (models) => {
 
   eventsList = mergeEventJsonId(
     mergeEventJsonId(
-      mergeEventJsonId(eventsList, winterJson, eventType[2].id),
-      summerJson,
+      mergeEventJsonId(eventsList, otherJson, eventType[2].id),
+      winterJson,
       eventType[1].id
     ),
-    otherJson,
+    summerJson,
     eventType[0].id
   )
 
