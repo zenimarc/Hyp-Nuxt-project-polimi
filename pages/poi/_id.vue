@@ -117,6 +117,7 @@ export default {
         map,
         title: poi.name,
         optimized: false,
+        zIndex: 99,
       })
 
       // Add a click listener for poi marker, and set up the info window.
