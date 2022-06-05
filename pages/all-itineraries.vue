@@ -1,7 +1,13 @@
 <template>
-  <section id="pois" class="page-section">
-    <div class="container">
-      <div class="text-center">
+  <div>
+    <div>
+      <img
+        class="back"
+        src="/assets/img/backgroundItinieraries.jpg"
+        alt="backgroundItinieraries"
+      />
+
+      <div class="text-center intro page-section top-center">
         <h2 class="section-heading text-uppercase">
           {{ infoPage.introduction }}
         </h2>
@@ -9,19 +15,24 @@
           {{ infoPage.description }}
         </h3>
       </div>
-      <div class="row text-center gy-5 gx-10">
-        <card-element
-          v-for="(itinerary, itineraryIndex) of itineraryList"
-          :id="itinerary.id"
-          :key="`poi-index-${itineraryIndex}`"
-          :name="itinerary.title"
-          :img="itinerary.img"
-          :address="''"
-          :cardtype="'itinerary'"
-        />
-      </div>
     </div>
-  </section>
+
+    <section id="pois" class="page-section">
+      <div class="container">
+        <div class="row text-center gy-5 gx-10">
+          <card-element
+            v-for="(itinerary, itineraryIndex) of itineraryList"
+            :id="itinerary.id"
+            :key="`poi-index-${itineraryIndex}`"
+            :name="itinerary.title"
+            :img="itinerary.img"
+            :address="''"
+            :cardtype="'itinerary'"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>

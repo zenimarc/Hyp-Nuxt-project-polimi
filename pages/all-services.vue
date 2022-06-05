@@ -1,14 +1,24 @@
 <template>
-  <section id="services" class="page-section">
-    <div class="container">
-      <div class="text-center">
+  <div>
+    <div>
+      <img
+        class="back"
+        src="/assets/img/backgroundService.jpg"
+        alt="backgroundService"
+      />
+
+      <div class="text-center intro page-section top-center">
         <h2 class="section-heading text-uppercase">
           {{ infoPage.introduction }}
         </h2>
         <h3 class="section-subheading text-muted">
           {{ infoPage.description }}
         </h3>
+      </div>
+    </div>
 
+    <section id="services" class="page-section">
+      <div class="container">
         <div class="row text-center gy-3">
           <FilterButtons
             id="filterButtons"
@@ -38,8 +48,8 @@
           />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>
