@@ -13,17 +13,24 @@
         <div
           v-for="(about, aboutIndex) of aboutList"
           :key="`about${aboutIndex}`"
-          class="row gy-5"
+          class="container"
         >
-          <div class="col-lg-6 ms-auto description-wrapper">
-            <h4 class="visitInformation">{{ about.descriptionCity }}</h4>
-            <p class="description">
-              {{ about.textCity }}
-            </p>
+          <div class="row gy-5">
+            <div class="col-lg-9 ms-auto description-wrapper">
+              <h4 class="visitInformation">{{ about.descriptionCity }}</h4>
+              <p class="description">
+                {{ about.textCity }}
+              </p>
+            </div>
+            <div class="col-lg-3">
+              <img
+                class="townImg"
+                :src="about.img"
+                :alt="`${about.descriptionCity}`"
+              />
+            </div>
           </div>
-          <div class="col-lg-6 image-wrapper e">
-            <img :src="about.img" :alt="`${about.descriptionCity}`" />
-          </div>
+          <br />
         </div>
       </div>
     </section>
@@ -92,7 +99,6 @@ export default {
     const townInfo = new Array(2)
 
     for (let i = 0; i < 2; i++) {
-      console.log('~~~~~~~' + JSON.stringify(data2.descriptionCity[i]))
       townInfo[i] = {
         descriptionCity: data2.descriptionCity[i],
         textCity: data2.textCity[i],
@@ -120,5 +126,8 @@ hr {
   margin-bottom: 1rem;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.townImg {
+  width: 100%;
 }
 </style>
