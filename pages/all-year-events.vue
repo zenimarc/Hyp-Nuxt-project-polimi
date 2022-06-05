@@ -53,7 +53,7 @@ export default {
     const { data } = await $axios.get('/api/events')
     const data2 = (await $axios.get('/api/eventType')).data
     const data3 = (await $axios.get('/api/page-info/events/')).data
-    const categories = [{ id: 0, name: 'All Events' }].concat(data2)
+    const categories = [{ id: 0, name: 'Tutti gli eventi' }].concat(data2)
     return {
       eventList: data,
       eventType: categories,
