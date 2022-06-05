@@ -8,10 +8,10 @@ export default async (models) => {
       involvedPois: [1, 2, 3, 4, 5, 6, 7],
     },
     {
-      title: 'Per le vie del centro',
+      title: 'Esplora le vie del centro',
       durationMinutes: 120,
-      shortDescription: `Ammira l'unicità delle vie del centro`,
-      involvedPois: [8, 10, 11],
+      shortDescription: `Scopri il cuore della città`,
+      involvedPois: [2, 3, 8, 11, 12],
     },
     {
       title: `Uno dei borghi più belli d'Italia: Castelmola`,

@@ -7,7 +7,6 @@
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
-        @click.once="initActive()"
       >
         {{ categories[activeNumber].name }}
       </button>
@@ -17,7 +16,9 @@
           :key="`category${categoryIndex}`"
         >
           <a
-            class="dropdown-item category"
+            :class="`dropdown-item category ${
+              activeNumber === categoryIndex ? 'active' : ''
+            }`"
             href="#"
             @click="readClick(category.id)"
             >{{ category.name }}</a
@@ -36,15 +37,17 @@ export default {
       type: Array[JSON],
       required: true,
     },
-  },
-  data() {
-    return {
-      activeNumber: 0,
-    }
+    activeNumber: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
   },
   methods: {
     initActive() {
-      document.getElementsByClassName('category')[0].classList.add('active')
+      document
+        .getElementsByClassName('category')
+        [this.activeNumber].classList.add('active')
     },
     readClick(id) {
       if (id !== this.activeNumber) {
@@ -53,7 +56,6 @@ export default {
           [this.activeNumber].classList.remove('active')
         document.getElementsByClassName('category')[id].classList.add('active')
         this.$emit('categoryChanged', id)
-        this.activeNumber = id
       }
     },
   },

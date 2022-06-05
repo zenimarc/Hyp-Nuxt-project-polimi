@@ -1,10 +1,10 @@
 /* eslint-disable unicorn/escape-case */
-import {
+/* import {
   mergeServiceJsonId,
   formatData,
   sorting,
   convertAddressToCoords,
-} from '../../script'
+} from '../../script' */
 
 export default async (models) => {
   // Service types
@@ -39,7 +39,7 @@ export default async (models) => {
   for (let i = 0; i < serviceTypeList.length; i++)
     serviceType[i] = await models.ServiceType.create(serviceTypeList[i])
 
-  let servicesList = new Array(0)
+  /*  let servicesList = new Array(0)
   const pharmaciesJson = require('./json/pharmacies')
   const restaurantsJson = require('./json/restaurants')
   const atmsJson = require('./json/atms')
@@ -47,7 +47,7 @@ export default async (models) => {
   const coffeeJson = require('./json/coffee')
   const museumsJson = require('./json/museums')
 
-  servicesList = mergeServiceJsonId(
+   servicesList = mergeServiceJsonId(
     mergeServiceJsonId(
       mergeServiceJsonId(
         mergeServiceJsonId(
@@ -72,7 +72,7 @@ export default async (models) => {
     element.coords = await convertAddressToCoords(element.address)
 
   servicesList = formatData(servicesList)
-  servicesList = sorting(servicesList)
+  servicesList = sorting(servicesList) */
 
-  await models.Service.bulkCreate(servicesList)
+  await models.Service.bulkCreate(require('./json/services'))
 }

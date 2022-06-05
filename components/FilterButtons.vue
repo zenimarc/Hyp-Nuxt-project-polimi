@@ -15,7 +15,7 @@
           class="btn-check category"
           name="btnradio"
           autocomplete="off"
-          :checked="category.id === 0 ? 1 : 0"
+          :checked="category.id === activeNumber ? 1 : 0"
           @click="readClick(category.id)"
         />
         <label
@@ -36,11 +36,11 @@ export default {
       type: Array[JSON],
       required: true,
     },
-  },
-  data() {
-    return {
-      activeNumber: 0,
-    }
+    activeNumber: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
   },
   methods: {
     readClick(id) {
@@ -50,7 +50,6 @@ export default {
         ].checked = false
         document.getElementsByClassName('category')[id].checked = true
         this.$emit('categoryChanged', id)
-        this.activeNumber = id
       }
     },
   },

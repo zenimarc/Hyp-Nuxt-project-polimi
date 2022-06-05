@@ -1,9 +1,7 @@
 <template>
   <div class="main-page">
     <the-header class="navbar-shrink" />
-    <body>
-      <nuxt />
-    </body>
+    <nuxt />
     <the-footer />
   </div>
 </template>
@@ -17,8 +15,3 @@ export default {
   },
 }
 </script>
-<style scoped>
-body {
-  height: 100%;
-}
-</style>

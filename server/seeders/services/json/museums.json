@@ -212,7 +212,7 @@
         "saturday": "3–7PM"
       }
     ],
-    "img": "https://www.museionline.info/component/ajax/?p=image&src=WyJpbWFnZXNcL211c2VpMlwvbXVzYXJ0cG9wdGFvcm1uaWEuanBnIixbWyJkb1Jlc2l6ZSIsWzkwMCw0MjAsOTAwLDQyMF1dLFsiZG9Dcm9wIixbOTAwLDQyMCwwLDBdXSxbInR5cGUiLFsid2VicCIsIjg1Il1dXV0%3D&hash=e61064c5756ae4d0be8a2857aea4cd37",
+    "img": "https://www.insidemessina.it/images/MUSEO-DI-ARTE-E-TRAD-TAO_.png",
     "sunday": [
       {
         "sunday": "10AM–2PM"
@@ -221,45 +221,6 @@
         "sunday": "3–7PM"
       }
     ]
-  },
-  {
-    "order": "1654159609-2","serviceLink": "https://www.google.com/maps/place/Museum+and+Archaeological+Area+of+%E2%80%8B%E2%80%8BNaxos/data=!4m6!3m5!1s0x131411cc51426c8f:0xc559064de123809c!8m2!3d37.823978!4d15.2734892!16s%2Fg%2F1twxnprd?authuser=0&hl=en&rclk=1",
-    "name": "Museum and Archaeological Area of ​​Naxos",
-    "address": "Via Schisò, 98034 Giardini Naxos ME",
-    "monday": "",
-    "tuesday": "",
-    "wednesday": "",
-    "thursday": "",
-    "friday": "",
-    "saturday": "",
-    "img": "https://lh5.googleusercontent.com/p/AF1QipP1-Y3XVivOhWClKhTGxPujaUwXcy-1-khLuHA=w408-h306-k-no",
-    "sunday": ""
-  },
-  {
-    "order": "1654159623-6","serviceLink": "https://www.google.com/maps/place/Ex+chiesa+di+S.+Agostino/data=!4m6!3m5!1s0x1314114f505b4543:0xb2ab399cfeb7296!8m2!3d37.8509586!4d15.2828454!16s%2Fg%2F11p5p61yfn?authuser=0&hl=en&rclk=1",
-    "name": "Ex chiesa di S. Agostino",
-    "address": "Piazza Duomo, 1, 98039 Taormina ME",
-    "monday": "",
-    "tuesday": "",
-    "wednesday": "",
-    "thursday": "",
-    "friday": "",
-    "saturday": "",
-    "img": "https://lh5.googleusercontent.com/p/AF1QipOfMa5f0JpDj4cVjfnJcllFftXUoveO_UW74IUD=w408-h544-k-no",
-    "sunday": ""
-  },
-  {
-    "order": "1654159633-9","serviceLink": "https://www.google.com/maps/place/Modern+Art+Exposition+Taormina/data=!4m6!3m5!1s0x13141133579c8c41:0x5f06d0dd8aada37f!8m2!3d37.8514503!4d15.282171!16s%2Fg%2F11smrdd84h?authuser=0&hl=en&rclk=1",
-    "name": "Modern Art Exposition Taormina",
-    "address": "Via Carmine, 7, 98039 Taormina ME",
-    "monday": "",
-    "tuesday": "",
-    "wednesday": "",
-    "thursday": "",
-    "friday": "",
-    "saturday": "",
-    "img": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=pNznkP22iupTaR2BVNjdzA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=328.86127&pitch=0&thumbfov=100",
-    "sunday": ""
   },
   {
     "order": "1654159630-8","serviceLink": "https://www.google.com/maps/place/Museo+delle+Arti+e+tradizioni+popolari/data=!4m6!3m5!1s0x131411a1bfff0d95:0x7ea09df397292110!8m2!3d37.853939!4d15.2882042!16s%2Fg%2F11f400nnw2?authuser=0&hl=en&rclk=1",

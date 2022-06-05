@@ -155,8 +155,7 @@ const pageContentObject = {
     title: 'About',
     introduction: `IL NOSTRO TEAM`,
     description: `Piacere di fare la tua conoscenza! Esplora i nostri social per più informazioni!`,
-    footer:
-      'Cerchiamo di migliorare sempre per offrirti il miglior contenuto possibile!',
+    footer: 'Siam sempre pronti a migliorare per offrirti nuovi contenuti!',
   },
   services: {
     title: 'Services',
