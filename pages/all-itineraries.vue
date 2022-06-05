@@ -54,5 +54,6 @@ export default {
 <style scoped>
 .intro {
   background-image: url('/assets/img/backgroundItinieraries.jpg');
+  background-position: center 45%;
 }
 </style>
