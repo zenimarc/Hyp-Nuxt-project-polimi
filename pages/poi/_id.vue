@@ -32,8 +32,8 @@
       </div>
     </div> -->
     <template v-if="hostedEvents.length > 0">
+      <h2 class="text-center mt-5 mb-4">Scopri gli eventi</h2>
       <div class="row text-center gy-5 gx-10">
-        <h2>Scopri gli eventi</h2>
         <card-element
           v-for="(event, eventIndex) of hostedEvents"
           :id="event.id"
@@ -58,7 +58,6 @@ export default {
   async asyncData({ route, $axios }) {
     const { id } = route.params
     const { data } = await $axios.get('/api/poi/' + id)
-    console.log(data)
     return {
       id: data.id,
       name: data.nonDetailedName,
