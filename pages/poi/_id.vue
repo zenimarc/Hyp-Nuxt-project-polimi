@@ -22,7 +22,7 @@
       </div>
     </div>
     <div id="map" class="map-container mt-4"></div>
-    <div class="row">
+    <!-- <div class="row">
       <div
         v-for="(service, serviceIndex) of nearServices"
         :key="`poi-index-${serviceIndex}`"
@@ -30,7 +30,21 @@
         {{ service.name }} is at
         {{ service.IsSurrounded.distanceMeters }} meters
       </div>
-    </div>
+    </div> -->
+    <template v-if="hostedEvents.length > 0">
+      <div class="row text-center gy-5 gx-10">
+        <h2>Scopri gli eventi</h2>
+        <card-element
+          v-for="(event, eventIndex) of hostedEvents"
+          :id="event.id"
+          :key="`event-index-${eventIndex}`"
+          :name="event.name"
+          :img="event.images[0]"
+          :address="''"
+          :cardtype="'event'"
+        />
+      </div>
+    </template>
   </div>
 </template>
 
@@ -44,6 +58,7 @@ export default {
   async asyncData({ route, $axios }) {
     const { id } = route.params
     const { data } = await $axios.get('/api/poi/' + id)
+    console.log(data)
     return {
       id: data.id,
       name: data.nonDetailedName,
@@ -53,6 +68,7 @@ export default {
       address: data.address,
       images: data.images,
       nearServices: data.services,
+      hostedEvents: data.events,
     }
   },
   head() {
@@ -69,6 +85,7 @@ export default {
     const poi = {
       name: this.name,
       address: this.address,
+      stringCoords: this.coords,
       coords: this.parseCoords(this.coords),
     }
     const services = this.nearServices
@@ -105,7 +122,10 @@ export default {
       // Add a click listener for poi marker, and set up the info window.
       poiMarker.addListener('click', () => {
         infoWindow.close()
-        infoWindow.setContent(poiMarker.getTitle())
+        infoWindow.setContent(
+          `<b>${poi.name}</b><br><a href='https://www.google.com/maps/search/${poi.stringCoords}'
+           target='_blank'>Ottieni indicazioni</a>`
+        )
         infoWindow.open(poiMarker.getMap(), poiMarker)
       })
 

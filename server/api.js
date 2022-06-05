@@ -109,6 +109,7 @@ async function initializeDatabaseConnection() {
   PointOfInterest.belongsToMany(Itinerary, { through: Involves })
   PointOfInterest.belongsToMany(Service, { through: isSurrounded })
   Service.belongsToMany(PointOfInterest, { through: isSurrounded })
+  PointOfInterest.hasMany(Event)
   Event.belongsTo(PointOfInterest)
   EventType.hasMany(Event)
   Event.belongsTo(EventType)
@@ -186,6 +187,7 @@ async function runMainApi() {
       where: { id },
       include: [
         { model: models.Service, include: [{ model: models.ServiceType }] },
+        { model: models.Event },
       ],
     })
     return res.json(result)
