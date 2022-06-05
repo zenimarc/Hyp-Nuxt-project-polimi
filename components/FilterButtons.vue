@@ -63,18 +63,5 @@ export default {
   color: #212529;
   margin-right: 5 px;
 }
-.btn-check:checked + .btn-outline-primary,
-.btn-check:active + .btn-outline-primary,
-.btn-outline-primary:active,
-.btn-outline-primary.active,
-.btn-outline-primary.dropdown-toggle.show,
-.activeInput {
-  color: #fff;
-  background-color: #212529;
-  border-color: #212529;
-}
-.btn-check:focus + .btn-outline-primary,
-.btn-outline-primary:focus {
-  box-shadow: 0 0 0 0.25rem #212529;
-}
+
 </style>

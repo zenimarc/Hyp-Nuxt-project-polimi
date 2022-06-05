@@ -181,7 +181,7 @@ const pageContentObject = {
   events: {
     title: 'Events',
     introduction: 'EVENTI',
-    description: `Non perderti gli eventi della città!`,
+    description: `Non perderti gli eventi della città! Musei, mostre, film e concerti e molto altro ancora!`,
   },
 }
 
