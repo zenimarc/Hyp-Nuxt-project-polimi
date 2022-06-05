@@ -91,12 +91,12 @@ export default {
     const services = this.nearServices
     const parseCoordsFunction = this.parseCoords
 
-    function pinSymbol(color) {
+    function pinSymbol(color, strokeColor = '#000') {
       return {
         path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z',
         fillColor: color,
         fillOpacity: 1,
-        strokeColor: '#000',
+        strokeColor,
         strokeWeight: 2,
         scale: 1.5,
       }
@@ -136,13 +136,13 @@ export default {
           map,
           title: `${service.name}`,
           icon: {
-            ...pinSymbol('black'),
+            ...pinSymbol('#37323E', '#37323E'),
             labelOrigin: new window.google.maps.Point(0, -29),
           },
           label: {
             text: service.serviceType.mapMarkerIcon, // codepoint from https://fonts.google.com/icons
             fontFamily: 'Material Icons',
-            color: '#ffffff',
+            color: '#fff',
             fontSize: '20px',
           },
           optimized: false,
