@@ -140,9 +140,23 @@ const pageContentObject = {
   },
   about: {
     title: 'About',
-    introduction: `IL NOSTRO TEAM`,
+    introduction: `ABOUT: IL NOSTRO TEAM`,
     description: `Piacere di fare la tua conoscenza! Esplora i nostri social per più informazioni!`,
     footer: 'Siam sempre pronti a migliorare per offrirti nuovi contenuti!',
+    introductionCity: `ABOUT: TAORMINA`,
+    subtitleCity: `Alcuni cenni sulla storia di questa magnifica città!`,
+    descriptionCity: [
+      `Taormina nell'antichità`,
+      `Taormina dal Medioevo ad oggi`,
+    ],
+    textCity: [
+      'I siculi si insediarono sul monte Tauro vicino l’attuale castello e instaurarono buoni rapporti con la nuova colonia greca di Naxos nel 735 a.C. Quando Dionisio I di Siracusa distrusse Naxos, i siculi concessero rifugio ai coloni greci prima che il tiranno di Siracusa conquistasse l’insediamento greco di Tauromenion. Con Andromaco, padre dello storico greco Timeo, i greci governarono la città per la prima volta nel 358 a.C. Come alleata di Siracusa, la città visse un periodo di crescita economica e culturale prima di essere conquistata prima dai cartaginesi e dopo la prima guerra punica dai romani. Come “civitas foederata” la romana Tauromenium sperimentò un altro periodo molto prospero. Nella prima guerra servile, Taormina fu una delle principali roccaforti degli schiavi e si alleò con Sesto Pompeo dopo l’assasinio di Giulio Cesare. L’alleanza con Sesto Pompeo ha portato alla deportazione della popolazione dopo la vittoria di Ottaviano. ',
+      'Durante la conquista araba della Sicilia, Taormina divenne temporaneamente la capitale della provincia bizantina siciliana, prima di essere l’ultima città siciliana a cadere in mano agli arabi nel 902 d.C. Gli arabi distrussero la città dopo due rivolte nel 962 e nel 969 e la ricostruirono. Sotto i normanni, Taormina acquistò importanza – nel 1410, il parlamento si incontrò per scegliere il nuovo re. Tuttavia, gli spagnoli e i francesi misero in moto il declino di Taormina finchè la città non venne riscoperta come meta turistica nel XIX secolo. Con l’aumentare del turismo la città ritrovò il suo splendore e divenne uno dei più conosciuti centri turistici della Sicilia orientale. ',
+    ],
+    img: [
+      'https://www.comune.taormina.me.it/la-citt/storia/immagini/teatrogreco_bn.jpg',
+      'https://www.archetravel.com/wp-content/uploads/2020/05/teatro-di-taormina-03.jpg',
+    ],
   },
   services: {
     title: 'Services',
