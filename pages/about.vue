@@ -15,9 +15,9 @@
           :key="`about${aboutIndex}`"
           class="container"
         >
+          <h4 class="visitInformation">{{ about.descriptionCity }}</h4>
           <div class="row gy-5">
             <div class="col-lg-9 ms-auto description-wrapper">
-              <h4 class="visitInformation">{{ about.descriptionCity }}</h4>
               <p class="description">
                 {{ about.textCity }}
               </p>
