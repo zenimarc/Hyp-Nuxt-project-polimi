@@ -5,12 +5,10 @@
       role="group"
       aria-label="Basic radio toggle button group"
     >
-      <div
-        v-for="(category, categoryIndex) of categories"
-        :key="`category${categoryIndex}`"
-      >
+      <template v-for="(category, categoryIndex) of categories">
         <input
           :id="`btnradio${category.id}`"
+          :key="`inputcategory${categoryIndex}`"
           type="radio"
           class="btn-check category"
           name="btnradio"
@@ -19,11 +17,12 @@
           @click="readClick(category.id)"
         />
         <label
+          :key="`category${categoryIndex}`"
           class="btn btn-outline-primary"
           :for="`btnradio${category.id}`"
           >{{ category.name }}</label
         >
-      </div>
+      </template>
     </div>
   </div>
 </template>
