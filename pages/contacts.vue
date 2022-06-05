@@ -2,9 +2,9 @@
   <section id="contact" class="page-section">
     <div class="container">
       <div class="text-center">
-        <h2 class="section-heading text-uppercase">
+        <h1 class="section-heading text-uppercase">
           {{ infoPage.introduction }}
-        </h2>
+        </h1>
         <h3 class="section-subheading text-muted">
           {{ infoPage.description }}
         </h3>

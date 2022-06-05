@@ -114,7 +114,7 @@ h1, .h1 {
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
   }
 }
 
@@ -11597,8 +11597,14 @@ p {
   object-fit: cover;
 }
 .intro {
-  position: absolute;
-  top: 70px;
-  right: 0;
-  left: 0;
+  height: 500px;
+  background-size: cover;
+  background-position: center 30%;
+}
+
+.textColorInverted {
+  color: white!important
+}
+.intro h1 {
+  color: #37323E;
 }

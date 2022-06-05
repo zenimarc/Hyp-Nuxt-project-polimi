@@ -1,17 +1,11 @@
 <template>
   <div>
     <div>
-      <img
-        class="back"
-        src="/assets/img/backgroundPoi.jpg"
-        alt="backgroundPoi"
-      />
-
       <div class="text-center intro page-section top-center">
-        <h2 class="section-heading text-uppercase">
+        <h1 class="section-heading text-uppercase textColorInverted">
           {{ infoPage.introduction }}
-        </h2>
-        <h3 class="section-subheading text-muted">
+        </h1>
+        <h3 class="section-subheading textColorInverted">
           {{ infoPage.description }}
         </h3>
       </div>
@@ -55,3 +49,9 @@ export default {
   },
 }
 </script>
+<style scoped>
+.intro {
+  background-image: url('/assets/img/backgroundPoi.jpg');
+  background-position: center 0;
+}
+</style>

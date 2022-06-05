@@ -1,16 +1,10 @@
 <template>
   <div>
     <div>
-      <img
-        class="back"
-        src="/assets/img/backgroundEvents.jpg"
-        alt="backgroundItinieraries"
-      />
-
       <div class="text-center intro page-section top-center">
-        <h2 class="section-heading text-uppercase">
+        <h1 class="section-heading text-uppercase">
           {{ infoPage.introduction }}
-        </h2>
+        </h1>
         <h3 class="section-subheading text-muted">
           {{ infoPage.description }}
         </h3>
@@ -89,8 +83,9 @@ export default {
 }
 </script>
 
-<style>
-.text-center {
-  margin-top: 0.5rem;
+<style scoped>
+.intro {
+  background-image: url('/assets/img/backgroundEvents.jpg');
+  background-position: center;
 }
 </style>
