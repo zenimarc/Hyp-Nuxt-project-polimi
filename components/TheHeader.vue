@@ -7,7 +7,7 @@
   >
     <div class="container">
       <nuxt-link to="/" class="navbar-brand"
-        ><img src="/assets/img/navbar-logo.svg" alt="logo"
+        ><img src="/assets/img/navbar-logo.png" alt="logo"
       /></nuxt-link>
       <button
         class="navbar-toggler"
@@ -122,8 +122,8 @@ export default {
   font-size: 32px;
 }
 #mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   background-color: #212529;
 }
 #mainNav .navbar-toggler {
@@ -145,7 +145,7 @@ export default {
   text-transform: uppercase;
 }
 #mainNav .navbar-brand img {
-  height: 1.5rem;
+  height: 3rem;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -157,13 +157,13 @@ export default {
 }
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ffc800;
+  color: #ff7850;
 }
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border: none;
     background: linear-gradient(
       180deg,
@@ -177,20 +177,23 @@ export default {
     transition: font-size 0.3s ease-in-out;
   }
   #mainNav .navbar-brand img {
-    height: 2rem;
+    height: 4rem;
     transition: height 0.3s ease-in-out;
   }
   #mainNav.navbar-shrink {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: #212529;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background: #fff;
+  }
+  #mainNav.navbar-shrink .nav-item .nav-link {
+    color: #000;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
   }
   #mainNav.navbar-shrink .navbar-brand svg,
   #mainNav.navbar-shrink .navbar-brand img {
-    height: 1.5rem;
+    height: 3.5rem;
   }
   #mainNav .navbar-nav .nav-item {
     margin-right: 1rem;
