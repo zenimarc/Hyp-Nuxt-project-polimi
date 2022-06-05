@@ -1,6 +1,5 @@
 <template>
   <div>
-    <the-header class="homepageNav" :is-fixed-pos="true" />
     <header class="masthead">
       <div class="container">
         <div class="masthead-subheading">Explore the city!</div>
@@ -28,7 +27,6 @@ export default {
   components: {
     CustomPage,
   },
-  layout: 'empty',
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/page-info/index')
     const title = data.title
