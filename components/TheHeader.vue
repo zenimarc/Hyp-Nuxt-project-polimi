@@ -122,9 +122,10 @@ export default {
   font-size: 32px;
 }
 #mainNav {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   background-color: #fff;
+  transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -169,6 +170,7 @@ export default {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
       rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     transition: box-shadow 0.3s ease-in-out;
+    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
   #mainNav.navbar-shrink .nav-item .nav-link {
     color: #000;
