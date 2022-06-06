@@ -118,5 +118,8 @@ header.masthead .masthead-heading {
     height: 420px;
     object-fit: cover;
   }
+  .btn {
+    background-color: #fd7e14;
+  }
 }
 </style>

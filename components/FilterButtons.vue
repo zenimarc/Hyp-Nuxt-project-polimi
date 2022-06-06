@@ -57,8 +57,8 @@ export default {
 <style scoped>
 .btn-outline-primary {
   background-color: #fff;
-  border-color: #212529;
-  color: #212529;
+  border-color: #fd7e14;
+  color: #fd7e14;
   margin-right: 5 px;
 }
 .btn-check:checked + .btn-outline-primary,
@@ -68,11 +68,11 @@ export default {
 .btn-outline-primary.dropdown-toggle.show,
 .activeInput {
   color: #fff;
-  background-color: #212529;
-  border-color: #212529;
+  background-color: #fd7e14;
+  border-color: #fd7e14;
 }
 .btn-check:focus + .btn-outline-primary,
 .btn-outline-primary:focus {
-  box-shadow: 0 0 0 0.25rem #212529;
+  box-shadow: 0 0 0 0.25rem #fd7e14;
 }
 </style>

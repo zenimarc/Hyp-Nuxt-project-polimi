@@ -164,15 +164,13 @@ table {
   border: solid #ced4da 2px;
 }
 .headCell {
-  border-bottom: solid #212529 1px;
   border-width: 1px;
-  background-color: #212529;
-  color: #ced4da;
+  background-color: #fd7e14;
+  color: #fff;
 }
 .bodyCell {
-  border-bottom: solid #212529 1px;
-  border-width: 1px;
-  background-color: #ced4da;
+  background-color: #f3b07c;
+  color: #fff;
 }
 td,
 th {
@@ -180,9 +178,9 @@ th {
   vertical-align: middle;
 }
 .btn-primary {
-  background-color: #212529;
+  background-color: #fd7e14;
   border-color: #212529;
-  color: #ced4da;
+  color: #fff;
   width: 100%;
   position: absolute;
   bottom: 0;
