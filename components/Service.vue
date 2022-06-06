@@ -149,10 +149,10 @@ export default {
 table {
   border-radius: 6px;
   border-collapse: separate;
-  border: solid #212529 1px;
+  border: solid #ced4da 1px;
 }
 .card {
-  border-radius: 5%;
+  border-radius: 1rem;
   border: solid #ced4da 2px;
 }
 #serviceImage {
@@ -179,12 +179,14 @@ th {
 }
 .btn-primary {
   background-color: #fd7e14;
-  border-color: #212529;
   color: #fff;
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
+  border-radius: 0.9rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 .card {
   height: 500px;
