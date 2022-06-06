@@ -13,7 +13,7 @@
 
     <section id="pois" class="page-section">
       <div class="container">
-        <div class="row text-center gy-5 gx-10">
+        <div class="row text-center gy-5">
           <card-element
             v-for="(itinerary, itineraryIndex) of itineraryList"
             :id="itinerary.id"
