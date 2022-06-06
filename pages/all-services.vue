@@ -58,9 +58,6 @@ export default {
     const data2 = (await $axios.get('/api/page-info/services/')).data
     const data3 = (await $axios.get('/api/servicesType')).data
     const categories = [{ id: 0, name: 'Tutti' }].concat(data3)
-    /*     console.log(
-      '~~~~~~~~~~~~~~~' + JSON.stringify(data) + '~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-    ) */
     return {
       servicesList: data,
       infoPage: data2,

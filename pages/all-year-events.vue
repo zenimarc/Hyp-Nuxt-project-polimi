@@ -26,17 +26,19 @@
             :active-number="idCategory"
             @categoryChanged=";(idCategory = $event), updateData()"
           />
-          <div class="row text-center gy-5 gx-10">
-            <card-element
-              v-for="(event, eventIndex) of eventList"
-              :id="event.id"
-              :key="`event-index-${eventIndex}`"
-              :name="event.name"
-              :img="event.images[0]"
-              :address="event.practicalInfo"
-              :cardtype="'event'"
-            />
-          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <card-element
+            v-for="(event, eventIndex) of eventList"
+            :id="event.id"
+            :key="`event-index-${eventIndex}`"
+            :name="event.name"
+            :img="event.images[0]"
+            :address="event.practicalInfo"
+            :cardtype="'event'"
+          />
         </div>
       </div>
     </section>
