@@ -11,22 +11,31 @@
         >
       </div>
     </header>
-    <custom-page
-      id="mainContentHome"
-      :title="title"
-      :image="image"
-      :description="description"
-    />
+    <hr />
+    <div id="mainContentHome" class="text-center">
+      <div class="row mb-4">
+        <div class="col">
+          <img class="preview" src="/assets/img/backgroundEvents.jpg" />
+        </div>
+        <div class="col">
+          <img class="preview" src="/assets/img/backgroundItineraries.jpg" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <img class="preview" src="/assets/img/backgroundPoi.jpg" />
+        </div>
+        <div class="col">
+          <img class="preview" src="/assets/img/backgroundService.jpg" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import CustomPage from '~/components/CustomPage.vue'
 export default {
   name: 'IndexPage',
-  components: {
-    CustomPage,
-  },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/page-info/index')
     const title = data.title
@@ -60,11 +69,12 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url('/assets/img/header-bg.webp');
+  background-image: url('/assets/img/backgroundHome1.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
+  height: 900px;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -101,6 +111,12 @@ header.masthead .masthead-heading {
     font-weight: 700;
     line-height: 4.5rem;
     margin-bottom: 4rem;
+  }
+  .preview {
+    border-radius: 1%;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
   }
 }
 </style>
