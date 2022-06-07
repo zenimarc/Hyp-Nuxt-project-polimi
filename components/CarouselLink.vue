@@ -23,7 +23,7 @@
         :key="elIndex"
         class="carousel-item"
         :class="{ active: elIndex === 0 }"
-        :aria-current="elIndex === 0 ? 'true' : ''"
+        :aria-current="elIndex === 0 ? 'true' : 'false'"
         data-bs-interval="10000"
       >
         <img :src="`${el.img}`" class="d-block w-100" :alt="`${el.name}`" />
@@ -102,6 +102,9 @@ img {
 .carousel-item {
   height: 55vh;
   width: 100%;
+}
+.carousel-inner {
+  height: inherit;
 }
 
 .carousel-control-prev-icon,
