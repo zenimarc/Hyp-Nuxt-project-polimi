@@ -99,23 +99,15 @@ img {
   margin-top: 20px;
   font-size: 1vw;
 }
+.carousel-item {
+  height: 55vh;
+  width: 100%;
+}
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon,
 .carousel-bar {
   width: 75px;
   height: 75px;
-}
-@media (max-width: 905px) {
-  .carousel-item {
-    height: 100%;
-    width: 100%;
-  }
-}
-@media (min-width: 905px) {
-  .carousel-item {
-    height: 55vh;
-    width: 100%;
-  }
 }
 </style>
