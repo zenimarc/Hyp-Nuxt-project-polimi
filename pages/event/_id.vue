@@ -6,9 +6,7 @@
         <p class="description">
           {{ shortDescription }}
         </p>
-        <p class="infos fw-bold">
-          Dove e Quando : {{ practicalInfo }}
-        </p>
+        <p class="infos fw-bold">Dove e Quando : {{ practicalInfo }}</p>
         <button
           type="button"
           class="btn btn-outline-secondary btn-lg px-4"
@@ -17,9 +15,7 @@
           Back to events list
         </button>
       </div>
-      <carousel-element
-      :images="images"
-      />
+      <carousel-element :images="images" />
     </div>
   </div>
 </template>
@@ -53,14 +49,14 @@ export default {
   },
   methods: {
     backToList() {
-      this.$router.push('/all-year-events')
+      this.$router.back()
     },
   },
 }
 </script>
 
 <style scoped>
-  .container{
-    margin-top: 50px;
-  }
+.container {
+  margin-top: 50px;
+}
 </style>

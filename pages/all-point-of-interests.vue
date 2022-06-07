@@ -1,27 +1,32 @@
 <template>
-  <section id="pois" class="page-section">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">
+  <div>
+    <div>
+      <div class="text-center intro page-section top-center">
+        <h1 class="section-heading text-uppercase textColorInverted">
           {{ infoPage.introduction }}
-        </h2>
-        <h3 class="section-subheading text-muted">
+        </h1>
+        <h3 class="section-subheading textColorInverted">
           {{ infoPage.description }}
         </h3>
       </div>
-      <div class="row text-center gy-5 gx-10">
-        <card-element
-          v-for="(poi, poiIndex) of poiList"
-          :id="poi.id"
-          :key="`poi-index-${poiIndex}`"
-          :name="poi.nonDetailedName"
-          :img="poi.images[0]"
-          :address="poi.address"
-          :cardtype="'poi'"
-        />
-      </div>
     </div>
-  </section>
+
+    <section id="pois" class="page-section">
+      <div class="container">
+        <div class="row text-center gy-5">
+          <card-element
+            v-for="(poi, poiIndex) of poiList"
+            :id="poi.id"
+            :key="`poi-index-${poiIndex}`"
+            :name="poi.nonDetailedName"
+            :img="poi.images[0]"
+            :address="poi.address"
+            :cardtype="'poi'"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -44,3 +49,9 @@ export default {
   },
 }
 </script>
+<style scoped>
+.intro {
+  background-image: url('/assets/img/backgroundPoi.jpg');
+  background-position: center 0;
+}
+</style>

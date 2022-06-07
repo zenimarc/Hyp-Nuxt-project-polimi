@@ -1,27 +1,35 @@
 <template>
-  <section id="events" class="page-section">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">
+  <div>
+    <div>
+      <div class="text-center intro page-section top-center">
+        <h1 class="section-heading text-uppercase">
           {{ infoPage.introduction }}
-        </h2>
+        </h1>
         <h3 class="section-subheading text-muted">
           {{ infoPage.description }}
         </h3>
+      </div>
+    </div>
 
-        <FilterButtons
-          id="filterButtons"
-          :categories="eventType"
-          :active-number="idCategory"
-          @categoryChanged=";(idCategory = $event), updateData()"
-        />
-        <FilterDropdown
-          id="filterDropdown"
-          :categories="eventType"
-          :active-number="idCategory"
-          @categoryChanged=";(idCategory = $event), updateData()"
-        />
-        <div class="row text-center gy-5 gx-10">
+    <section id="events" class="page-section">
+      <div class="container">
+        <div class="row text-center gy-3">
+          <FilterButtons
+            id="filterButtons"
+            :categories="eventType"
+            :active-number="idCategory"
+            @categoryChanged=";(idCategory = $event), updateData()"
+          />
+          <FilterDropdown
+            id="filterDropdown"
+            :categories="eventType"
+            :active-number="idCategory"
+            @categoryChanged=";(idCategory = $event), updateData()"
+          />
+          <br />
+          <br />
+          <br />
+          <br />
           <card-element
             v-for="(event, eventIndex) of eventList"
             :id="event.id"
@@ -33,8 +41,8 @@
           />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -77,8 +85,9 @@ export default {
 }
 </script>
 
-<style>
-.text-center {
-  margin-top: 0.5rem;
+<style scoped>
+.intro {
+  background-image: url('/assets/img/backgroundEvents.jpg');
+  background-position: center;
 }
 </style>

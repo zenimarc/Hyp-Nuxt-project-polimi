@@ -70,6 +70,6 @@ img:hover {
   overflow: hidden;
   border-radius: 5%;
   height: 19rem;
-  width: 15rem;
+  max-width: 16rem;
 }
 </style>

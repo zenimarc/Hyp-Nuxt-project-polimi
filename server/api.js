@@ -109,26 +109,13 @@ async function initializeDatabaseConnection() {
   PointOfInterest.belongsToMany(Itinerary, { through: Involves })
   PointOfInterest.belongsToMany(Service, { through: isSurrounded })
   Service.belongsToMany(PointOfInterest, { through: isSurrounded })
+  PointOfInterest.hasMany(Event)
   Event.belongsTo(PointOfInterest)
   EventType.hasMany(Event)
   Event.belongsTo(EventType)
 
-  const Cat = database.define('cat', {
-    name: DataTypes.STRING,
-    description: DataTypes.STRING,
-    breed: DataTypes.STRING,
-    img: DataTypes.STRING,
-  })
-  const Location = database.define('location', {
-    name: DataTypes.STRING,
-    city: DataTypes.STRING,
-  })
-  Location.hasMany(Cat)
-  Cat.belongsTo(Location)
   await database.sync({ force: true })
   return {
-    Cat,
-    Location,
     TeamMember,
     Social,
     PointOfInterest,
@@ -153,9 +140,23 @@ const pageContentObject = {
   },
   about: {
     title: 'About',
-    introduction: `IL NOSTRO TEAM`,
+    introduction: `ABOUT: IL NOSTRO TEAM`,
     description: `Piacere di fare la tua conoscenza! Esplora i nostri social per più informazioni!`,
     footer: 'Siam sempre pronti a migliorare per offrirti nuovi contenuti!',
+    introductionCity: `ABOUT: TAORMINA`,
+    subtitleCity: `Alcuni cenni sulla storia di questa magnifica città!`,
+    descriptionCity: [
+      `Taormina nell'antichità`,
+      `Taormina dal Medioevo ad oggi`,
+    ],
+    textCity: [
+      'I siculi si insediarono sul monte Tauro vicino l’attuale castello e instaurarono buoni rapporti con la nuova colonia greca di Naxos nel 735 a.C. Quando Dionisio I di Siracusa distrusse Naxos, i siculi concessero rifugio ai coloni greci prima che il tiranno di Siracusa conquistasse l’insediamento greco di Tauromenion. Con Andromaco, padre dello storico greco Timeo, i greci governarono la città per la prima volta nel 358 a.C. Come alleata di Siracusa, la città visse un periodo di crescita economica e culturale prima di essere conquistata prima dai cartaginesi e dopo la prima guerra punica dai romani. Come “civitas foederata” la romana Tauromenium sperimentò un altro periodo molto prospero. Nella prima guerra servile, Taormina fu una delle principali roccaforti degli schiavi e si alleò con Sesto Pompeo dopo l’assasinio di Giulio Cesare. L’alleanza con Sesto Pompeo ha portato alla deportazione della popolazione dopo la vittoria di Ottaviano. ',
+      'Durante la conquista araba della Sicilia, Taormina divenne temporaneamente la capitale della provincia bizantina siciliana, prima di essere l’ultima città siciliana a cadere in mano agli arabi nel 902 d.C. Gli arabi distrussero la città dopo due rivolte nel 962 e nel 969 e la ricostruirono. Sotto i normanni, Taormina acquistò importanza – nel 1410, il parlamento si incontrò per scegliere il nuovo re. Tuttavia, gli spagnoli e i francesi misero in moto il declino di Taormina finchè la città non venne riscoperta come meta turistica nel XIX secolo. Con l’aumentare del turismo la città ritrovò il suo splendore e divenne uno dei più conosciuti centri turistici della Sicilia orientale. ',
+    ],
+    img: [
+      'https://www.comune.taormina.me.it/la-citt/storia/immagini/teatrogreco_bn.jpg',
+      'https://www.archetravel.com/wp-content/uploads/2020/05/teatro-di-taormina-03.jpg',
+    ],
   },
   services: {
     title: 'Services',
@@ -194,21 +195,13 @@ async function runMainApi() {
     return res.json(result)
   })
 
-  app.get('/cats/:id', async (req, res) => {
-    const id = +req.params.id
-    const result = await models.Cat.findOne({
-      where: { id },
-      include: [{ model: models.Location }],
-    })
-    return res.json(result)
-  })
-
   app.get('/poi/:id', async (req, res) => {
     const id = Number(req.params.id)
     const result = await models.PointOfInterest.findOne({
       where: { id },
       include: [
         { model: models.Service, include: [{ model: models.ServiceType }] },
+        { model: models.Event },
       ],
     })
     return res.json(result)
@@ -253,21 +246,6 @@ async function runMainApi() {
         durationMinutes: element.durationMinutes,
         shortDescription: element.shortDescription,
         img: element.PointOfInterests[2].images[0],
-        id: element.id,
-      })
-    }
-    return res.json(filtered)
-  })
-
-  // HTTP GET api that returns all the cats in our actual database
-  app.get('/cats', async (req, res) => {
-    const result = await models.Cat.findAll()
-    const filtered = []
-    for (const element of result) {
-      filtered.push({
-        name: element.name,
-        img: element.img,
-        breed: element.breed,
         id: element.id,
       })
     }
@@ -440,13 +418,60 @@ async function runMainApi() {
     }
     return res.json(filtered)
   })
+  // HTTP GET api that returns all the top itineraries
+  app.get('/top/itineraries', async (req, res) => {
+    const result = await models.Itinerary.findAll({
+      include: models.PointOfInterest,
+    })
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.title,
+        img: element.PointOfInterests[2].images[0],
+        id: element.id,
+      })
+    }
+    return res.json(filtered)
+  })
 
-  // HTTP POST api, that will push (and therefore create) a new element in
-  // our actual database
-  app.post('/cats', async (req, res) => {
-    const { body } = req
-    await models.Cat.create(body)
-    return res.sendStatus(200)
+  // events page
+  app.get('/top/events', async (req, res) => {
+    const result = await models.Event.findAll({ limit: 5 })
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        img: element.images,
+      })
+    }
+    return res.json(filtered)
+  })
+  // HTTP GET api that returns all the top POIs i
+  app.get('/top/pois', async (req, res) => {
+    const result = await models.PointOfInterest.findAll({ limit: 5 })
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        img: element.images,
+        name: element.nonDetailedName,
+      })
+    }
+    return res.json(filtered)
+  })
+  // HTTP GET api that returns the top services in our actual database
+  app.get('/top/services', async (req, res) => {
+    const result = await models.Service.findAll({ limit: 5 })
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        img: element.img,
+      })
+    }
+    return res.json(filtered)
   })
 }
 

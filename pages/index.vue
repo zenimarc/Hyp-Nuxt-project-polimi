@@ -1,6 +1,5 @@
 <template>
   <div>
-    <the-header class="homepageNav" :is-fixed-pos="true" />
     <header class="masthead">
       <div class="container">
         <div class="masthead-subheading">Explore the city!</div>
@@ -12,32 +11,48 @@
         >
       </div>
     </header>
-    <custom-page
-      id="mainContentHome"
-      :title="title"
-      :image="image"
-      :description="description"
-    />
+    <br />
+
+    <div id="mainContentHome" class="text-center mt-2">
+      <h2>Eventi più attesi</h2>
+      <CarouselLink
+        class="preview"
+        :elements="eventsCarousel"
+        cardtype="event"
+      />
+      <h2>I nostri migliori tour</h2>
+      <CarouselLink
+        class="preview"
+        :elements="itinenariesCarousel"
+        cardtype="itinerary"
+      />
+      <h2>Le attrazioni che non puoi perderti</h2>
+      <CarouselLink class="preview" :elements="poisCarousel" cardtype="poi" />
+      <h2>I principali servizi</h2>
+      <CarouselLink
+        class="preview"
+        :elements="servicesCarousel"
+        cardtype="all-services"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import CustomPage from '~/components/CustomPage.vue'
+import CarouselLink from '~/components/CarouselLink.vue'
 export default {
   name: 'IndexPage',
-  components: {
-    CustomPage,
-  },
-  layout: 'empty',
+  components: { CarouselLink },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get('/api/page-info/index')
-    const title = data.title
-    const image = data.image
-    const description = data.description
+    const data1 = (await $axios.get('/api/top/events/')).data
+    const data2 = (await $axios.get('/api/top/itineraries/')).data
+    const data3 = (await $axios.get('/api/top/pois/')).data
+    const data4 = (await $axios.get('/api/top/services/')).data
     return {
-      title,
-      description,
-      image,
+      eventsCarousel: data1,
+      itinenariesCarousel: data2,
+      poisCarousel: data3,
+      servicesCarousel: data4,
     }
   },
   head() {
@@ -62,11 +77,12 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url('/assets/img/header-bg.webp');
+  background-image: url('/assets/img/backgroundHome1.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
+  height: 900px;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -86,6 +102,13 @@ header.masthead .masthead-heading {
     Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
+* {
+  scroll-margin-top: 4.5rem;
+}
+#mainContentHome h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
 @media (min-width: 768px) {
   header.masthead {
@@ -103,6 +126,15 @@ header.masthead .masthead-heading {
     font-weight: 700;
     line-height: 4.5rem;
     margin-bottom: 4rem;
+  }
+  .preview {
+    border-radius: 1%;
+    width: 100%;
+    height: 55vh;
+    object-fit: cover;
+  }
+  .btn {
+    background-color: #fd7e14;
   }
 }
 </style>

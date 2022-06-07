@@ -1,7 +1,7 @@
 import VueTypeText from '@/vue-type-text.vue';
 <template>
   <div class="col-md-3 cardService">
-    <div class="card">
+    <div :id="id" class="card">
       <span class="fa-stack fa-8x card-img-top">
         <img id="serviceImage" :src="img" :alt="`${name}`" />
       </span>
@@ -149,10 +149,10 @@ export default {
 table {
   border-radius: 6px;
   border-collapse: separate;
-  border: solid #212529 1px;
+  border: solid #ced4da 1px;
 }
 .card {
-  border-radius: 5%;
+  border-radius: 1rem;
   border: solid #ced4da 2px;
 }
 #serviceImage {
@@ -164,15 +164,13 @@ table {
   border: solid #ced4da 2px;
 }
 .headCell {
-  border-bottom: solid #212529 1px;
   border-width: 1px;
-  background-color: #212529;
-  color: #ced4da;
+  background-color: #fd7e14;
+  color: #fff;
 }
 .bodyCell {
-  border-bottom: solid #212529 1px;
-  border-width: 1px;
-  background-color: #ced4da;
+  background-color: #f3b07c;
+  color: #fff;
 }
 td,
 th {
@@ -180,13 +178,15 @@ th {
   vertical-align: middle;
 }
 .btn-primary {
-  background-color: #212529;
-  border-color: #212529;
-  color: #ced4da;
+  background-color: #fd7e14;
+  color: #fff;
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
+  border-radius: 0.9rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 .card {
   height: 500px;

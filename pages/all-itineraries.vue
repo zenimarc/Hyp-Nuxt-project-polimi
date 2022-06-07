@@ -1,27 +1,32 @@
 <template>
-  <section id="pois" class="page-section">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">
+  <div>
+    <div>
+      <div class="text-center intro page-section top-center">
+        <h1 class="section-heading text-uppercase">
           {{ infoPage.introduction }}
-        </h2>
+        </h1>
         <h3 class="section-subheading text-muted">
           {{ infoPage.description }}
         </h3>
       </div>
-      <div class="row text-center gy-5 gx-10">
-        <card-element
-          v-for="(itinerary, itineraryIndex) of itineraryList"
-          :id="itinerary.id"
-          :key="`poi-index-${itineraryIndex}`"
-          :name="itinerary.title"
-          :img="itinerary.img"
-          :address="''"
-          :cardtype="'itinerary'"
-        />
-      </div>
     </div>
-  </section>
+
+    <section id="pois" class="page-section">
+      <div class="container">
+        <div class="row text-center gy-5">
+          <card-element
+            v-for="(itinerary, itineraryIndex) of itineraryList"
+            :id="itinerary.id"
+            :key="`poi-index-${itineraryIndex}`"
+            :name="itinerary.title"
+            :img="itinerary.img"
+            :address="''"
+            :cardtype="'itinerary'"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -45,3 +50,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.intro {
+  background-image: url('/assets/img/backgroundItineraries.jpg');
+  background-position: center 45%;
+}
+</style>

@@ -1,14 +1,18 @@
 <template>
-  <section id="services" class="page-section">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">
+  <div>
+    <div>
+      <div class="text-center intro page-section top-center">
+        <h1 class="section-heading text-uppercase">
           {{ infoPage.introduction }}
-        </h2>
+        </h1>
         <h3 class="section-subheading text-muted">
           {{ infoPage.description }}
         </h3>
+      </div>
+    </div>
 
+    <section id="services" class="page-section">
+      <div class="container">
         <div class="row text-center gy-3">
           <FilterButtons
             id="filterButtons"
@@ -38,8 +42,8 @@
           />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -54,9 +58,6 @@ export default {
     const data2 = (await $axios.get('/api/page-info/services/')).data
     const data3 = (await $axios.get('/api/servicesType')).data
     const categories = [{ id: 0, name: 'Tutti' }].concat(data3)
-    /*     console.log(
-      '~~~~~~~~~~~~~~~' + JSON.stringify(data) + '~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-    ) */
     return {
       servicesList: data,
       infoPage: data2,
@@ -77,3 +78,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.intro {
+  background-image: url('/assets/img/backgroundService.jpg');
+}
+</style>
