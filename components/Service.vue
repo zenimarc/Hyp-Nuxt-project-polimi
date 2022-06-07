@@ -1,7 +1,7 @@
 import VueTypeText from '@/vue-type-text.vue';
 <template>
   <div class="col-md-3 cardService">
-    <div class="card">
+    <div :id="id" class="card">
       <span class="fa-stack fa-8x card-img-top">
         <img id="serviceImage" :src="img" :alt="`${name}`" />
       </span>

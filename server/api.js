@@ -418,6 +418,61 @@ async function runMainApi() {
     }
     return res.json(filtered)
   })
+  // HTTP GET api that returns all the top itineraries
+  app.get('/top/itineraries', async (req, res) => {
+    const result = await models.Itinerary.findAll({
+      include: models.PointOfInterest,
+    })
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.title,
+        img: element.PointOfInterests[2].images[0],
+        id: element.id,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  // events page
+  app.get('/top/events', async (req, res) => {
+    const result = await models.Event.findAll({ limit: 5 })
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        img: element.images,
+      })
+    }
+    return res.json(filtered)
+  })
+  // HTTP GET api that returns all the top POIs i
+  app.get('/top/pois', async (req, res) => {
+    const result = await models.PointOfInterest.findAll({ limit: 5 })
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        img: element.images,
+        name: element.nonDetailedName,
+      })
+    }
+    return res.json(filtered)
+  })
+  // HTTP GET api that returns the top services in our actual database
+  app.get('/top/services', async (req, res) => {
+    const result = await models.Service.findAll({ limit: 5 })
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        id: element.id,
+        name: element.name,
+        img: element.img,
+      })
+    }
+    return res.json(filtered)
+  })
 }
 
 runMainApi()

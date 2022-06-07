@@ -11,22 +11,39 @@
         >
       </div>
     </header>
-    <hr />
+    <br />
+
     <div id="mainContentHome" class="text-center">
       <div class="row mb-4">
         <div class="col">
-          <img class="preview" src="/assets/img/backgroundEvents.jpg" />
+          <CarouselLink
+            class="preview"
+            :elements="eventsCarousel"
+            cardtype="event"
+          />
         </div>
         <div class="col">
-          <img class="preview" src="/assets/img/backgroundItineraries.jpg" />
+          <CarouselLink
+            class="preview"
+            :elements="itinenariesCarousel"
+            cardtype="itinerary"
+          />
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <img class="preview" src="/assets/img/backgroundPoi.jpg" />
+          <CarouselLink
+            class="preview"
+            :elements="poisCarousel"
+            cardtype="poi"
+          />
         </div>
         <div class="col">
-          <img class="preview" src="/assets/img/backgroundService.jpg" />
+          <CarouselLink
+            class="preview"
+            :elements="servicesCarousel"
+            cardtype="all-services"
+          />
         </div>
       </div>
     </div>
@@ -34,17 +51,20 @@
 </template>
 
 <script>
+import CarouselLink from '~/components/CarouselLink.vue'
 export default {
   name: 'IndexPage',
+  components: { CarouselLink },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get('/api/page-info/index')
-    const title = data.title
-    const image = data.image
-    const description = data.description
+    const data1 = (await $axios.get('/api/top/events/')).data
+    const data2 = (await $axios.get('/api/top/itineraries/')).data
+    const data3 = (await $axios.get('/api/top/pois/')).data
+    const data4 = (await $axios.get('/api/top/services/')).data
     return {
-      title,
-      description,
-      image,
+      eventsCarousel: data1,
+      itinenariesCarousel: data2,
+      poisCarousel: data3,
+      servicesCarousel: data4,
     }
   },
   head() {
