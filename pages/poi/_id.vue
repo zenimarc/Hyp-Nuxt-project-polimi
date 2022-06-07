@@ -33,7 +33,7 @@
     </div> -->
     <template v-if="hostedEvents.length > 0">
       <h2 class="text-center mt-5 mb-4">Scopri gli eventi</h2>
-      <div class="row text-center gy-5 gx-10">
+      <div class="row text-center gy-5">
         <card-element
           v-for="(event, eventIndex) of hostedEvents"
           :id="event.id"
