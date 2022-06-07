@@ -23,7 +23,7 @@
         :key="elIndex"
         class="carousel-item"
         :class="{ active: elIndex === 0 }"
-        :aria-current="{ true: elIndex === 0 }"
+        :aria-current="elIndex === 0 ? 'true' : ''"
         data-bs-interval="10000"
       >
         <img :src="`${el.img}`" class="d-block w-100" :alt="`${el.name}`" />
@@ -86,6 +86,7 @@ export default {
 img {
   height: inherit;
   width: inherit;
+  object-fit: cover;
 }
 .carousel-caption {
   width: 100%;
@@ -113,7 +114,7 @@ img {
 }
 @media (min-width: 905px) {
   .carousel-item {
-    height: 420px;
+    height: 55vh;
     width: 100%;
   }
 }

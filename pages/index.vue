@@ -13,39 +13,27 @@
     </header>
     <br />
 
-    <div id="mainContentHome" class="text-center">
-      <div class="row mb-4">
-        <div class="col">
-          <CarouselLink
-            class="preview"
-            :elements="eventsCarousel"
-            cardtype="event"
-          />
-        </div>
-        <div class="col">
-          <CarouselLink
-            class="preview"
-            :elements="itinenariesCarousel"
-            cardtype="itinerary"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <CarouselLink
-            class="preview"
-            :elements="poisCarousel"
-            cardtype="poi"
-          />
-        </div>
-        <div class="col">
-          <CarouselLink
-            class="preview"
-            :elements="servicesCarousel"
-            cardtype="all-services"
-          />
-        </div>
-      </div>
+    <div id="mainContentHome" class="text-center mt-2">
+      <h2>Eventi più attesi</h2>
+      <CarouselLink
+        class="preview"
+        :elements="eventsCarousel"
+        cardtype="event"
+      />
+      <h2>I nostri migliori tour</h2>
+      <CarouselLink
+        class="preview"
+        :elements="itinenariesCarousel"
+        cardtype="itinerary"
+      />
+      <h2>Le attrazioni che non puoi perderti</h2>
+      <CarouselLink class="preview" :elements="poisCarousel" cardtype="poi" />
+      <h2>I principali servizi</h2>
+      <CarouselLink
+        class="preview"
+        :elements="servicesCarousel"
+        cardtype="all-services"
+      />
     </div>
   </div>
 </template>
@@ -114,6 +102,13 @@ header.masthead .masthead-heading {
     Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
+* {
+  scroll-margin-top: 4.5rem;
+}
+#mainContentHome h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
 @media (min-width: 768px) {
   header.masthead {
@@ -135,7 +130,7 @@ header.masthead .masthead-heading {
   .preview {
     border-radius: 1%;
     width: 100%;
-    height: 420px;
+    height: 55vh;
     object-fit: cover;
   }
   .btn {
