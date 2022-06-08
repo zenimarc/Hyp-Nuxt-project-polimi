@@ -6,13 +6,18 @@
         <p class="description">
           {{ shortDescription }}
         </p>
-        <p class="infos fw-bold">Dove e Quando : {{ practicalInfo }}</p>
+        <h5 class="infos fw-bold">Quando : {{ when }}</h5>
+        <h5> Dove :
+        <nuxt-link :to="`/poi/${poiId}`">
+          {{ where }}
+        </nuxt-link>
+        </h5>
         <button
           type="button"
           class="btn btn-outline-secondary btn-lg px-4"
           @click="backToList"
         >
-          Back to events list
+          Indietro
         </button>
       </div>
       <carousel-element :images="images" />
@@ -34,8 +39,10 @@ export default {
       id: data.id,
       name: data.name,
       shortDescription: data.shortDescription,
-      practicalInfo: data.practicalInfo,
+      when: data.when,
+      where: data.where,
       images: data.images,
+      poiId: data.PointOfInterestId
     }
   },
   head() {

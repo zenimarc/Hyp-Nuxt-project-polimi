@@ -6,8 +6,9 @@
     "name": "IL MITO DI ARETUSA e POLIFEMO E GALATEA",
     "shortDescription": "IL MITO DI ARETUSA e POLIFEMO E GALATEA\n                                                \n                                                Storie di amore e ninfe\n\nDopo il grande successo dello scorso anno, a partire dal 3 giugno 2022 la ninfa Aretusa torna a incantare Siracusa con uno spettacolo arricchito da una nuova voce, quella della ninfa Galatea.\n\nSuoni e luci per una performance teatrale unica, nella splendida cornice del Parco Archeologico della Neapolis.",
     "link": "https://aditusculture.com/eventi/2022/il-mito-di-aretusa-e-polifemo-e-galatea",
-    "practicalInfo": "Parco Archeologico della Neapolis\n            Via Paradiso, 14\n\n            96100 - Siracusa (SR)",
-    "PointOfInterestId": 1
+    "when": "dal 4 all'8 Novembre ore 20.30",  
+    "where": "Teatro greco",
+    "PointOfInterestId": 3
   },
   {
     "images": [
@@ -16,8 +17,9 @@
     "name": "ATTORI E GLADIATORI",
     "shortDescription": "ATTORI E GLADIATORI\n                                                \n                                                Imparare la storia divertendosi\n\nUn percorso formativo esperienziale per i bambini dai 6 ai 12 anni che unisce creatività, gioco e cultura: un viaggio nella storia che va dalle maschere del teatro greco, alle storie dei gladiatori nell’anfiteatro romano.",
     "link": "https://aditusculture.com/eventi/2022/attori-e-gladiatori",
-    "practicalInfo": "Parco Archeologico della Neapolis\n            Via Paradiso, 14\n\n            96100 - Siracusa (SR)",
-    "PointOfInterestId": 1
+    "when": "dal 14 al 18 Febbraio ore 19.30",  
+    "where": "Teatro greco",
+    "PointOfInterestId": 3
   },
   {
     "images": [
@@ -26,7 +28,8 @@
     "name": "IN UN MONDO \"PERFETTO\" - DAVIDE DALL’OSSO",
     "shortDescription": "IN UN MONDO \"PERFETTO\" - DAVIDE DALL’OSSO\n                                                \n                                                Aretusa, Griselda e Desdemona tra scultura, teatro e danza per raccontare l'uguaglianza di genere.\n\nL'installazione artistica dello scultore Davide Dall'Osso, che fonde scultura, teatro e danza e ci racconta di un Mondo perfetto in cui l'uguaglianza di genere è finalmente possibile. Come? Attraverso le donne che emergono dal mito e dalla tragedia per portarci la loro testimonianza e il loro monito. Aretusa, Griselda, Desdemona vi aspettano nella Sala Ipostila del Castello Maniace, dove Dall'Osso darà loro voce e corpo per parlarci di uguaglianza ed emancipazione, attraverso il linguaggio dell'arte.\nCASTELLO MANIACE - DAL 4 GIUGNO AL 31 DICEMBRE 2022",
     "link": "https://aditusculture.com/mostre/2022/in-un-mondo-perfetto",
-    "practicalInfo": "Castello Maniace Siracusa\n            Via Castello Maniace 51\n\n            96100 - Ortigia  (SIRACUSA) (SR)",
-    "PointOfInterestId": 1
+    "when": "dal 12 al 26 Aprile dalle 9 alle 18",  
+    "where": "Palazzo Corvaja",
+    "PointOfInterestId": 12
   }
 ]

@@ -14,7 +14,7 @@
           class="btn btn-outline-secondary btn-lg px-4"
           @click="backToList"
         >
-          Back to list
+          Indietro
         </button>
       </div>
       <div class="col-lg-6 image-wrapper">

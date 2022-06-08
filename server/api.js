@@ -80,7 +80,8 @@ async function initializeDatabaseConnection() {
   const Event = database.define('event', {
     name: DataTypes.STRING,
     shortDescription: DataTypes.TEXT,
-    practicalInfo: DataTypes.STRING,
+    when: DataTypes.STRING,
+    where: DataTypes.STRING,
     images: DataTypes.ARRAY(DataTypes.TEXT),
   })
   // ========================================================
@@ -181,7 +182,7 @@ const pageContentObject = {
   events: {
     title: 'Events',
     introduction: 'EVENTI',
-    description: `Non perderti gli eventi della città!`,
+    description: `Non perderti gli eventi della città! Musei, mostre, film e concerti e molto altro ancora!`,
   },
 }
 
@@ -286,7 +287,8 @@ async function runMainApi() {
         id: element.id,
         name: element.name,
         shortDescription: element.shortDescription,
-        practicalInfo: element.practicalInfo,
+        when: element.when,
+        where: element.where,
         images: element.images,
       })
     }
@@ -309,7 +311,8 @@ async function runMainApi() {
         id: element.id,
         name: element.name,
         shortDescription: element.shortDescription,
-        practicalInfo: element.practicalInfo,
+        when: element.when,
+        where: element.where,
         images: element.images,
       })
     }

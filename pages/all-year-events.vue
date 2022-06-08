@@ -10,7 +10,6 @@
         </h3>
       </div>
     </div>
-
     <section id="events" class="page-section">
       <div class="container">
         <div class="row text-center gy-3">
@@ -36,7 +35,7 @@
             :key="`event-index-${eventIndex}`"
             :name="event.name"
             :img="event.images[0]"
-            :address="event.practicalInfo"
+            :address="event.when"
             :cardtype="'event'"
           />
         </div>
@@ -61,7 +60,7 @@ export default {
     const { data } = await $axios.get('/api/events')
     const data2 = (await $axios.get('/api/eventType')).data
     const data3 = (await $axios.get('/api/page-info/events/')).data
-    const categories = [{ id: 0, name: 'Tutti' }].concat(data2)
+    const categories = [{ id: 0, name: 'Tutti gli eventi' }].concat(data2)
     return {
       eventList: data,
       eventType: categories,
