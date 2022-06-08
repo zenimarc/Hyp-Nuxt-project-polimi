@@ -80,7 +80,8 @@ async function initializeDatabaseConnection() {
   const Event = database.define('event', {
     name: DataTypes.STRING,
     shortDescription: DataTypes.TEXT,
-    practicalInfo: DataTypes.STRING,
+    when: DataTypes.STRING,
+    where: DataTypes.STRING,
     images: DataTypes.ARRAY(DataTypes.TEXT),
   })
   // ========================================================
@@ -286,7 +287,8 @@ async function runMainApi() {
         id: element.id,
         name: element.name,
         shortDescription: element.shortDescription,
-        practicalInfo: element.practicalInfo,
+        when: element.when,
+        where: element.where,
         images: element.images,
       })
     }
@@ -309,7 +311,8 @@ async function runMainApi() {
         id: element.id,
         name: element.name,
         shortDescription: element.shortDescription,
-        practicalInfo: element.practicalInfo,
+        when: element.when,
+        where: element.where,
         images: element.images,
       })
     }

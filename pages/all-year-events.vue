@@ -35,7 +35,7 @@
             :key="`event-index-${eventIndex}`"
             :name="event.name"
             :img="event.images[0]"
-            :address="event.practicalInfo"
+            :address="event.when"
             :cardtype="'event'"
           />
         </div>
