@@ -10,7 +10,6 @@
         </h3>
       </div>
     </div>
-
     <section id="events" class="page-section">
       <div class="container">
         <div class="row text-center gy-3">
