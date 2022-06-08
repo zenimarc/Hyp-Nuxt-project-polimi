@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="page-section">
+  <section id="contact" class="page-section bg-light">
     <div class="container">
       <div class="text-center">
         <h2 class="section-heading text-uppercase">
