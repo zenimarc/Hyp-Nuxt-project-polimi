@@ -445,7 +445,7 @@ async function runMainApi() {
       filtered.push({
         id: element.id,
         name: element.name,
-        img: element.images,
+        img: element.images[0],
       })
     }
     return res.json(filtered)
@@ -457,7 +457,7 @@ async function runMainApi() {
     for (const element of result) {
       filtered.push({
         id: element.id,
-        img: element.images,
+        img: element.images[0],
         name: element.nonDetailedName,
       })
     }

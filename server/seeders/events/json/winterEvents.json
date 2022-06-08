@@ -5,10 +5,11 @@
         "La Bellezza declinata in ogni sua forma. Tale è l’alchimia di Taobuk che convoglia su Taormina, luogo unico al mondo, snodo fra cultura occidentale ed orientale, le eccellenze della letteratura, delle arti e del pensiero. Il Festival, nato dodici anni fa, da un’intuizione di Antonella Ferrara che lo presiede e dirige, accoglie la vocazione di recepire i “sedimenti letterari” della città, sintesi di una storia che coagula eventi, miti, vissuti, tradizioni. Ogni anno, Taobuk sceglie un tema intorno a cui s’incardina un calendario di incontri, con il concorso di scrittori autorevoli, artisti, filosofi e scienziati. La kermesse ha assunto una configurazione multidisciplinare e il cartello si impreziosisce con mostre, spettacoli teatrali e di danza, retrospettive cinematografiche, in location suggestive di cui il più rappresentativo è il Teatro Antico, insieme a palazzi, angoli e grandi alberghi.",
       "when":
         "Dal 5 al 10 dicembre 2022",
+        "PointOfInterestId": 11,
       "where": "Piazza 9 Aprile,Taormina",
       "images": [
-        "https://blog.taobuk.it/wp-content/uploads/2020/07/5_dMSKQg.jpg",
-        "https://www.add-design.it/wp-content/uploads/2020/09/logo-taobuk-10anni.gif"
+        "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_2048/https://www.notiziemigranti.it/news/wp-content/uploads/2021/07/taobook-2048x1365.jpg",
+        "https://64.media.tumblr.com/9dd245e57afcd21500fba3e3763f1217/e1eb92671a3d2925-e7/s1280x1920/b39df5dd8d169ea8dae64268870d327e5cc5522f.jpg"
       ]
     },
     {
@@ -17,6 +18,7 @@
         "Taormina: lo sguardo corre dal mare invitante all’Etna imponente, come su un naturale grande schermo in Cinemascope. Il legame tra Taormina e il cinema è innato. A cavallo tra Ottocento e Novecento, quasi in coincidenza con l’invenzione dei fratelli Lumière, Taormina diventava patria elettiva del barone Wilhelm von Gloeden, che ha lasciato un suggestivo patrimonio visivo di fotografie e cartoline raffiguranti giovani siciliani agghindati come divinità dell’Olimpo (luogo proverbiale per la Decima Musa) con sullo sfondo panorami risplendenti: il suo studio fu visitato, tra gli altri, da Oscar Wilde, Gabriele D’Annunzio, Eleonora Duse. Va in scena la 68° edizione dell’acclamato Festival del Cinema, un concorso internazionale composto da sei film: una selezione ufficiale riservata a opere prime e seconde che si alterneranno alle première sul grande schermo del Teatro Antico. In programma anche agli incontri con gli autori, le personalità del cinema e della cultura e, naturalmente, le celebrities nella settimana in cui Taormina si trasforma in una sala cinematografica open air.",
       "when": "Dal 2 all' 8 Dicembre",
       "where": "Teatro antico di Taormina",
+      "PointOfInterestId": 3,
       "images": [
         "https://i0.wp.com/www.universalmovies.it/wp-content/uploads/2022/03/taormina-film-festival-2022-scaled.jpeg?resize=1210%2C642&ssl=1",
         "https://www.askanews.it/wp-content/uploads/2021/01/20210121_194150_A61B774C.jpg",
@@ -31,7 +33,7 @@
       "images": [
         "https://www.radiotaormina.it/wp-content/uploads/2019/12/Mercatini-di-Natale-a-Erice.jpg",
         "https://www.vagabondisquattrinati.it/wp-content/uploads/2017/11/Natale-Taormina1-696x355.jpg"
-
-      ]
+      ],
+      "PointOfInterestId":8 
     }
   ]
