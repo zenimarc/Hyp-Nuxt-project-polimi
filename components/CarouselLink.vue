@@ -97,7 +97,7 @@ img {
   background-color: #fd7e14;
   color: #fff;
   margin-top: 20px;
-  font-size: 1vw;
+  font-size: inherit;
 }
 .carousel-item {
   height: 55vh;
