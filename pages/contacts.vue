@@ -1,10 +1,10 @@
 <template>
-  <section id="contact" class="page-section">
+  <section id="contact" class="page-section bg-light">
     <div class="container">
       <div class="text-center">
-        <h1 class="section-heading text-uppercase">
+        <h2 class="section-heading text-uppercase">
           {{ infoPage.introduction }}
-        </h1>
+        </h2>
         <h3 class="section-subheading text-muted">
           {{ infoPage.description }}
         </h3>

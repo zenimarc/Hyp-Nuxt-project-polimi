@@ -11,7 +11,7 @@
         type="button"
         class="carousel-bar"
         :data-bs-target="`#carouselExampleDark${cardtype}`"
-        :data-bs-slide-to="`  ${el.id - 1}`"
+        :data-bs-slide-to="`${elIndex}`"
         :class="{ active: elIndex === 0 }"
         :aria-current="{ true: elIndex === 0 }"
         :aria-label="`${el.name}`"
@@ -23,7 +23,6 @@
         :key="elIndex"
         class="carousel-item"
         :class="{ active: elIndex === 0 }"
-        :aria-current="elIndex === 0 ? 'true' : 'false'"
         data-bs-interval="10000"
       >
         <img :src="`${el.img}`" class="d-block w-100" :alt="`${el.name}`" />

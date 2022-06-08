@@ -57,7 +57,7 @@
     <div class="text-center">
       <div class="col-12">
         <button id="submitButton" class="btn btn-primary" type="submit">
-          Submit form
+          Invia
         </button>
       </div>
     </div>

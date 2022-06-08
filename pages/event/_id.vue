@@ -12,7 +12,7 @@
           class="btn btn-outline-secondary btn-lg px-4"
           @click="backToList"
         >
-          Back to events list
+          Indietro
         </button>
       </div>
       <carousel-element :images="images" />
