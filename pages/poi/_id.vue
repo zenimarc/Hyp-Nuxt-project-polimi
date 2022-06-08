@@ -100,7 +100,7 @@ export default {
         scale: 1.5,
       }
     }
-
+    const goToServiceDetail = this.goToServiceDetail
     function initMap() {
       // Create an info window to share between markers.
       const infoWindow = new window.google.maps.InfoWindow()
@@ -150,7 +150,16 @@ export default {
         // Add a click listener for each marker, and set up the info window.
         marker.addListener('click', () => {
           infoWindow.close()
-          infoWindow.setContent(marker.getTitle())
+          const content = document.createElement('a')
+          content.innerHTML = `<b>${service.name}</b><br><a id="goToServiceDetails-${service.id}" href="#">vai ai dettagli</a>`
+          content
+            .querySelector(`#goToServiceDetails-${service.id}`)
+            .addEventListener('click', (event) => {
+              event.preventDefault()
+              goToServiceDetail(service.id)
+            })
+          infoWindow.setContent(content)
+
           infoWindow.open(marker.getMap(), marker)
         })
       })
@@ -165,6 +174,9 @@ export default {
     backToList() {
       // this.$router.push('/all-point-of-interests')
       this.$router.back()
+    },
+    goToServiceDetail(id) {
+      this.$router.push('/all-services/#' + id)
     },
   },
 }
