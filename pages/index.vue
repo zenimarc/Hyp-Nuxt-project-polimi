@@ -2,12 +2,12 @@
   <div>
     <header class="masthead">
       <div class="container">
-        <div class="masthead-subheading">Explore the city!</div>
+        <div class="masthead-subheading">Esplora la città!</div>
         <div class="masthead-heading text-uppercase">Taormina</div>
         <a
           class="btn btn-primary btn-xl text-uppercase"
           @click="scrollSmoothIntoView('#mainContentHome')"
-          >Tell Me More</a
+          >Scopri di più</a
         >
       </div>
     </header>
