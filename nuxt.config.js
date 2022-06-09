@@ -70,7 +70,6 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@aceforth/nuxt-optimized-images',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -78,10 +77,6 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   ],
-
-  optimizedImages: {
-    optimizeImages: true,
-  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
