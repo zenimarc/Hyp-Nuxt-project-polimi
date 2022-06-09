@@ -11,6 +11,11 @@
       </div>
     </div>
 
+    <the-breadcrumb
+      :paths="['/']"
+      :labels="['Home']"
+      :activeLabel="'Servizi'"
+      />
     <section id="services" class="page-section">
       <div class="container">
         <div class="row text-center gy-3">
@@ -50,9 +55,10 @@
 import Service from '~/components/Service.vue'
 import FilterButtons from '~/components/FilterButtons.vue'
 import FilterDropdown from '~/components/FilterDropdown.vue'
+import TheBreadcrumb from '~/components/TheBreadcrumb.vue'
 export default {
   name: 'ServicesPage',
-  components: { Service, FilterButtons, FilterDropdown },
+  components: { Service, FilterButtons, FilterDropdown, TheBreadcrumb },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/services')
     const data2 = (await $axios.get('/api/page-info/services/')).data

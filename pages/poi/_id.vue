@@ -1,5 +1,9 @@
 <template>
   <div class="container mt-5 mb-5">
+    <the-breadcrumb
+    :paths="['/','/all-point-of-interests']"
+    :labels="['Home', 'Posti']"
+    :activeLabel="name"/>
     <div class="row gy-5">
       <div class="col-lg-6 ms-auto description-wrapper">
         <h1 class="title">{{ name }}</h1>
@@ -51,9 +55,10 @@
 <script>
 import CommonMixin from '~/mixins/common'
 import CarouselElement from '~/components/CarouselElement.vue'
+import TheBreadcrumb from '~/components/TheBreadcrumb.vue'
 export default {
   name: 'PoidetailsPage',
-  components: { CarouselElement },
+  components: { CarouselElement, TheBreadcrumb },
   mixins: [CommonMixin],
   async asyncData({ route, $axios }) {
     const { id } = route.params

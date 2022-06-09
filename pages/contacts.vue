@@ -8,6 +8,11 @@
         <h3 class="section-subheading text-muted">
           {{ infoPage.description }}
         </h3>
+        <the-breadcrumb
+        :paths="['/']"
+        :labels="['Home']"
+        :activeLabel="'Servizi'"
+        />
       </div>
       <SubmitForm></SubmitForm>
     </div>

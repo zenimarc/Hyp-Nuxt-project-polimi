@@ -10,6 +10,11 @@
             {{ infoPage.subtitleCity }}
           </h3>
         </div>
+        <the-breadcrumb
+        :paths="['/']"
+        :labels="['Home']"
+        :activeLabel="'About Taormina'"
+        />
         <div
           v-for="(about, aboutIndex) of aboutList"
           :key="`about${aboutIndex}`"

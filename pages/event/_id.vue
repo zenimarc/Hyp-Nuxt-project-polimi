@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <the-breadcrumb
+    :paths="['/','/all-year-events']"
+    :labels="['Home','Eventi']"
+    :activeLabel="name"/>
     <div class="row gy-5">
       <div class="col-sm-9">
         <h1 class="title">{{ name }}</h1>
@@ -28,9 +32,10 @@
 <script>
 import CarouselElement from '~/components/CarouselElement.vue'
 import CommonMixin from '~/mixins/common'
+import TheBreadcrumb from '~/components/TheBreadcrumb.vue'
 export default {
   name: 'EventdetailsPage',
-  components: { CarouselElement },
+  components: { CarouselElement, TheBreadcrumb },
   mixins: [CommonMixin],
   async asyncData({ route, $axios }) {
     const { id } = route.params

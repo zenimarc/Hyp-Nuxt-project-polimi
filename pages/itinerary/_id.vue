@@ -1,13 +1,16 @@
 <template>
   <section id="about" class="page-section">
     <div class="container">
+      <the-breadcrumb
+      :paths="['/','all-itineraries']"
+      :labels="['Home', 'Itinerari']"
+      :activeLabel="title"/>
       <div class="text-center">
         <h2 class="section-heading text-uppercase">{{ title }}</h2>
         <h3 class="section-subheading text-muted">
           {{ shortDescription }}
         </h3>
       </div>
-
       <ul class="timeline">
         <itinerary-step
           v-for="(poi, poiIndex) of poiList"
@@ -27,9 +30,10 @@
 <script>
 import ItineraryStep from '~/components/ItineraryStep.vue'
 import CommonMixin from '~/mixins/common'
+import TheBreadcrumb from '~/components/TheBreadcrumb.vue'
 export default {
   name: 'ItineraryPage',
-  components: { ItineraryStep },
+  components: { ItineraryStep, TheBreadcrumb },
   mixins: [CommonMixin],
   async asyncData({ route, $axios }) {
     const { id } = route.params
