@@ -10,6 +10,11 @@
         </h3>
       </div>
     </div>
+    <the-breadcrumb
+    :paths="['/']"
+    :labels="['Home']"
+    :activeLabel="'Eventi'"
+    />
     <section id="events" class="page-section">
       <div class="container">
         <div class="row text-center gy-3">
@@ -48,12 +53,14 @@
 import CardElement from '~/components/CardElement.vue'
 import FilterButtons from '~/components/FilterButtons.vue'
 import FilterDropdown from '~/components/FilterDropdown.vue'
+import TheBreadcrumb from '~/components/TheBreadcrumb.vue'
 export default {
   name: 'EventsPage',
   components: {
     CardElement,
     FilterButtons,
     FilterDropdown,
+    TheBreadcrumb,
   },
 
   async asyncData({ $axios }) {

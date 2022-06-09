@@ -10,7 +10,10 @@
         </h3>
       </div>
     </div>
-
+    <the-breadcrumb
+    :paths="['/',]"
+    :labels="['Home']"
+    :activeLabel="'Itinerari'"/>
     <section id="pois" class="page-section">
       <div class="container">
         <div class="row text-center gy-5">
@@ -31,11 +34,13 @@
 
 <script>
 import CardElement from '~/components/CardElement.vue'
+import TheBreadcrumb from '~/components/TheBreadcrumb.vue'
 export default {
   name: 'ItinerariesPage',
   components: {
     CardElement,
-  },
+    TheBreadcrumb
+},
   // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/itineraries')

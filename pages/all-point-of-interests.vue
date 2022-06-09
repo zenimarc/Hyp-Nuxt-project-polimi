@@ -10,7 +10,11 @@
         </h3>
       </div>
     </div>
-
+    <the-breadcrumb
+    :paths="['/',]"
+    :labels="['Home']"
+    :activeLabel="'Posti'"
+    />
     <section id="pois" class="page-section">
       <div class="container">
         <div class="row text-center gy-5">
@@ -31,11 +35,13 @@
 
 <script>
 import CardElement from '~/components/CardElement.vue'
+import TheBreadcrumb from '~/components/TheBreadcrumb.vue'
 export default {
   name: 'PoiListPage',
   components: {
     CardElement,
-  },
+    TheBreadcrumb
+},
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/pois')
     const data2 = (await $axios.get('/api/page-info/pois/')).data
