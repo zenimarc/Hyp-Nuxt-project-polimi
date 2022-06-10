@@ -55,10 +55,6 @@ export default {
       title: this.name,
     }
   },
-  mounted() {
-    const date = new Date()
-    console.log(this.formatMyDate(date.toLocaleDateString()))
-  },
   methods: {
     backToList() {
       this.$router.back()
