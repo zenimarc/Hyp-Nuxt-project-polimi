@@ -5,9 +5,6 @@
         <h1 class="section-heading text-uppercase">
           {{ infoPage.introduction }}
         </h1>
-        <h3 class="section-subheading text-muted">
-          {{ infoPage.description }}
-        </h3>
       </div>
     </div>
     <the-breadcrumb

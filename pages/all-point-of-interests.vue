@@ -2,19 +2,12 @@
   <div>
     <div>
       <div class="text-center intro page-section top-center">
-        <h1 class="section-heading text-uppercase textColorInverted">
+        <h1 class="section-heading text-uppercase">
           {{ infoPage.introduction }}
         </h1>
-        <h3 class="section-subheading textColorInverted">
-          {{ infoPage.description }}
-        </h3>
       </div>
     </div>
-    <the-breadcrumb
-    :paths="['/',]"
-    :labels="['Home']"
-    :activeLabel="'Posti'"
-    />
+    <the-breadcrumb :paths="['/']" :labels="['Home']" :activeLabel="'Posti'" />
     <section id="pois" class="page-section">
       <div class="container">
         <div class="row text-center gy-5">
@@ -40,8 +33,8 @@ export default {
   name: 'PoiListPage',
   components: {
     CardElement,
-    TheBreadcrumb
-},
+    TheBreadcrumb,
+  },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/pois')
     const data2 = (await $axios.get('/api/page-info/pois/')).data

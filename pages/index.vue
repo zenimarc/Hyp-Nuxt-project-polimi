@@ -85,6 +85,7 @@ header.masthead {
   height: 900px;
 }
 header.masthead .masthead-subheading {
+  color: #37323e;
   font-size: 1.5rem;
   font-style: italic;
   line-height: 1.5rem;
@@ -94,6 +95,7 @@ header.masthead .masthead-subheading {
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 header.masthead .masthead-heading {
+  color: #37323e;
   font-size: 3.25rem;
   font-weight: 700;
   line-height: 3.25rem;
