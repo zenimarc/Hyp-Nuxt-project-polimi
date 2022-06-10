@@ -2,14 +2,16 @@
   <section id="about" class="page-section">
     <div class="container">
       <the-breadcrumb
-      :paths="['/','all-itineraries']"
-      :labels="['Home', 'Itinerari']"
-      :activeLabel="title"/>
+        :paths="['/', 'all-itineraries']"
+        :labels="['Home', 'Itinerari']"
+        :activeLabel="title"
+      />
       <div class="text-center">
         <h2 class="section-heading text-uppercase">{{ title }}</h2>
-        <h3 class="section-subheading text-muted">
+        <h3 id="itine-subheading" class="section-subheading text-muted">
           {{ shortDescription }}
         </h3>
+        <itinerary-duration class="duration" :duration="durationMinutes" />
       </div>
       <ul class="timeline">
         <itinerary-step
@@ -31,9 +33,10 @@
 import ItineraryStep from '~/components/ItineraryStep.vue'
 import CommonMixin from '~/mixins/common'
 import TheBreadcrumb from '~/components/TheBreadcrumb.vue'
+import ItineraryDuration from '~/components/ItineraryDuration.vue'
 export default {
   name: 'ItineraryPage',
-  components: { ItineraryStep, TheBreadcrumb },
+  components: { ItineraryStep, TheBreadcrumb, ItineraryDuration },
   mixins: [CommonMixin],
   async asyncData({ route, $axios }) {
     const { id } = route.params
@@ -107,5 +110,14 @@ export default {
 <style scoped>
 #itinerary-map {
   height: 500px;
+}
+.section-subheading {
+  margin-bottom: 1rem;
+}
+#itine-subheading {
+  margin-bottom: 1rem;
+}
+.duration {
+  margin-bottom: 2rem;
 }
 </style>

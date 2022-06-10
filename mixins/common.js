@@ -14,13 +14,5 @@ export default {
       const [latString, lngString] = stringCoords.split(',')
       return { lat: Number(latString), lng: Number(lngString) }
     },
-    getGoogleFontsIconCode(iconName) {
-      const correspondences = {
-        Pharmacies: '\ue550',
-        ATMs: '\ue53e',
-        Restaurants: '\ue56c',
-      }
-      return correspondences[iconName]
-    },
   },
 }

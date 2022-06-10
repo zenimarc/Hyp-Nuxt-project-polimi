@@ -11,9 +11,10 @@
       </div>
     </div>
     <the-breadcrumb
-    :paths="['/',]"
-    :labels="['Home']"
-    :activeLabel="'Itinerari'"/>
+      :paths="['/']"
+      :labels="['Home']"
+      :activeLabel="'Itinerari'"
+    />
     <section id="pois" class="page-section">
       <div class="container">
         <div class="row text-center gy-5">
@@ -39,8 +40,8 @@ export default {
   name: 'ItinerariesPage',
   components: {
     CardElement,
-    TheBreadcrumb
-},
+    TheBreadcrumb,
+  },
   // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/itineraries')
