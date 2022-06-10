@@ -36,7 +36,7 @@ export default {
 
 <style>
     ol{
-        font-size: 24px;
+        font-size: inherit;
         margin-left: 1%;
         margin-top: 4%;
     }
