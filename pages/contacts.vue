@@ -9,9 +9,9 @@
           {{ infoPage.description }}
         </h3>
         <the-breadcrumb
-        :paths="['/']"
-        :labels="['Home']"
-        :activeLabel="'Servizi'"
+          :paths="['/']"
+          :labels="['Home']"
+          :activeLabel="'Contatti'"
         />
       </div>
       <SubmitForm></SubmitForm>
