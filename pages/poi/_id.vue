@@ -1,9 +1,10 @@
 <template>
   <div class="container mt-5 mb-5">
     <the-breadcrumb
-    :paths="['/','/all-point-of-interests']"
-    :labels="['Home', 'Posti']"
-    :activeLabel="name"/>
+      :paths="['/', '/all-point-of-interests']"
+      :labels="['Home', 'Posti']"
+      :activeLabel="name"
+    />
     <div class="row gy-5">
       <div class="col-lg-6 ms-auto description-wrapper">
         <h1 class="title">{{ name }}</h1>
@@ -44,7 +45,7 @@
           :key="`event-index-${eventIndex}`"
           :name="event.name"
           :img="event.images[0]"
-          :address="''"
+          :address="event.when"
           :cardtype="'event'"
         />
       </div>

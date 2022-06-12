@@ -17,5 +17,5 @@ export default async (models) => {
   //  init events
   await initializeEventsList(models)
   // fill the near services in poi
-  initializeNearServices(models)
+  await initializeNearServices(models)
 }
