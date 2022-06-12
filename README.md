@@ -19,7 +19,7 @@ The application integrates the Server Side Rendering feature. Whenever it's need
 The Design document is available here: [Design_Report.pdf](METTERE LINK)
 
 **Technology:**  
-The project has been developed using the Nuxt.js framework.  
+The project has been developed using the Nuxt.js and the Vue.js frameworks.  
 
 **Other Technologies:**  
 Server Technology: NodeJS  
