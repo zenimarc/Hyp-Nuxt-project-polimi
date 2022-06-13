@@ -11,9 +11,9 @@
           </h3>
         </div>
         <the-breadcrumb
-        :paths="['/']"
-        :labels="['Home']"
-        :activeLabel="'About Taormina'"
+          :paths="['/']"
+          :labels="['Home']"
+          :activeLabel="'About Taormina'"
         />
         <div
           v-for="(about, aboutIndex) of aboutList"
@@ -116,6 +116,11 @@ export default {
       infoPage: data2,
       socials: data3,
       aboutList: townInfo,
+    }
+  },
+  head() {
+    return {
+      title: 'About Taormina',
     }
   },
 }

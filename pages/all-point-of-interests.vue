@@ -46,6 +46,11 @@ export default {
   data() {
     return {}
   },
+  head() {
+    return {
+      title: 'Posti a Taormina',
+    }
+  },
 }
 </script>
 <style scoped>

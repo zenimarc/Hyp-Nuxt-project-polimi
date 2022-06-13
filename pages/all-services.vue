@@ -72,6 +72,11 @@ export default {
       idCategory: 0,
     }
   },
+  head() {
+    return {
+      title: 'Servizi a Taormina',
+    }
+  },
   methods: {
     async updateData() {
       const categoryNumber = this.idCategory

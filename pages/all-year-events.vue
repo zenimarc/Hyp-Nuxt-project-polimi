@@ -74,6 +74,12 @@ export default {
     }
   },
 
+  head() {
+    return {
+      title: 'Eventi a Taormina',
+    }
+  },
+
   methods: {
     async updateData() {
       const categoryNumber = this.idCategory

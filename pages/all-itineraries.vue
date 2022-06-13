@@ -51,6 +51,11 @@ export default {
   data() {
     return {}
   },
+  head() {
+    return {
+      title: 'Itinerari Taormina',
+    }
+  },
 }
 </script>
 
