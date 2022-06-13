@@ -16,8 +16,6 @@ The website contains these pages:
 
 The application integrates the Server Side Rendering feature. Whenever it's needed to add new Events for example, it's not necessary to build and deploy the website again. Moreover using SSR we are able to better optimize the SEO.
 
-The Design document is available here: [Design_Report.pdf](METTERE LINK)
-
 **Technology:**  
 The project has been developed using the Nuxt.js and the Vue.js frameworks.  
 
