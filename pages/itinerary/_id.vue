@@ -2,7 +2,7 @@
   <section id="about" class="page-section">
     <div class="container">
       <the-breadcrumb
-        :paths="['/', 'all-itineraries']"
+        :paths="['/', '/all-itineraries']"
         :labels="['Home', 'Itinerari']"
         :activeLabel="title"
       />
